@@ -23,6 +23,11 @@ body {
     margin-bottom: 60px;
 }
 
+#nav_menu_img{
+    height: 50px;
+    width: 50px;
+}
+
 #navigate:hover {
     box-shadow: 0 0 6px rgba(0, 0, 0, .35);
 }
