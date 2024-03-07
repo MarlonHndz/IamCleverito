@@ -57,15 +57,18 @@ nav {
 
 #navigate {
     z-index: 1000;
-    font-size: 20px;
-    font-weight: 400;
     position: absolute;
     left: 0;
     margin-left: 50px;
     cursor: pointer;
     border-radius: 8px;
-    padding: 10px 25px;
-    width: fit-content;
-    border: solid 2px #000;
+    border: solid 2px #FFF;
+    display: flex;
+    align-items: center;
     transition: width 3.8s ease;
+}
+
+#nav_menu_img{
+    height: 50px;
+    width: 50px;
 }

@@ -17,6 +17,7 @@ function loadHeader(url) {
 
 function addListenerToMenu() {
     var navigateSpan = document.getElementById('navigate');
+    var navigateImg = document.getElementById('nav_menu_img');
 
     navigateSpan.addEventListener("click", function () {
 
@@ -30,6 +31,12 @@ function addListenerToMenu() {
 
         //nav btn style
         navigateSpan.classList.toggle('navigate-black-bg');
+
+        if (navigateImg.src.endsWith("ic_menu_book_closed.svg")) {
+            navigateImg.src = "assets/ic_menu_book_open_white.svg";
+        } else {
+            navigateImg.src = "assets/ic_menu_book_closed.svg";
+        }
 
     });
 }
