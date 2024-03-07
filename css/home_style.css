@@ -23,11 +23,6 @@ body {
     margin-bottom: 60px;
 }
 
-#navigate {
-    color: #000;
-    border: solid 2px #000;
-}
-
 #navigate:hover {
     box-shadow: 0 0 6px rgba(0, 0, 0, .35);
 }

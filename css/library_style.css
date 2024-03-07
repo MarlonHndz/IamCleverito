@@ -31,12 +31,6 @@ body {
     box-shadow: 0 0 6px rgba(0, 0, 0, .35);
 }
 
-.navigate-white-bg{
-    color: #000;
-    background: #FFF;
-    box-shadow: 0 0 6px rgba(0, 0, 0, .35);
-}
-
 /* -- HEADER -- */
 header {
     width: 100%;
