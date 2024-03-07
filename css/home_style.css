@@ -49,8 +49,6 @@ header {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, rgba(122, 255, 215, 0), rgba(0, 119, 143, 0.4)), url(../img/Banner_home_bg.png);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    -webkit-background-size: 900px;
 
     background-size: cover;
     background-attachment: fixed;
@@ -291,6 +289,10 @@ main .home-introduction {
 /* -- Responsive 1200px -- */
 @media screen and (max-width:1200px) {
 
+    header {
+        background-size: 100%;
+    }
+
     .developer-presentation-container .card {
         width: 90%;
         height: 400px;
@@ -314,6 +316,7 @@ main .home-introduction {
     /* -- Header -- */
     header {
         background-position: center;
+        background-size: 100%;
     }
 
     /* -- Introduction -- */
