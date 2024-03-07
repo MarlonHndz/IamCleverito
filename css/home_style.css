@@ -290,6 +290,10 @@ main .home-introduction {
 
 /* -- Responsive 1200px -- */
 @media screen and (max-width:1200px) {
+    header{
+        -webkit-background-size: 900px;
+    }
+
     .developer-presentation-container .card {
         width: 90%;
         height: 400px;
@@ -313,6 +317,7 @@ main .home-introduction {
     /* -- Header -- */
     header {
         background-position: center;
+            -webkit-background-size: 700px;
     }
 
     /* -- Introduction -- */
