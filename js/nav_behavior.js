@@ -1,5 +1,5 @@
 async function loadHeaderNav() {
-    await loadHeader("../../ui/nav/nav_section.html");
+    await loadHeader("ui/nav/nav_section.html");
     addListenerToMenu();
 }
 
