@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+.container {
+    padding: 60px 0;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+#navigate {
+    color: #FFF;
+    border: solid 2px #FFF;
+}
+
+#navigate:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, .35);
+}
+
+.navigate-black-bg{
+    color: #FFF;
+    background: #000;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .35);
+}
+
+.navigate-white-bg{
+    color: #000;
+    background: #FFF;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .35);
+}
+
+/* -- HEADER -- */
+header {
+    width: 100%;
+    height: 500px;
+    background: #000;
+
+}
+
+.active {
+    color: #000;
+    font-weight: 450;
+}
+
+.nav_selected {
+    text-decoration: underline;
+}
+
+.texts-header {
+    display: flex;
+    height: 430px;
+    width: 100%;
+    padding: 0 200px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    text-align: start;
+}
+
+.container-header-title {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-header-title img {
+    width: 120px;
+    height: 60px;
+}
+
+.texts-header h1 {
+    font-size: 70px;
+    font-weight: 500;
+    color: #FFF;
+    width: fit-content;
+}
+
+.texts-header h2 {
+    font-size: 50px;
+    font-weight: 400;
+    color: #FFF;
+}
+
+/* -- Portfolio -- */
+.library-galery-portfolio {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card-portfolio {
+    width: 40%;
+    height: 200px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    display: flex;
+    cursor: pointer;
+    border: 1px solid #E1E2E6;
+    /*box-shadow: 0 0 6px rgba(0, 0, 0, .5);*/
+}
+
+.card-portfolio:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, .35);
+}
+
+.card-portfolio:hover .container-card-button {
+    background: #000;
+    color: #FFF;
+}
+
+.card-portfolio h4 {
+    font-weight: 400;
+    font-size: 20px;
+    color: #A2A6A9;
+}
+
+.card-portfolio h3 {
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.library-galery-portfolio .card-portfolio>.container-card-text {
+    flex: 1;
+    width: 100%;
+}
+
+.library-galery-portfolio .card-portfolio>.container-card-bottom-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container-card-button {
+    padding: 10px 25px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-card-button img {
+    width: 90px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+/* -- Libray Context -- */
+.library-context {
+    background: #000;
+    color: #FFF;
+    border-radius: 25px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+}
+
+.container-context {
+    padding: 70px 0;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.library-context .context-text {
+    width: 50%;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.library-context h4 {
+    font-weight: 400;
+    font-size: 25px;
+    text-align: justify;
+}
+
+.library-context p {
+    font-size: 18px;
+    border-left: 1px solid #FFF;
+    margin: 30px 0 20px 30px;
+    padding-left: 30px;
+}
+
+.context-text-long h2 {
+    font-weight: 400;
+    font-size: 55px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+/* -- Porpuses -- */
+.library-purpose {
+    display: flex;
+    margin: auto;
+    overflow: hidden;
+}
+
+.container-purpose {
+    padding: 70px 0;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-porpuse {
+    width: 40%;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #E1E2E6;
+    overflow: hidden;
+    display: flex;
+}
+
+.card-porpuse img {
+    width: 40%;
+    height: 40%;
+    margin: 15px;
+    border-radius: 12px;
+    object-fit: cover;
+    align-self: center;
+}
+
+.card-porpuse h4 {
+    font-weight: 400;
+    font-size: 15px;
+    color: #797c7f;
+}
+
+.card-porpuse h3 {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+/* --   Responsive   -- */
+@media screen and (max-width:1500px) {
+    .texts-header {
+        padding: 0 100px;
+    }
+
+    .context-text-long h2 {
+        font-size: 50px;
+    }
+
+    .container-purpose {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .texts-header {
+        padding: 0 80px;
+    }
+
+    .card-portfolio {
+        width: 45%;
+    }
+
+    .library-context .context-text {
+        width: 60%;
+    }
+
+    .context-text-long h2 {
+        font-size: 45px;
+    }
+
+    .container-purpose {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1150px) {
+    .library-context .context-text {
+        width: 70%;
+    }
+
+    .card-porpuse {
+        flex-direction: column;
+    }
+
+    .card-porpuse img {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .texts-header h1 {
+        font-size: 60px;
+    }
+
+    .texts-header h2 {
+        font-size: 40px;
+    }
+
+    .card-portfolio {
+        width: 80%;
+    }
+
+    .context-text-long h2 {
+        font-size: 35px;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    nav {
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav>a {
+        margin-right: 5px;
+    }
+
+    .texts-header h1 {
+        font-size: 50px;
+    }
+
+    .texts-header h2 {
+        font-size: 30px;
+    }
+
+    .container-header-title img {
+        width: 90px;
+        height: 45px;
+    }
+
+    .card-portfolio {
+        width: 90%;
+    }
+
+    .library-context .context-text {
+        width: 100%;
+    }
+
+    .container-purpose {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-porpuse {
+        width: 80%;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    header {
+        height: 400px;
+    }
+    .texts-header {
+        padding: 0 80px;
+        height: 300px;
+    }
+    .texts-header h1 {
+        font-size: 40px;
+    }
+
+    .texts-header h2 {
+        font-size: 20px;
+    }
+
+    .container-header-title img {
+        width: 80px;
+        height: 40px;
+    }
+}
