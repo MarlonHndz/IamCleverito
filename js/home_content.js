@@ -15,7 +15,7 @@ async function loadHomeContent() {
     await loadSection("ui/home/portfolio_home_section.html");
     await loadSection("ui/home/developer_home_section.html");
     await loadSection("ui/home/services_home_section.html");
-    await loadSection("../footer/footer_section.html");
+    await loadSection("ui/footer/footer_section.html");
 }
 
 function loadSection(url) {
