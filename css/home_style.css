@@ -42,6 +42,7 @@ body {
 /* -- HEADER -- */
 header {
     width: 100%;
+    max-width: 100%;
     height: 700px;
     background: #007991;
     /* fallback for old browsers */
