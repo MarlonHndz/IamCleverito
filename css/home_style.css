@@ -297,6 +297,9 @@ main .home-introduction {
 
 /* -- Responsive 900px -- */
 @media screen and (max-width:900px) {
+    #navigate {
+        margin-left: 25px;
+    }
 
     /* -- Header -- */
     header {
