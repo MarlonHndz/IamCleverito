@@ -49,6 +49,9 @@ header {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, rgba(122, 255, 215, 0), rgba(0, 119, 143, 0.4)), url(../img/Banner_home_bg.png);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    -webkit-background-size: cover;
+    
     background-size: cover;
     background-attachment: fixed;
     position: relative;
