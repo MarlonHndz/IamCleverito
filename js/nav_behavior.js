@@ -48,8 +48,6 @@ window.addEventListener('scroll', function () {
     var sections = document.querySelectorAll('.section');
     var navLinks = document.querySelectorAll('#nav-menu a');
 
-    var navigateImg = document.getElementById('nav_menu_img');
-
     /* Change to menu:
     var navMenu = document.getElementById('nav-menu');
     var navigateSpan = document.getElementById('navigate');
@@ -78,7 +76,7 @@ window.addEventListener('scroll', function () {
             navMenu.style.display = 'block';
         }
     }
-    */
+
 
 
     // Color changes per section:
@@ -92,18 +90,6 @@ window.addEventListener('scroll', function () {
 
             navLinks.forEach(link => {
                 link.classList.remove('nav_white_bg');
-
-                /* -- Library -- */
-                if (sectionId === "library-header-section") {
-                    if (navigateImg.src.endsWith("ic_menu_book_closed.svg")) {
-                        navigateImg.src = "/IamCleverito/assets/ic_menu_book_closed_white.svg";
-                    }
-                    if (navigateImg.src.endsWith("ic_menu_book_closed_white.svg")) {
-                        navigateImg.src = "/IamCleverito/assets/ic_menu_book_closed_white.svg";
-                    } else {
-                        navigateImg.src = "/IamCleverito/assets/ic_menu_book_closed.svg";
-                    }
-                }
 
                 /* -- Home -- /
                 if (sectionId === "home-header-section") {
@@ -130,7 +116,10 @@ window.addEventListener('scroll', function () {
                     link.classList.add('nav_white_bg');
                 }
 
-                
+                /* -- Library -- /
+                if (sectionId === "library-header-section") {
+                    link.classList.remove('nav_white_bg');
+                }
 
                 if (sectionId === "library-portfolio-section") {
                     link.classList.add('nav_white_bg');
@@ -143,9 +132,9 @@ window.addEventListener('scroll', function () {
                 if (sectionId === "library-purpose-section") {
                     link.classList.add('nav_white_bg');
                 }
-                */
-
             });
+
         }
     });
+    */
 });
