@@ -15,15 +15,14 @@ body {
     overflow: hidden;
 }
 
-
-#navigate{
+.navigate{
     background-color: #FFF;
     border-radius: 8px;
     border: solid 2px #000;
    
 }
 
-#navigate:hover {
+.navigate:hover {
     box-shadow: 0 0 6px rgba(0, 0, 0, .35);
 }
 
@@ -297,7 +296,7 @@ header {
 }
 
 @media screen and (max-width:900px) {
-    #navigate {
+    .navigate {
         margin-left: 25px;
     }
     .nav-menu {

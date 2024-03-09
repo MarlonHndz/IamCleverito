@@ -23,12 +23,12 @@ body {
     margin-bottom: 60px;
 }
 
-#navigate{
+.navigate{
     border-radius: 8px;
     border: solid 2px #FFF;
 }
 
-#navigate:hover {
+.navigate:hover {
     box-shadow: 0 0 6px rgba(0, 0, 0, .35);
 }
 
@@ -298,7 +298,7 @@ main .home-introduction {
 
 /* -- Responsive 900px -- */
 @media screen and (max-width:900px) {
-    #navigate {
+    .navigate {
         margin-left: 25px;
     }
 

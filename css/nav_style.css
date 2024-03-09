@@ -55,7 +55,7 @@ nav {
     background: #ccc;
 }
 
-#navigate {
+.navigate {
     z-index: 1000;
     position: absolute;
     left: 0;
