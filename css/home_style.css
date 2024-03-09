@@ -354,6 +354,10 @@ main .home-introduction {
         margin-top: 0px;
     }
 
+    .container-developer-text {
+        width: 90%;
+    }
+
     /* -- Services -- */
     .service-container {
         justify-content: center;
