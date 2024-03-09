@@ -28,6 +28,7 @@ body {
 
 .navigate-black-bg{
     background-color: #000;
+    border: solid 2px #FFF;
     box-shadow: 0 0 6px rgba(0, 0, 0, .35);
 }
 
