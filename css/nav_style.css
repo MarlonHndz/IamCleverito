@@ -61,10 +61,8 @@ nav {
     left: 0;
     margin-left: 50px;
     cursor: pointer;
-    border-radius: 8px;
     display: flex;
     align-items: center;
-    transition: width 3.8s ease;
     max-width: 80%;
     max-height: 80%;
     overflow: hidden;

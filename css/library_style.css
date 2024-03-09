@@ -18,6 +18,7 @@ body {
 
 #navigate{
     background: #FFF;
+    border-radius: 8px;
     border: solid 2px #000;
 }
 
