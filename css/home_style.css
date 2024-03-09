@@ -284,10 +284,6 @@ main .home-introduction {
 /* -- Responsive 1200px -- */
 @media screen and (max-width:1200px) {
 
-    header {
-        background-size: 100%;
-    }
-
     .developer-presentation-container .card {
         width: 90%;
         height: 400px;
