@@ -272,6 +272,10 @@ header {
     .texts-header h2 {
         font-size: 45px;
     }
+    .container-header-title img {
+        width: 100px;
+        height: 50px;
+    }
 
     .card-portfolio {
         width: 45%;
@@ -299,6 +303,11 @@ header {
     }
     .texts-header h2 {
         font-size: 40px;
+    }
+
+    .container-header-title img {
+        width: 90px;
+        height: 45px;
     }
 
     .library-context .context-text {
@@ -360,11 +369,6 @@ header {
 
     .texts-header h2 {
         font-size: 30px;
-    }
-
-    .container-header-title img {
-        width: 90px;
-        height: 45px;
     }
 
     .card-portfolio {
