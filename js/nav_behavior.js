@@ -33,9 +33,9 @@ function addListenerToMenu() {
         navigateSpan.classList.toggle('navigate-black-bg');
 
         if (navigateImg.src.endsWith("ic_menu_book_closed.svg")) {
-            navigateImg.src = "assets/ic_menu_book_open_white.svg";
+            navigateImg.src = "/IamCleverito/assets/ic_menu_book_open_white.svg";
         } else {
-            navigateImg.src = "assets/ic_menu_book_closed.svg";
+            navigateImg.src = "/IamCleverito/assets/ic_menu_book_closed.svg";
         }
 
     });
