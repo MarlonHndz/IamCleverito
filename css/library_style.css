@@ -16,9 +16,10 @@ body {
 }
 
 
-#navigate {
-    color: #FFF;
-    border: solid 2px #FFF;
+#navigate{
+    max-width: 80%;
+    max-height: 80%;
+    overflow: hidden;
 }
 
 #navigate:hover {
@@ -296,6 +297,13 @@ header {
 }
 
 @media screen and (max-width:900px) {
+    #navigate {
+        margin-left: 25px;
+    }
+    .nav-menu {
+        margin-left: 25px;
+    }
+
     .texts-header h1 {
         font-size: 60px;
     }
