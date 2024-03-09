@@ -133,6 +133,7 @@ header {
 .library-galery-portfolio .card-portfolio>.container-card-bottom-part {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 }
 
