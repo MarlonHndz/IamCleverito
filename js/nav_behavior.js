@@ -16,7 +16,7 @@ function loadHeader(url) {
 }
 
 function addListenerToMenu() {
-    var navigateSpan = document.getElementById('navigate');
+    var navigateSpan = document.getElementById('navigate_button');
     var navigateImg = document.getElementById('nav_menu_img');
 
     navigateSpan.addEventListener("click", function () {
