@@ -1,18 +1,19 @@
-let listElements = document.querySelectorAll('.list_button--click');
-
-listElements.forEach(listElement => {
-    listElement.addEventListener('click', () => {
-
-        listElement.classList.toggle('arrow')
-
-        let height = 0;
-        let menu = listElement.nextElementSibling; // toma al elemento siguiente
-
-        if (menu.clientHeight == "0") {
-            height = menu.scrollHeight;
-        }
-
-        menu.style.height = `${height}px`
-
-    })
+document.addEventListener("DOMContentLoaded", function () {
+   // loadPortfolioFooter();
 });
+
+async function loadPortfolioFooter() {
+    await loadPortfolioFooterSection("../footer/footer_section.html");
+}
+
+function loadPortfolioFooterSection(url) {
+    return new Promise((resolve, reject) => {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector("main").innerHTML += data;
+                resolve();
+            })
+            .catch(error => console.log(error));
+    });
+}
