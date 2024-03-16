@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cleverito's Portfolio</title>
     <link rel="shortcut icon" href="../../img/ic_cleverito_google_dev.png" type="image/x-icon">
+    
     <link rel="stylesheet" href="../../css/portfolio_style.css">
     <link rel="stylesheet" href="../../css/footer_style.css">
 
@@ -23,227 +24,15 @@
             <img class="cloc_vol_one_logo" src="../../img/cloc_logo.png" alt="">
         </section>
         <!--Here goes the Horizontal Nav-->
-
-        <section class="vol_one_content_tabs">
-            <nav>
-                <div class="content_tabs">
-                    <a href="#">POO</a>
-                    <a href="#">Java - Conceptos básicos</a>
-                    <a href="#">Patrones de diseño</a>
-                    <a href="#">SOLID</a>
-                    <a href="#">DRY & KISS</a>
-                    <a href="#">Web Services</a>
-                    <a href="#">Andriod Components</a>
-                </div>
-            </nav>
-        </section>
-
     </header>
 
-    <div class="portfolio_body">
-        <!--Here goes the LIST-->
-
-        <div class="portfolio_list_section">
-            <ul class="portfolio_list">
-
-                <li class="list_item">
-                    <a href="#" class="list_title title_level_one">Programación Orientada a Objetos</a>
-                </li>
-                <li class="list_item">
-                    <a href="#object" class="list_title title_level_one">Objeto</a>
-                </li>
-                <li class="list_item">
-                    <a href="#class" class="list_title title_level_one">Clase</a>
-                </li>
-                <li class="list_item">
-                    <a href="#abstract_class" class="list_title title_level_one">Clase Abstracta</a>
-                </li>
-                <li class="list_item">
-                    <a href="#class_interface" class="list_title title_level_one">Clase Interfaz</a>
-                </li>
-                <li class="list_item">
-                    <a href="#abstract_class_vs_class_interface" class="list_title title_level_one">Clase Abstracta versus interfaces</a>
-                </li>
-
-                <li class="list_item ">
-                    <a  class="list_title title_level_one list_title_father">
-                        <img src="../../assets/ic_arrow_right.svg" alt="" class="list_arrow">Técnicas de POO</a>
-
-                    <ul class="list_child">
-                        <li class="list_item">
-                            <a href="#inheritance" class="list_title title_level_two">Herencia</a>
-                        </li>
-                        <li class="list_item">
-                            <a href="#composition" class="list_title title_level_two">Composición</a>
-                        </li>
-                        <li class="list_item">
-                            <a href="#polymorphism" class="list_title title_level_two list_title_father">
-                                <img src="../../assets/ic_arrow_right.svg" alt="" class="list_arrow">Polimorfismo</a>
-
-                            <ul class="list_child">
-                                <li class="list_item">
-                                    <a href="#dynamic_polymorphism" class="list_title title_level_three">Polimorfismo dinámico</a>
-                                </li>
-                                <li class="list_item">
-                                    <a href="#static_polymorphism" class="list_title title_level_three">Polimorfismo estático</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="list_item">
-                            <a href="#cohesion" class="list_title title_level_two">Cohesión</a>
-                        </li>
-                        <li class="list_item">
-                            <a href="#coupling" class="list_title title_level_two">Acoplamiento</a>
-                        </li>
-                        <li class="list_item">
-                            <a href="#encapsulation" class="list_title title_level_two">Encapsulamiento</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="portfolio_content_section">
-            <!--Here goes the TEXT CONTENT-->
-
-            <div class="portfolio_text_section">
-
-                <h1 id="poo_def">Programación Orientada <br>a Objetos</h1>
-                <br><p>Forma especial de programar, más cercana a la realidad. Se escribe el código en términos de objetos,
-                    propiedades y métodos haciendo el código reutilizable.</p>
-
-                <h2 id="object">Objeto</h2>
-                <p>Es una entidad que consta de un estado (atributos) y un comportamiento (métodos) u operaciones que se
-                    pueden realizar con él.</p>
-
-                <h2 id="class">Clase</h2>
-                <p>Es la definición de un objeto. Es decir, define sus atributos y sus métodos.
-                    Un objeto es una instancia de una clase.</p>
-
-                <h2 id="abstract_class">Clase Abstracta</h2>
-                <p>Es una clase que tiene métodos tanto concretos como abstractos (sin implementación). Los métodos
-                    abstractos deben ser implementados por las subclases de la clase abstracta. Una clase abstracta no
-                    puede
-                    ser instanciada y necesita ser extendida para ser usada.
-
-                    <br><br>Una clase abstracta proporciona una superclase a partir de la cual otras puedan heredar y
-                    compartir un diseño común. Es decir, una clase abstracta define lo que las subclases de ésta
-                    <strong>SON</strong> y
-                    aquí se definen los atributos y métodos que les caracterizan, respecto a lo que son.
-
-                    <br><br><em>Ej: La clase abstracta Animal, y el atributo Nombre.</em></p>
-
-                <h2 id="class_interface">Clase Interfaz</h2>
-                <p>Es como un blueprint de una clase. Puede considerarse como una clase con métodos, pero sin su
-                    implementación. Contiene métodos vacíos que representan lo que todas sus subclases deberían tener en
-                    común. Las subclases proporcionan la implementación de cada uno de estos métodos. Una clase interfaz
-                    es
-                    implementada por otra.
-
-                    <br><br>Una interfaz describe un conjunto de métodos que se pueden invocar en un objeto. Es decir,
-                    una
-                    clase
-                    interfaz define lo que las subclases de esta <strong>PUEDEN</strong> realizar, y aquí se establecen
-                    los métodos que
-                    indican las acciones que quienes la implementen pueden realizar a su manera.
-
-                    <br><br><em>Ej: La clase Pato extiende de la clase abstracta Animal e implementa la interfaz Volar,
-                        mientras que la
-                        clase Tiburón extiende de igual manera de la clase abstracta Animal pero por su parte implementa
-                        la
-                        interfaz Nadar.</em></p>
-
-                <h2 id="abstract_class_vs_class_interface">Clases Abstractas versus Interfaces</h2>
-                <p>Las clases abstractas e interfaces pueden ayudarlo a mantener su diseño más limpio, más organizado y
-                    más
-                    fácil de mantener.
-
-                    <br><br>Las clases abstractas pueden tener constructores y las interfaces no, pero por lo demás son
-                    muy
-                    similares. Entonces, <strong>¿cuándo debería usar cada uno?</strong>
-
-                    <br><br>Cuando usa <strong>interfaces para componer</strong> una clase, la funcionalidad de la clase
-                    se
-                    amplía mediante las
-                    instancias de clase que contiene. La composición tiende a hacer que el código sea más fácil de
-                    reutilizar y razonar que la <strong>herencia de una clase abstracta</strong>. Además, puede usar
-                    múltiples interfaces en
-                    una clase, pero solo puede crear una subclase de una clase abstracta.
-
-                    <br><br>La composición a menudo conduce a una mejor encapsulación, menor
-                    acoplamiento (interdependencia), interfaces más limpias y un código más utilizable. Por estas
-                    razones, el uso de la composición con
-                    interfaces es el diseño preferido. Por otro lado, la herencia de una clase abstracta tiende a
-                    encajar de forma natural en algunos problemas. Por lo tanto, debería preferir la composición, pero
-                    cuando la herencia tiene sentido, ¡también es permitido hacerlo!</p>
-
-                <br><br>
-
-                <h1 id="poo_techniques">Técnicas de la POO</h1>
-                <p>La programación orientada a objetos está basada en varias técnicas:</p>
-
-                <h2 id="inheritance">Herencia</h2>
-                <p>Permite la creación de clases basadas en clases ya existentes, con las cuales podemos obtener las
-                    características de las clases padres, heredando campos, atributos o métodos. Permitiendo la creación
-                    de objetos que incorporen atributos y métodos de otros objetos.
-
-                    <br><br>Es una relación <strong>ES-UN</strong> (is-a) entre objetos (extends).</p>
-
-                <h2 id="composition">Composición</h2>
-                <p>Composición quiere decir que tenemos una instancia de una clase que contiene instancias de otras
-                    clases que implementan las funciones deseadas. Un objeto que tiene como atributo a otro objeto.
-
-                    Es una relación <strong>TIENE-UN</strong> (has-a) entre objetos (obj in obj).</p>
-
-                <h2 id="polymorphism">Polimorfismo</h2>
-                <p>Permite enviar mensajes sintácticamente iguales a objetos de distintos tipos. Es decir, es la
-                    capacidad que tienen los objetos para comportarse de múltiples formas. El único requisito que deben
-                    cumplir los objetos es que deben saber responder el mensaje que se les envía. Consiste en
-                    <strong>hacer
-                        referencia a objetos de una clase que puedan tomar comportamientos de objetos descendientes de
-                        esta.</strong>
-                </p>
-
-                <h3 id="dynamic_polymorphism">Polimorfismo dinámico (Override)</h3>
-                <p>O anulación de métodos <strong>(Override)</strong> ocurre en tiempo de ejecución y es cuando un
-                    método es implementado
-                    de forma diferente por las clases hijas.</p>
-
-                <h3 id="static_polymorphism">Polimorfismo estático (Overloading)</h3>
-                <p>O sobrecarga de métodos <strong>(Overloading)</strong> ocurre en tiempo de compilación y es cuando
-                    existen dos métodos
-                    del mismo nombre pero con diferentes parámetros de entrada en la misma clase.</p>
-
-                <h2 id="cohesion">Cohesión</h2>
-                <p>El nivel de cohesión de una aplicación mide la fuerza de la relación de sus componentes dentro de un
-                    módulo. No es una suma de sus componentes sino un conjunto de los mismos. Se refiere a la forma en
-                    que podemos agrupar diversas unidades de software para crear una unidad mayor y de esta forma
-                    alcanzar un mejor resultado.</p>
-
-                <h2 id="coupling">Acoplamiento</h2>
-                <p>Es la forma y nivel de interdependencia entre módulos del software. Cuanto más estándar sea la
-                    relación de una entidad lógica con otras, mayor re-aprovechamiento se podrá hacer de ella. Si dos
-                    unidades de software son completamente independientes la una de la otra, decimos que están
-                    desacopladas.</p>
-
-                <h2 id="encapsulation">Encapsulamiento</h2>
-                <p>Es el ocultamiento del estado de un objeto, de manera que solo se pueda cambiar mediante las
-                    operaciones definidas para ese objeto. Se protegen los datos asociados al objeto contra su
-                    modificación por quien no tenga derecho a acceder a ellos. Lo único que se requiere es que el
-                    usuario sepa qué se puede hacer y no el cómo se está haciendo.</p>
-
-            </div>
-        </div>
-
-        <div class="portfolio_footer_section">
-
-            <main></main>
-        </div>
-
+    <div class="portfolio_body" id="portfolio_body">
+        <!--Here goes the Body-->
     </div>
 
-
     <script src="../../js/portfolio_content.js"></script>
+    <script src="../../js/portfolio_cloc_vol_one_content.js"></script>
+    <script src="../../js/portfolio_list_behavior.js"></script>
 </body>
 
 </html>
