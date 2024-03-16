@@ -5,7 +5,6 @@ function loadPortfolioContentClocVolOne(){
     loadPortfolioFooter();
 }
 
-
 // Content Tabs //
 async function loadPortfolioClocVolOneContentTabs() {
     await loadPortfolioHeader("../../ui/portfolio/cloc_vol_one/cloc_vol_one_content_tabs.html");
