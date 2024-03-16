@@ -3,9 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     font-family: 'Poppins';
@@ -52,27 +53,35 @@ header {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.nav{
+.nav {
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
 }
+
 .content_tabs {
-    display: inline-block;
+    padding-left: 100px;
+    white-space: nowrap;
+    overflow-x: auto;
+    display: flex;
 }
 
-.content_tabs>a {
+.content_tabs a {
     font-size: 20px;
     font-weight: 400;
     text-decoration: none;
     color: #FFF;
     padding: 5px 20px;
     height: 40px;
-    display: inline-block;
+
 }
 
-.content_tabs>a:hover {
-    background: #1B5492;
+.content_tabs a:hover {
+    background: #0f3761;
+}
+
+.scroll_arrow{
+    display: none;
 }
 
 /* -- Portfolio LIST Content -- */
@@ -141,6 +150,7 @@ header {
 .list_item img {
     height: 24px;
     width: 24px;
+    padding: 6px;
     margin-left: -24PX;
 }
 
@@ -172,19 +182,22 @@ header {
 
 
 /* -- Portfolio BODY Content -- */
-.portfolio_text_section{
+.portfolio_text_section {
     padding: 50px;
     display: flex;
     flex-direction: column;
     width: 70%;
 }
+
 .portfolio_text_section h1 {
     font-size: 50px;
     font-weight: 450;
     margin-bottom: 20px;
 
-    scroll-margin-block-start: 110px;   /*Adds margin to the top of the viewport*/
-    scroll-margin-block-end: 110px;     /*Adds margin to the bottom of the viewport*/
+    scroll-margin-block-start: 110px;
+    /*Adds margin to the top of the viewport*/
+    scroll-margin-block-end: 110px;
+    /*Adds margin to the bottom of the viewport*/
 
 }
 
@@ -193,8 +206,10 @@ header {
     font-weight: 450;
     margin: 18px 0 0 0;
 
-    scroll-margin-block-start: 110px;   /*Adds margin to the top of the viewport*/
-    scroll-margin-block-end: 110px;     /*Adds margin to the bottom of the viewport*/
+    scroll-margin-block-start: 110px;
+    /*Adds margin to the top of the viewport*/
+    scroll-margin-block-end: 110px;
+    /*Adds margin to the bottom of the viewport*/
 
 }
 
@@ -203,8 +218,10 @@ header {
     font-weight: 400;
     margin: 18px 0 0 0;
 
-    scroll-margin-block-start: 110px;   /*Adds margin to the top of the viewport*/
-    scroll-margin-block-end: 110px;     /*Adds margin to the bottom of the viewport*/
+    scroll-margin-block-start: 110px;
+    /*Adds margin to the top of the viewport*/
+    scroll-margin-block-end: 110px;
+    /*Adds margin to the bottom of the viewport*/
 
 }
 
@@ -219,4 +236,32 @@ header {
     font-weight: 400;
     margin: 8px 0px;
     text-align: justify;
+}
+
+
+
+/* -/-/-/-/-/- Responsive -/-/-/-/-/-/-*/
+
+/* -- Responsive 1500px -- */
+@media screen and (max-width:1500px) {
+    .content_tabs {
+        padding-left: 50px;
+    }
+}
+
+/* -- Responsive 1400px -- */
+@media screen and (max-width:1400px) {
+    .content_tabs {
+        padding-left: 0px;
+    }
+}
+
+/* -- Responsive 1285px -- */
+@media screen and (max-width:1285px) {
+    .scroll_arrow{
+        display: block;
+        position: absolute;
+        top: 70%;
+       right: 0;
+    }
 }
