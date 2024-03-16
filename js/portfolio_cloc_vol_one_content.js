@@ -2,7 +2,6 @@
 function loadPortfolioContentClocVolOne(){
     loadPortfolioClocVolOneContentTabs();
     loadPortfolioClocVolOneBodyPoo();
-    loadPortfolioFooter();
 }
 
 // Content Tabs //

@@ -24,6 +24,7 @@ function loadPortfolioBody(url) {
                 document.getElementById("portfolio_body").innerHTML += data;
                 resolve();
                 loadListListener();
+                loadPortfolioFooter();
             })
             .catch(error => console.log(error));
     });
