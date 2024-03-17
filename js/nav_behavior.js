@@ -1,5 +1,5 @@
 async function loadHeaderNav() {
-    await loadHeader("/IamCleverito/ui/nav/nav_section.html");
+    await loadHeader("../../ui/nav/nav_section.html");
     addListenerToMenu();
 }
 
@@ -33,9 +33,9 @@ function addListenerToMenu() {
         navigateSpan.classList.toggle('navigate-black-bg');
 
         if (navigateImg.src.endsWith("ic_menu_book_closed.svg")) {
-            navigateImg.src = "/IamCleverito/assets/ic_menu_book_open_white.svg";
+            navigateImg.src = "../../assets/ic_menu_book_open_white.svg";
         } else {
-            navigateImg.src = "/IamCleverito/assets/ic_menu_book_closed.svg";
+            navigateImg.src = "../../assets/ic_menu_book_closed.svg";
         }
 
     });

@@ -32,13 +32,13 @@ header {
     align-items: center;
 }
 
-.cloc_vol_one_logo {
-    height: 35px;
-    width: 100px;
-    margin: 15px 16px;
+.cloc_library_logo {
+    height: 55px;
+    width: 120px;
+    margin: 10px 16px;
 }
 
-.cloc_vol_one_logo:hover {
+.cloc_library_logo:hover {
     cursor: pointer;
 }
 
