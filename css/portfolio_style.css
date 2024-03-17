@@ -17,7 +17,7 @@ body {
 /* -- HEADER -- */
 header {
     width: 100%;
-    height: 115px;
+    height: 110px;    /* En caso de cambiar, mover también en portfolio_list_section y portfolio_content_section*/
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -44,7 +44,7 @@ header {
 
 /* -- HEADER TABS-- */
 .vol_one_content_tabs {
-    height: 40px;
+    height: 50px;
     background: #1580A4;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #00D2B2, #1580A4, #1B5492, #1580A4);
@@ -54,7 +54,6 @@ header {
 }
 
 .content_tabs {
-    height: 40px;
     padding-left: 100px;
     white-space: nowrap;
     overflow-x: auto;
@@ -62,13 +61,11 @@ header {
 }
 
 .content_tabs a {
-    height: 40px;
     font-size: 20px;
     font-weight: 400;
     text-decoration: none;
     color: #FFF;
-    padding: 5px 20px;
-    height: 40px;
+    padding: 2px 20px;
 }
 
 .content_tabs a:hover {
@@ -86,7 +83,7 @@ header {
 }
 
 .portfolio_list_section {
-    margin-top: 115px;
+    margin-top: 110px;
     position: fixed;
     overflow-y: auto;
     border-radius: 0 16px 16px 0;
@@ -94,7 +91,7 @@ header {
 }
 
 .portfolio_content_section {
-    margin-top: 115px;
+    margin-top: 110px;
     flex: 1;
     overflow-y: auto;
     padding-left: 300px;
@@ -256,7 +253,7 @@ header {
     .scroll_arrow{
         display: block;
         position: absolute;
-        top: 70%;
+        top: 74%;
        right: 0;
     }
 }
