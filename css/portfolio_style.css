@@ -303,3 +303,10 @@ header {
         width: 100%;
     }
 }
+
+/* -- Responsive 680px -- */
+@media screen and (max-width:680px) {
+    .portfolio_text_section{
+        padding: 15px;
+    }
+}
