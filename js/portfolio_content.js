@@ -25,14 +25,15 @@ function loadPortfolioBody(url) {
                 resolve();
                 loadListListener();
                 loadPortfolioFooter();
+                addListenerToNavListForBook();
             })
             .catch(error => console.log(error));
     });
 }
 // List behavior //
-function loadListListener(){
+function loadListListener() {
     let listElements = document.querySelectorAll('.list_title_father');
-    
+
     listElements.forEach(listElement => {
         listElement.addEventListener('click', () => {
 
@@ -68,5 +69,21 @@ function loadPortfolioFooterSection(url) {
                 resolve();
             })
             .catch(error => console.log(error));
+    });
+}
+
+// List click event for small devices //
+function addListenerToNavListForBook() {
+    var bookContentMenu = document.getElementById('book_content_menu_icon');
+    var portfolioListSection = document.getElementById('portfolio_list_section');
+    let isDisplayed = false;
+
+    bookContentMenu.addEventListener('click', () => {
+        if (isDisplayed) {
+            portfolioListSection.style.width = `0px`;
+        } else {
+            portfolioListSection.style.width = `300px`;
+        }
+        isDisplayed = !isDisplayed;
     });
 }
