@@ -1,98 +1,586 @@
 footer {
-    background: #ffffff;
-    padding: 40px 0 30px 0;
-    margin: auto;
-    overflow: hidden;
-    border-top: 1px solid #E1E2E6;
+  background: #ffffff;
+  padding: 40px 0 30px 0;
+  margin: auto;
+  border-top: 1px solid #E1E2E6;
 }
 
 .container-footer {
-    display: flex;
-    width: 90%;
-    justify-content: space-evenly;
-    margin: auto;
-    overflow: hidden;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #CCC;
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #CCC;
 }
-.container-footer a{
-    text-decoration: none;
-    width: 15%;
-    display: flex;
-    text-align: center;
+
+.container-footer a {
+  text-decoration: none;
+  display: flex;
+  text-align: center;
 }
 
 .content-foo {
-    text-align: center;
-    cursor: pointer;
+  width: 15%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
 }
 
-.content-foo:hover h4{
-    text-decoration: underline;
+.content-foo:hover .text_instagram {
+  color: #e6683c;
 }
 
-.content-foo  img{
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    align-self: center;
+.content-foo:hover .text_linkedin {
+  color: #1da1f2;
+}
+
+.content-foo:hover .text_github {
+  color: #A74CB3;
 }
 
 .content-foo h4 {
-    font-size: 15px;
-    font-weight: 400;
-    color: #000;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+  transition: all 0.2s;
 }
+
 .content-foo h3 {
-    font-size: 20px;
-    font-weight: 650;
-    color: #000;
+  font-size: 20px;
+  font-weight: 650;
+  color: #000;
 }
 
 .content-foo p {
-    color: #000;
-    font-size: 15px;
-    font-weight: 400;
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .finale-title {
-    text-align: center;
-    font-size: 25px;
-    font-weight: 500;
-    margin: 20px 0 0 0;
-    color: #9E9797;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 20px 0 0 0;
+  color: #9E9797;
 }
+
+/* ----- Instagram Logo ----- */
+.instagram-tooltip-container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 17px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.instagram-tooltip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.instagram-profile {
+  background: #2a2b2f;
+  border-radius: 10px 15px;
+  padding: 10px;
+  border: 1px solid #52382f;
+}
+
+.instagram-tooltip-container:hover .instagram-tooltip {
+  top: -150px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.instagram-icon {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  position: relative;
+}
+
+.instagram-layer {
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s;
+}
+
+.instagram-icon:hover .instagram-layer {
+  transform: rotate(-35deg) skew(20deg);
+}
+
+.instagram-layer span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.instagram-layer span,
+.text {
+  color: #e6683c;
+  border-color: #e6683c;
+}
+
+.instagram-icon:hover .instagram-layer span {
+  box-shadow: -1px 1px 3px #e6683c;
+}
+
+.instagram-icon:hover .instagram-layer span:nth-child(1) {
+  opacity: 0.2;
+}
+
+.instagram-icon:hover .instagram-layer span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+}
+
+.instagram-icon:hover .instagram-layer span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+}
+
+.instagram-icon:hover .instagram-layer span:nth-child(4) {
+  opacity: 0.8;
+  transform: translate(15px, -15px);
+}
+
+.instagram-icon:hover .instagram-layer span:nth-child(5) {
+  opacity: 1;
+  transform: translate(20px, -20px);
+}
+
+.instagramSVG {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: -webkit-linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  background: linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+.instagramSVG img {
+  width: 40px;
+  height: 40px;
+}
+
+.instagram-user {
+  display: flex;
+  gap: 10px;
+}
+
+.instagram-img {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 700;
+  border: 1px solid #e6683c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.instagram-img img {
+  width: 50px;
+  height: 50px;
+}
+
+.instagram-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #e6683c;
+}
+
+.instagram-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  color: #fff;
+}
+
+.instagram-about {
+  color: #ccc;
+  padding-top: 5px;
+}
+
+/* ----- LinkedIn Logo ----- */
+.linkedin-tooltip-container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 17px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.linkedin-tooltip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.linkedin-profile {
+  background: #2a2b2f;
+  border-radius: 10px 15px;
+  padding: 10px;
+  border: 1px solid #0b3f5f;
+}
+
+.linkedin-tooltip-container:hover .linkedin-tooltip {
+  top: -150px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.linkedin-icon {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  position: relative;
+}
+
+.linkedin-layer {
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s;
+}
+
+.linkedin-icon:hover .linkedin-layer {
+  transform: rotate(-35deg) skew(20deg);
+}
+
+.linkedin-layer span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.linkedin-layer span,
+.text {
+  color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.linkedin-icon:hover .linkedin-layer span {
+  box-shadow: -1px 1px 3px #1da1f2;
+}
+
+.linkedin-icon:hover .linkedin-layer span:nth-child(1) {
+  opacity: 0.2;
+}
+
+.linkedin-icon:hover .linkedin-layer span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+}
+
+.linkedin-icon:hover .linkedin-layer span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+}
+
+.linkedin-icon:hover .linkedin-layer span:nth-child(4) {
+  opacity: 0.8;
+  transform: translate(15px, -15px);
+}
+
+.linkedin-icon:hover .linkedin-layer span:nth-child(5) {
+  opacity: 1;
+  transform: translate(20px, -20px);
+}
+
+.linkedinSVG {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.linkedinSVG img {
+  width: 35px;
+  height: 35px;
+}
+
+.linkedin-user {
+  display: flex;
+  gap: 10px;
+}
+
+.linkedin-img {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 700;
+  border: 1px solid #1da1f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.linkedin-img img {
+  width: 50px;
+  height: 55px;
+}
+
+.linkedin-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1da1f2;
+}
+
+.linkedin-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  color: #fff;
+}
+
+.linkedin-about {
+  color: #ccc;
+  padding-top: 5px;
+}
+
+/* ----- Github Logo ----- */
+.github-tooltip-container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 17px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.github-tooltip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.github-profile {
+  background: #2a2b2f;
+  border-radius: 10px 15px;
+  padding: 10px;
+  border: 1px solid #773995;
+}
+
+.github-tooltip-container:hover .github-tooltip {
+  top: -150px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.github-icon {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  position: relative;
+}
+
+.github-layer {
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s;
+}
+
+.github-icon:hover .github-layer {
+  transform: rotate(-35deg) skew(20deg);
+}
+
+.github-layer span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.github-layer span,
+.text {
+  color: #773995;
+  border-color: #A74CB3;
+}
+
+.github-icon:hover .github-layer span {
+  box-shadow: -1px 1px 3px #773995;
+}
+
+.github-icon:hover .github-layer span:nth-child(1) {
+  opacity: 0.2;
+}
+
+.github-icon:hover .github-layer span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+}
+
+.github-icon:hover .github-layer span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+}
+
+.github-icon:hover .github-layer span:nth-child(4) {
+  opacity: 0.8;
+  transform: translate(15px, -15px);
+}
+
+.github-icon:hover .github-layer span:nth-child(5) {
+  opacity: 1;
+  transform: translate(20px, -20px);
+}
+
+.githubSVG {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.githubSVG img {
+  width: 35px;
+  height: 35px;
+}
+
+.github-user {
+  display: flex;
+  gap: 10px;
+}
+
+.github-img {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 700;
+  border: 1px solid #773995;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.github-img img {
+  width: 50px;
+  height: 50px;
+}
+
+.github-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #A74CB3;
+}
+
+.github-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  color: #fff;
+}
+
+.github-about {
+  color: #ccc;
+  padding-top: 5px;
+}
+
+
 
 /* -- Responsive 550px -- */
 @media screen and (max-width:550px) {
- /* -- Footer -- */
-    .container-footer {
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 0px;
-        border-bottom: 0px;
-    }
 
-    .content-foo{
-        width: 100%;
-        text-align: center;
-    }
+  /* -- Footer -- */
+  .container-footer {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0px;
+    border-bottom: 0px;
+  }
 
-    .container-footer a{
-        margin-bottom: 20px;
-        width: 80%;
-    }
+  .content-foo {
+    width: 100%;
+    text-align: center;
+  }
 
-    .content-foo h4 {
-        border: none;
-    }
+  .container-footer a {
+    margin-bottom: 20px;
+    width: 80%;
+  }
 
-    .content-foo p {
-        color: #CCC;
-        border-bottom: 1px solid #F2F2F2;
-    }
+  .content-foo h4 {
+    border: none;
+  }
 
-    .finale-title {
-        font-size: 20px;
-    }
+  .content-foo p {
+    color: #CCC;
+    border-bottom: 1px solid #F2F2F2;
+  }
+
+  .finale-title {
+    font-size: 20px;
+  }
 }
