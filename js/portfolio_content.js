@@ -150,6 +150,9 @@ async function loadSelectedTabContent(selectedLabel) {
         } else if (inputValue === 'JAVA') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'JAVA - Conceptos básicos'
             loadPortfolioClocVolOneBodyJAVA();
+        } else if (inputValue === 'design_patterns') {
+            // Lógica para cargar un archivo HTML cuando el valor del input es 'Design paterns'
+            loadPortfolioClocVolOneBodyDesignPatterns();
         }
         // Y así sucesivamente para los otros valores de input
     }

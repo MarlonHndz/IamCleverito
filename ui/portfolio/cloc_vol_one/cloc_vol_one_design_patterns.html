@@ -1,0 +1,145 @@
+<div class="portfolio_list_section" id="portfolio_list_section">
+
+    <ul class="portfolio_list">
+
+        <li class="list_item">
+            <a href="#" class="list_title title_level_one">Patrones de diseño</a>
+        </li>
+        <li class="list_item">
+            <a href="#creational_patterns" class="list_title title_level_one list_title_father">
+                <img src="../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Creational patterns</a>
+                <ul class="list_child">
+                    <li class="list_item">
+                        <a href="#builder" class="list_title title_level_two">Builder</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#factory" class="list_title title_level_two">Factory</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#singleton" class="list_title title_level_two">Singleton</a>
+                    </li>
+                </ul>
+        </li>
+        <li class="list_item">
+            <a href="#structural_patterns" class="list_title title_level_one list_title_father">
+                <img src="../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Structural patterns</a>
+                <ul class="list_child">
+                    <li class="list_item">
+                        <a href="#adapter" class="list_title title_level_two">Adapter</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#decorator" class="list_title title_level_two">Decorator</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#fecade" class="list_title title_level_two">Fecade</a>
+                    </li>
+                </ul>
+        </li>
+        <li class="list_item">
+            <a href="#behavioral_patterns" class="list_title title_level_one list_title_father">
+                <img src="../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Behavioral patterns</a>
+                <ul class="list_child">
+                    <li class="list_item">
+                        <a href="#chain_of_responsibility" class="list_title title_level_two">Chain of responsibility</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#iterator" class="list_title title_level_two">Iterator</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#strategy" class="list_title title_level_two">Strategy</a>
+                    </li>
+                </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="portfolio_content_section">
+    <!--Here goes the TEXT CONTENT-->
+
+    <div class="portfolio_text_section">
+
+        <h1 id="design_paterns_def">Patrones de diseño</h1>
+        <p> Los patrones de diseño son las mejores prácticas formalizadas que el programador puede usar para resolver
+            problemas comunes al diseñar una aplicación o sistema. Los patrones de diseño pueden acelerar el proceso de
+            desarrollo al proporcionar paradigmas de desarrollo probados y comprobados.
+            <br><br>
+            La reutilización de patrones de diseño ayuda a evitar problemas sutiles que pueden causar problemas
+            importantes, y también mejora la legibilidad del código para codificadores y arquitectos que están
+            familiarizados con los patrones.</p>
+        <br>
+
+        <h1 id="creational_patterns">Creational patterns</h1>
+
+        <h2 id="builder">Builder</h2>
+        <p>Nos permite construir objetos complejos paso a paso. El patrón nos permite producir distintos tipos y
+            representaciones de un objeto empleando el mismo código de construcción.</p>
+        <h3>implementación:
+            <p>sacar el código de construcción del objeto de su propia clase y lo coloques dentro de objetos
+                independientes llamados <em>constructores</em>.
+                <br><br>
+                El patrón organiza la construcción de objetos en una serie de pasos. Para crear un objeto, se ejecuta
+                una serie de estos pasos en un objeto constructor. Lo importante es que no necesitas invocar todos los
+                pasos. Puedes invocar sólo aquellos que sean necesarios para producir una configuración particular de un
+                objeto.
+            </p>
+        </h3>
+
+        <h2 id="factory">Factory</h2>
+        <p>Proporciona una interfaz para crear objetos en una superclase, mientras permite a las subclases alterar el
+            tipo de objetos que se crearán.</p>
+        <h3>implementación:
+            <p>Se crea la interfaz que es común a todos los objetos, se crean los objetos que implementan dicha
+                interfaz, la clase creadora declara el método fábrica que devuelve nuevos objetos, los Creadores
+                Concretos sobrescriben el Factory Method base, de modo que devuelva un tipo diferente de producto.
+            </p>
+        </h3>
+
+        <h2 id="singleton">Singleton</h2>
+        <p>Nos permite asegurarnos de que una clase tenga una única instancia, a la vez que proporciona un punto de
+            acceso global a dicha instancia.</p>
+        <h3>implementación:
+            <p>haciendo privado el constructor de la clase y creando un método que crea una instancia (objeto) de la
+                misma si no existe. En Kotlin es aún más sencillo, haciendo uso del keyword <strong>object</strong>.
+            </p>
+        </h3>
+
+        <br><br>
+        <h1 id="structural_patterns">Structural patterns</h1>
+
+        <h2 id="adapter">Adapter</h2>
+        <p>Permite la colaboración entre objetos con interfaces incompatibles. Se trata de un objeto especial que
+            convierte la interfaz de un objeto, de forma que otro objeto pueda comprenderla.</p>
+
+        <h2 id="decorator">Decorator</h2>
+        <p>Permite añadir funcionalidades a objetos colocando estos objetos dentro de objetos encapsuladores especiales
+            que contienen estas funcionalidades.</p>
+
+        <h2 id="fecade">Fecade</h2>
+        <p>Proporciona una interfaz que facilita el acceso a una biblioteca, un marco o cualquier conjunto complejo de
+            clases. Una fachada es muy útil si tu aplicación solo necesita algunas de las funcionalidades de una
+            biblioteca sofisticada entre las muchas que ofrece.</p>
+
+
+
+        <br><br>
+        <h1 id="behavioral_patterns">Behavioral patterns</h1>
+
+        <h2 id="chain_of_responsibility">Chain of responsibility</h2>
+        <p>Permite que las solicitudes fluyan a través de una cadena de controladores. Cuando un controlador recibe una
+            solicitud, decide si procesarla o enviarla al siguiente controlador de la cadena.</p>
+
+        <h2 id="iterator">Iterator</h2>
+        <p>Permite iterar a través de los elementos de una colección sin revelar su representación interna. El propósito
+            del patrón de diseño del iterador es extraer el comportamiento que permite iterar a través de una colección
+            y ponerlo en un objeto llamado <em>iterador</em>.</p>
+
+        <h2 id="strategy">Strategy</h2>
+        <p>La estrategia es un patrón de diseño de comportamiento que le permite definir una familia de algoritmos,
+            colocarlos en clases separadas y hacer que sus objetos sean intercambiables. Permite tomar una clase que
+            tiene un comportamiento específico pero lo realiza de diferentes maneras y divide sus algoritmos en clases
+            separadas llamadas <em>estrategias</em>.
+        </p>
+
+    </div>
+    <div id="portfolio_footer_section"></div>
+</div>

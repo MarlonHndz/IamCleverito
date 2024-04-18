@@ -18,3 +18,7 @@ async function loadPortfolioClocVolOneBodyPoo() {
 async function loadPortfolioClocVolOneBodyJAVA() {
     await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_java_concepts.html");
 }
+// Design Partens Body Content //
+async function loadPortfolioClocVolOneBodyDesignPatterns() {
+    await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_design_patterns.html");
+}
