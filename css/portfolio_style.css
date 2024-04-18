@@ -145,6 +145,7 @@ header {
     border-radius: 0 16px 16px 0;
     background: #EAEBEF;
     min-width: 300px;
+    z-index: 10;
 }
 
 .portfolio_content_section {
