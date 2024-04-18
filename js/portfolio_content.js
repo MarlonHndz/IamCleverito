@@ -156,6 +156,9 @@ async function loadSelectedTabContent(selectedLabel) {
         } else if (inputValue === 'SOLID') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'SOLID'
             loadPortfolioClocVolOneBodySolid();
+        } else if (inputValue === 'Dry_Kiss') {
+            // Lógica para cargar un archivo HTML cuando el valor del input es 'Dry_Kiss'
+            loadPortfolioClocVolOneBodyDryAndKiss();
         }
         // Y así sucesivamente para los otros valores de input
     }

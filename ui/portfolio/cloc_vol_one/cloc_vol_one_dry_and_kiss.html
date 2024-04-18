@@ -1,0 +1,112 @@
+<div class="portfolio_list_section" id="portfolio_list_section">
+
+    <ul class="portfolio_list">
+
+        <li class="list_item">
+            <a href="#" class="list_title title_level_one">Principios DRY y KISS</a>
+        </li>
+        <li class="list_item">
+            <a href="#dry" class="list_title title_level_one list_title_father">
+                <img src="../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">DRY: Don't Repeat YourSelf</a>
+                <ul class="list_child">
+                    <li class="list_item">
+                        <a href="#violation_of_DRY" class="list_title title_level_two">Violación al principio DRY</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#how_to_achieve_DRY" class="list_title title_level_two">Cómo lograr DRY</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#benefits_DRY" class="list_title title_level_two">Beneficios de DRY</a>
+                    </li>
+                </ul>
+        </li>
+        <li class="list_item">
+            <a href="#kiss" class="list_title title_level_one list_title_father">
+                <img src="../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">KISS: Keep It Simple, Stupid</a>
+                <ul class="list_child">
+                    <li class="list_item">
+                        <a href="#violation_of_KISS" class="list_title title_level_two">Violación al principio KISS</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#how_to_achieve_KISS" class="list_title title_level_two">Cómo lograr KISS</a>
+                    </li>
+                    <li class="list_item">
+                        <a href="#benefits_KISS" class="list_title title_level_two">Ventajas de KISS</a>
+                    </li>
+                </ul>
+        </li>
+
+    </ul>
+</div>
+
+<div class="portfolio_content_section">
+    <!--Here goes the TEXT CONTENT-->
+
+    <div class="portfolio_text_section">
+
+        <h1 id="dry_kiss_def">Principios DRY y KISS</h1>
+        <p> A continuación se describen ciertos principios importantes para cualquier desarrollo software:
+        </p>
+        <br>
+
+        <h2 id="dry">DRY: Don't Repeat YourSelf</h2>
+        <p>Es un principio destinado a reducir la repetición de información. El principio DRY se establece como: “Todo
+            conocimiento o lógica debe tener una representación única e inequívoca dentro de un sistema”.</p>
+        <br>
+        <h3 id="violation_of_DRY">Violación al principio DRY
+            <p>Siendo DRY “seco” en inglés, WET o “Húmedo” sería entonces una violación a este principio.
+                <strong>WET</strong> “We enjoy
+                typing” (o, “Wasting everyone's time.”).
+                <br><br>
+                “Disfrutamos escribiendo”, significa escribir el mismo código o lógica una y otra vez. Será difícil
+                administrar el código y si la lógica cambia, entonces tenemos que hacer cambios en todos los lugares
+                donde hemos escrito el código, con lo que se pierde el tiempo de todos.</p>
+        </h3>
+        <h3 id="how_to_achieve_DRY">Cómo lograr DRY
+            <p>Para evitar violar el principio DRY, divida su sistema en partes. Divida su código y lógica en unidades
+                reutilizables más pequeñas y use ese código llamándolo donde desee. No escriba métodos largos, pero
+                divida la lógica e intente usar la pieza existente en su método.</p>
+        </h3>
+        <h3 id="benefits_DRY">Beneficios de DRY
+            <p>Menos código es bueno: ahorra tiempo y esfuerzo, es fácil de mantener y también reduce las posibilidades
+                de errores.
+                <br><br>
+                Un buen ejemplo del principio DRY es la clase helper en las Librerías empresariales, en las que cada
+                código es único en las librerías y las clases helper.</p>
+        </h3>
+
+        <br><br>
+        <h2 id="kiss">KISS: Keep It Simple, Stupid</h2>
+        <p>El principio KISS es descriptivo para mantener el código simple y claro, lo que facilita su comprensión.
+            Después de todo, los lenguajes de programación son para que los humanos los comprendan: las computadoras
+            solo pueden entender 0 y 1, así que siga codificando de manera simple y directa. Mantenga sus métodos
+            pequeños. Cada método nunca debe tener más de 40-50 líneas.
+            <br><br>
+            Cada método solo debe resolver un pequeño problema, no muchos casos de uso. Si tiene muchas condiciones en
+            el método, divídalas en métodos más pequeños. No solo será más fácil de leer y mantener, sino que puede
+            ayudar a encontrar errores mucho más rápido.</p>
+
+        <h3 id="violation_of_KISS">Violación al principio KISS
+            <p>Es probable que todos hayamos experimentado la situación en la que trabajamos en un proyecto y
+                encontremos algún código desordenado. Eso nos lleva a preguntar por qué han escrito estas líneas
+                innecesarias. Este uso de líneas innecesarias es lo que se considera una violación al principio KISS.
+            </p>
+        </h3>
+        <h3 id="how_to_achieve_KISS">Cómo lograr KISS
+            <p>Para evitar violar el principio KISS, intente escribir código simple. Piense en muchas soluciones para su
+                problema, luego elija la mejor y más simple y transfórmela en su código. Siempre que encuentre un código
+                largo, divídalo en varios métodos: haga clic con el botón derecho y refactorice en el editor. Intenta
+                escribir pequeños bloques de código que hagan una sola tarea.</p>
+        </h3>
+        <h3 id="benefits_KISS">Ventajas de KISS
+            <p>Si tenemos alguna funcionalidad escrita por un desarrollador y fue escrita con un código desordenado, y
+                si le pedimos a otro desarrollador que haga modificaciones en ese código, entonces primero, tienen que
+                entender el código. Obviamente, si el código está escrito simplemente, entonces no habrá ninguna
+                dificultad para comprender ese código, y también será fácil de modificar.
+            </p>
+        </h3>
+
+
+    </div>
+    <div id="portfolio_footer_section"></div>
+</div>

@@ -24,7 +24,12 @@ async function loadPortfolioClocVolOneBodyDesignPatterns() {
     await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_design_patterns.html");
 }
 
-// Design Partens Body Content //
+// Solid Body Content //
 async function loadPortfolioClocVolOneBodySolid() {
     await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_solid.html");
+}
+
+// Dry & Kiss Body Content //
+async function loadPortfolioClocVolOneBodyDryAndKiss() {
+    await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_dry_and_kiss.html");
 }
