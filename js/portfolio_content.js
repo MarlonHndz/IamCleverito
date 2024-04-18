@@ -10,6 +10,7 @@ function loadPortfolioHeader(url) {
             .then(data => {
                 document.querySelector("header").innerHTML += data;
                 resolve();
+                addListenerToHorizontalNavForBook();
             })
             .catch(error => console.log(error));
     });
@@ -86,4 +87,38 @@ function addListenerToNavListForBook() {
         }
         isDisplayed = !isDisplayed;
     });
+}
+
+// Horizontal Nav Behavior //
+function addListenerToHorizontalNavForBook() {
+    const labels = document.querySelectorAll('.tab');
+    const contentTabs = document.querySelector('.content_tabs');
+
+    // Agregar un event listener a cada radio button para detectar el cambio de selección
+    labels.forEach(function (label) {
+        label.addEventListener('click', moveGliderSpan); 
+    });
+
+
+    // Llamar a la función para ajustar el span inicialmente
+    moveGliderSpan({
+        // target: document.querySelector('input[type="radio"]:checked')
+    });
+
+    // Escuchar el evento scroll en el contenedor desplazable
+    contentTabs.addEventListener('scroll',  moveGliderSpan);
+
+}
+
+// Función para ajustar la posición y el ancho del span
+function moveGliderSpan(event) {
+    const glider = document.querySelector('.glider');
+    const contentTabs = document.querySelector('.content_tabs');
+    const scrollHorizontal = contentTabs.scrollLeft;
+
+    const selectedLabel = event.target; // Obtener el input seleccionado
+    const rect = selectedLabel.getBoundingClientRect(); // Obtener las dimensiones del input
+
+    glider.style.width = rect.width + 'px'; // Ajustar el ancho del span al ancho del input
+    glider.style.left = rect.left + window.pageXOffset + scrollHorizontal  + 'px'; // Ajustar la posición izquierda del span
 }
