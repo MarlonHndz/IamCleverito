@@ -153,6 +153,9 @@ async function loadSelectedTabContent(selectedLabel) {
         } else if (inputValue === 'design_patterns') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'Design paterns'
             loadPortfolioClocVolOneBodyDesignPatterns();
+        } else if (inputValue === 'SOLID') {
+            // Lógica para cargar un archivo HTML cuando el valor del input es 'SOLID'
+            loadPortfolioClocVolOneBodySolid();
         }
         // Y así sucesivamente para los otros valores de input
     }

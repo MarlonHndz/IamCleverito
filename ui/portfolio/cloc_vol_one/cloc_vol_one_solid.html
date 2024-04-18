@@ -1,0 +1,124 @@
+<div class="portfolio_list_section" id="portfolio_list_section">
+
+    <ul class="portfolio_list">
+
+        <li class="list_item">
+            <a href="#" class="list_title title_level_one">Principios SOLID</a>
+        </li>
+        <li class="list_item">
+            <a href="#principle_s" class="list_title title_level_one">S : Single Responsibility</a>
+        </li>
+        <li class="list_item">
+            <a href="#principle_o" class="list_title title_level_one">O : Open/Closed</a>
+        </li>
+        <li class="list_item">
+            <a href="#principle_l" class="list_title title_level_one">L : Liskov Substitution</a>
+        </li>
+        <li class="list_item">
+            <a href="#principle_i" class="list_title title_level_one">I : Interface Segregation</a>
+        </li>
+        <li class="list_item">
+            <a href="#principle_d" class="list_title title_level_one">D : Dependency Inversion</a>
+        </li>
+        
+    </ul>
+</div>
+<div class="portfolio_content_section">
+    <!--Here goes the TEXT CONTENT-->
+
+    <div class="portfolio_text_section">
+
+        <h1 id="solid_def">Principios SOLID</h1>
+        <p> Los principios SOLID son eso: principios, es decir, buenas prácticas que pueden ayudar a escribir un mejor
+            código: más limpio, mantenible y escalable.
+            <br><br>
+            En definitiva, prácticas para desarrollar un software de calidad.</p>
+        <br>
+        <p class="indentado"><strong>> S :</strong> Single Responsibility Principle (SRP)
+        </p>
+        <br>
+        <p class="indentado"><strong>> O :</strong> Open/Closed Principle (OCP)
+        </p>
+        <br>
+        <p class="indentado"><strong>> L :</strong> Liskov Substitution Principle (LSP)
+        </p>
+        <br>
+        <p class="indentado"><strong>> I :</strong> Interface Segregation Principle (ISP)
+        </p>
+        <br>
+        <p class="indentado"><strong>> D :</strong> Dependency Inversion Principle (DIP)
+        </p>
+        <br>
+
+        <p>En este sentido la aplicación de los principios SOLID está muy relacionada con la comprensión y el uso de
+            patrones de diseño, que nos permitirán mantener una <strong>alta cohesión</strong> y, por tanto, un
+            <strong>bajo acoplamiento</strong> de
+            software.</p>
+        <br>
+
+        <h2 id="principle_s">S: Single Responsibility Principle (SRP)</h2>
+        <p><em>“A class should have one, and only one, reason to change.”</em></p>
+        <br>
+        <p>Según el Principio de <strong>Responsabilidad Única</strong> “una clase debería tener una, y solo una, razón
+            para cambiar”. Es
+            esto, precisamente, “razón para cambiar”, lo que Robert C Martin identifica como “responsabilidad”.</p>
+        <br>
+        <p>Es decir, que cada clase o método <strong>sólo debe hacer una cosa</strong>, sencilla y concreta. Si un
+            objeto tiene un solo
+            cometido, éste será más fácil de mantener.</p>
+
+        <br>
+        <h2 id="principle_o">O: Open/Closed Principle (OCP)</h2>
+        <p><em>“You should be able to extend a classes behavior, without modifying it.”</em></p>
+        <br>
+        <p>El Principio de <strong>Abierto/Cerrado</strong> dice “Deberías ser capaz de extender el comportamiento de
+            una clase, sin
+            modificarla”. En otras palabras: las clases que usas deberían estar <strong>abiertas para poder extenderse y
+                cerradas para modificarse</strong>.</p>
+        <br>
+        <p>Si el día de mañana el cliente solicita un nuevo requisito para algo que ya tienes desarrollado, si tienes en
+            cuenta este principio, el comportamiento de esa clase debería ser extendido, nunca modificado. En caso
+            contrario la probabilidad de que te encuentres con daños colaterales es muy alta.</p>
+
+        <br>
+        <h2 id="principle_l">L: Liskov Substitution Principle (LSP)</h2>
+        <p><em>“Derived classes must be substitutable for their base classes.”</em></p>
+        <br>
+        <p>El Principio de <strong>Sustitución de Liskov</strong> dice que “las clases derivadas deben poder sustituirse
+            por sus clases
+            base”.</p>
+        <br>
+        <p>Esto significa que los objetos deben poder ser reemplazados por instancias de sus subtipos sin alterar el
+            correcto funcionamiento del sistema o lo que es lo mismo: si en un programa utilizamos cierta clase,
+            <strong>deberíamos poder usar cualquiera de sus subclases</strong> sin interferir en la funcionalidad del
+            programa.</p>
+
+        <br>
+        <h2 id="principle_i">I: Interface Segregation Principle (ISP)</h2>
+        <p><em>“Make fine grained interfaces that are client specific.”</em></p>
+        <br>
+        <p>Según el Principio de <strong>Segregación de la Interfaz</strong> “Haz interfaces que sean específicas para
+            un tipo de
+            cliente”, es decir, para una finalidad concreta.</p>
+        <br>
+        <p>En este sentido, según ISP, es <strong>preferible contar con muchas interfaces</strong> que definan pocos
+            métodos que tener
+            una interface forzada a implementar muchos métodos a los que no dará uso.</p>
+
+        <br>
+        <h2 id="principle_d">D: Dependency Inversion Principle (DIP)</h2>
+        <p><em>“Depend on abstractions, not on concretions.”</em></p>
+        <br>
+        <p>El último principio, el Principio de <strong>Inversión de Dependencias</strong> dice “Depende de
+            abstracciones, no de clases concretas”.</p>
+        <br>
+        <p>El objetivo de este principio es conseguir desacoplar las clases de nuestro desarrollo. <strong>Que una clase pueda
+            funcionar por sí sola sin depender de otra</strong>. Es decir que:</p>
+
+        <p class="indentado"><strong>></strong> Los módulos de alto nivel no deberían depender de módulos de bajo nivel. Ambos deberían depender de abstracciones.</p>
+        <br>
+        <p class="indentado"><strong>></strong> Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.</p>
+
+    </div>
+    <div id="portfolio_footer_section"></div>
+</div>
