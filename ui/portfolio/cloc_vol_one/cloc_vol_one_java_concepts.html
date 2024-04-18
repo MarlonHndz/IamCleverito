@@ -1,0 +1,324 @@
+<div class="portfolio_list_section" id="portfolio_list_section">
+
+    <ul class="portfolio_list">
+
+        <li class="list_item">
+            <a href="#" class="list_title title_level_one">JAVA - Conceptos básicos</a>
+        </li>
+        <li class="list_item">
+            <a href="#access_modifiers" class="list_title title_level_one list_title_father">
+                <img src="../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Modificadores de Acceso</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#access_modifiers_private" class="list_title title_level_two">Private</a>
+                </li>
+                <li class="list_item">
+                    <a href="#access_modifiers_protected" class="list_title title_level_two">Protected</a>
+                </li>
+                <li class="list_item">
+                    <a href="#access_modifiers_public" class="list_title title_level_two">Public</a>
+                </li>
+                <li class="list_item">
+                    <a href="#access_modifiers_default" class="list_title title_level_two">Default</a>
+                </li>
+                <li class="list_item">
+                    <a href="#access_modifiers_final" class="list_title title_level_two">Final</a>
+                </li>
+                <li class="list_item">
+                    <a href="#access_modifiers_static" class="list_title title_level_two">Static</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#comparison_of_objects" class="list_title title_level_one list_title_father">
+                <img src="../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Comparación de objetos</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#comparison_of_objects_equals" class="list_title title_level_two">Método .equals()</a>
+                </li>
+                <li class="list_item">
+                    <a href="#comparison_of_objects_operator" class="list_title title_level_two">Operador “==”</a>
+                </li>
+                <li class="list_item">
+                    <a href="#comparison_of_objects_hashcode" class="list_title title_level_two">Método hashCode()</a>
+                </li>
+            </ul>
+
+        </li>
+        <li class="list_item">
+            <a href="#collections" class="list_title title_level_one list_title_father">
+                <img src="../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Collections</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#collections_set" class="list_title title_level_two">SET</a>
+                </li>
+                <li class="list_item">
+                    <a href="#collections_list" class="list_title title_level_two">LIST</a>
+                </li>
+                <li class="list_item">
+                    <a href="#collections_map" class="list_title title_level_two">MAP</a>
+                </li>
+                <li class="list_item">
+                    <a href="#collections_conclusion" class="list_title title_level_two">Conclusión y árbol de
+                        decisión</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#constructors" class="list_title title_level_one list_title_father">
+                <img src="../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Constructores</a>
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#constructors_overload" class="list_title title_level_two">Sobrecargar de constructores</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#exception_handling" class="list_title title_level_one">Manejo de excepciones</a>
+        </li>
+
+    </ul>
+</div>
+
+<div class="portfolio_content_section">
+    <!--Here goes the TEXT CONTENT-->
+
+    <div class="portfolio_text_section">
+
+        <h1 id="JAVA_def">JAVA - Conceptos básicos</h1>
+        <p> Se refiere a los elementos fundamentales de Java, como estructuras de datos, modificadores de acceso,
+            manejo de constructores, y demás conceptos necesarios para entender mejor este lenguaje.</p>
+        <br>
+
+        <h2 id="access_modifiers">Modificadores de acceso</h2>
+        <p>Hay cuatro modificadores de acceso en lenguaje Java (desde el más estricto al más indulgente):</p>
+
+        <h3 id="access_modifiers_private">Private:
+            <p>Variables, métodos, constructores y clases internas son solamente visibles desde su clase
+                contenedora y sus métodos.</p>
+        </h3>
+
+        <h3 id="access_modifiers_protected">Protected:
+            <p>Se puede usar en variables, métodos y constructores, por lo tanto, permite el acceso solo a subclases
+                y clases que están dentro del mismo paquete que la clase de miembros
+                protegidos.
+            </p>
+        </h3>
+
+        <h3 id="access_modifiers_public">Public:
+            <p>Utilizado en clases, variables, constructores y métodos para otorgar acceso desde cualquier clase y
+                método en cualquier lugar.
+            </p>
+        </h3>
+
+        <h3 id="access_modifiers_default">Default:
+            <p>Utilizado en clases, variables, constructores y métodos para otorgar acceso desde cualquier clase y
+                método dentro del mismo paquete.
+            </p>
+        </h3><br>
+
+        <p>Tenemos también:</p>
+
+        <h3 id="access_modifiers_final">Final:
+            <p>Indica que a esa variable solo se le puede asignar un valor u objeto una única vez.</p>
+        </h3>
+
+        <h3 id="access_modifiers_static">Static:
+            <p>Una variable estática es única para todas las instancias de la clase, es decir, ocupa un único lugar en
+                memoria.
+            </p>
+        </h3> <br>
+
+        <h2 id="comparison_of_objects">Comparación de objetos</h2>
+        <p>Existen diferentes formas de llevar a cabo la comparación entre objetos, las más destacadas son:</p>
+
+        <h3 id="comparison_of_objects_equals">Método .equals():
+            <p>El método .equals() evalúa la comparación de valores en los objetos.</p>
+        </h3>
+
+        <h3 id="comparison_of_objects_operator">Operador “==”:
+            <p>El operador == comprueba si ambos objetos apuntan a la misma ubicación de memoria además de los valores
+                en el objeto.</p>
+        </h3>
+
+        <h3 id="comparison_of_objects_hashcode">Método hashCode():
+            <p>En pocas palabras, el método hashCode() devuelve un valor entero, generado por un algoritmo de hash. Los
+                objetos que son iguales (de acuerdo con .equals()) deben devolver el mismo código hash. No
+                necesariamente diferentes objetos devuelven diferentes códigos hash.</p>
+        </h3>
+
+        <h2 id="collections">Collections</h2>
+        <p>Una colección representa un grupo de objetos. Estos objetos son conocidos como elementos. Cuando queremos
+            trabajar con un conjunto de elementos, necesitamos un almacén donde poder guardarlos. En Java, se emplea la
+            interfaz genérica Collection para este propósito. Gracias a esta interfaz, podemos almacenar cualquier tipo
+            de objeto y podemos usar una serie de métodos comunes, como pueden ser: añadir, eliminar, obtener el tamaño
+            de la colección… Partiendo de la interfaz genérica Collection extienden otra serie de interfaces genéricas.
+            Estas subinterfaces aportan distintas funcionalidades sobre la interfaz anterior.
+            <br><br>Los principales tipos de colecciones que se encuentran, por defecto, en la plataforma de Java son:
+        </p>
+
+        <h3 id="collections_set">SET:
+            <p>La interfaz Set define una colección que <strong>no puede contener elementos duplicados</strong>. Esta
+                interfaz contiene,
+                únicamente, los métodos heredados de Collection añadiendo la restricción de que los elementos duplicados
+                están prohibidos. Es importante destacar que, para comprobar si los elementos son elementos duplicados o
+                no lo son, es necesario que dichos elementos tengan implementada, de forma correcta, los métodos equals
+                y hashCode. Para comprobar si dos Set son iguales, se comprobarán si todos los elementos que los
+                componen son iguales sin importar en el orden que ocupen dichos elementos.
+                <br><br>
+                Dentro de la interfaz Set existen varios tipos de implementaciones:
+                <br><br>
+                <p class="indentado"><strong>> HashSet:</strong> Esta implementación almacena los elementos en una
+                    tabla hash. Es la
+                    implementación con mejor rendimiento de todas pero no garantiza ningún orden a la hora de realizar
+                    iteraciones. Esta implementación proporciona tiempos constantes en las operaciones básicas siempre y
+                    cuando la función hash disperse de forma correcta los elementos dentro de la tabla hash. Es
+                    importante definir el tamaño inicial de la tabla ya que este tamaño marcará el rendimiento de esta
+                    implementación.
+                </p>
+                <br>
+                <p class="indentado"><strong>> TreeSet:</strong> Esta implementación almacena los elementos
+                    ordenándolos en función de sus valores. Es bastante más lento que HashSet. Los elementos almacenados
+                    deben implementar la interfaz Comparable. Esta implementación garantiza, siempre, un rendimiento de
+                    log(N) en las operaciones básicas, debido a la estructura de árbol empleada para almacenar los
+                    elementos.
+                </p>
+                <br>
+                <p class="indentado"><strong>> LinkedHashSet:</strong> Esta implementación almacena los
+                    elementos en función del orden de inserción. Es, simplemente, un poco más costosa que HashSet.
+                </p>
+            </p>
+        </h3>
+        <br>
+        <h3 id="collections_list">LIST:
+            <p>La interfaz List define una sucesión de elementos. A diferencia de la interfaz Set, la interfaz List
+                <strong>sí admite elementos duplicados</strong>. A parte de los métodos heredados de Collection, añade
+                métodos
+                que permiten mejorar los siguientes puntos:
+                <br><br>
+                <p><strong>> Acceso posicional a elementos:</strong> manipula elementos en función de
+                    su posición en la lista.
+                </p>
+                <p><strong>> Búsqueda de elementos:</strong> busca un elemento concreto de la lista y devuelve su
+                    posición.
+                </p>
+                <p><strong>> Iteración sobre elementos:</strong> mejora el Iterator por defecto.
+                </p>
+                <p><strong>> Rango de operación:</strong> permite realizar ciertas operaciones sobre rangos de elementos
+                    dentro de la propia lista.
+                </p>
+                <br>
+                <p>Dentro de la interfaz List existen varios tipos de implementaciones:</p>
+                <br>
+                <p class="indentado"><strong>> ArrayList:</strong> Esta es la implementación típica. Se basa en un array
+                    redimensionable que aumenta su tamaño según crece la colección de elementos. Es la que mejor
+                    rendimiento tiene sobre la mayoría de situaciones.
+                </p>
+                <br>
+                <p class="indentado"><strong>> LinkedList:</strong> Esta implementación permite que mejore el
+                    rendimiento en ciertas ocasiones. Esta implementación se basa en una lista doblemente enlazada de
+                    los elementos, teniendo cada uno de los elementos un puntero al anterior y al siguiente elemento.
+                </p>
+            </p>
+        </h3>
+        <br>
+        <h3 id="collections_map">MAP:
+            <p>La interfaz Map asocia claves a valores. Esta interfaz <strong>no puede contener claves
+                    duplicadas</strong> y cada una de dichas claves, sólo puede tener asociado un valor
+                como máximo (relación uno a uno).
+                <br><br>
+                Para conocer qué tipo de colección usar, podemos emplear el siguiente diagrama:
+                <br><br>
+                <p class="indentado"><strong>> HashMap:</strong> Esta implementación almacena las claves en una tabla
+                    hash <strong>(llave - valor)</strong>. Es la implementación con mejor rendimiento de todas pero no
+                    garantiza ningún
+                    orden a la hora de realizar iteraciones. Esta implementación proporciona tiempos constantes en las
+                    operaciones básicas siempre y cuando la función hash disperse de forma correcta los elementos dentro
+                    de la tabla hash. Es importante definir el tamaño inicial de la tabla ya que este tamaño marcará el
+                    rendimiento de esta implementación.
+
+                </p>
+                <br>
+                <p class="indentado"><strong>> TreeMap:</strong> Esta implementación almacena las claves ordenándolas en
+                    función de sus valores. Es bastante más lento que HashMap. Las claves almacenadas deben implementar
+                    la interfaz Comparable. Esta implementación garantiza, siempre, un rendimiento de log(N) en las
+                    operaciones básicas, debido a la estructura de árbol empleada para almacenar los elementos.
+
+                </p>
+                <br>
+                <p class="indentado"><strong>> LinkedHashMap:</strong> Esta implementación almacena las claves en
+                    función
+                    del orden de inserción. Es, simplemente, un poco más costosa que HashMap.
+                </p>
+            </p>
+        </h3>
+
+        <br>
+        <h3 id="collections_conclusion">Conclusión y Árbol de decisión
+            <p>Para concluir, Java proporciona una serie de estructuras muy variadas para almacenar datos. Estas
+                estructuras, ofrecen diversas funcionalidades: ordenación de elementos, mejora de rendimiento, rango de
+                operaciones. Es importante conocer cada una de ellas para saber cuál es la mejor situación para
+                utilizarlas. Un buen uso de estas estructuras mejorará el rendimiento de nuestra aplicación.
+                <br><br>
+                Para conocer qué tipo de colección usar, podemos emplear el siguiente diagrama:
+            </p>
+        </h3>
+
+        <h2 id="constructors">Constructores</h2>
+        <p>Un Constructor es una función o método, de una clase, el cual es llamado automáticamente cuando se crea un
+            objeto de esa clase. Por ser métodos, los constructores también aceptan parámetros. Cuando en una clase no
+            especificamos ningún
+            tipo de constructor, el compilador añade uno público por defecto sin parámetros, el cual NO hace nada.
+            <br><br>
+            Dentro del código de un constructor generalmente suelen existir inicializaciones de variables y objetos,
+            para conseguir que el objeto sea creado con dichos valores iniciales.
+            <br><br>
+            Los constructores poseen ciertas características:
+            <br><br>
+            <p class="indentado"><strong>> </strong>Se llaman igual que la clase.
+            </p>
+            <p class="indentado"><strong>> </strong>No devuelven nada, ni siquiera void, por lo cual no debe
+                especificarse ningún tipo de dato.
+            </p>
+            <p class="indentado"><strong>> </strong>Pueden existir varios, pero siguiendo las reglas de la sobrecarga de
+                métodos (Polimorfismo estático u overloading).
+            </p>
+            <p class="indentado"><strong>> </strong>De entre los que existan, tan sólo uno se ejecutará al crear un
+                objeto de la clase.
+            </p>
+            <p class="indentado"><strong>> </strong>Debe declararse como public; solo en casos realmente extraordinarios
+                será de otro tipo.
+            </p>
+        </p>
+        <h3 id="constructors_overload">Sobrecarga de constructores
+            <p>La sobrecarga de constructores es utilizada para crear objetos de una misma clase de diferentes maneras,
+                es decir, con diferentes atributos.
+                <br><br>
+                Cuando una clase tiene el constructor por defecto, o sin atributos de entrada, cuando creemos un objeto
+                de esta clase éste se creará vacío; sin embargo, si la clase tiene un constructor con parámetros de
+                entrada al crear una instancia de dicha clase deberemos de pasar los atributos solicitados en el
+                constructor; y si por otro lado la clase cuenta con más de un constructor en donde cada uno solicite
+                diferentes parámetros de entrada, contaremos entonces con más de una forma de inicializar los atributos
+                de las instancias de dicha clase que deseemos crear. A esto último se le conoce como sobrecarga de
+                constructores.
+            </p>
+        </h3>
+
+        <h2 id="exception_handling">Manejo de excepciones</h2>
+        <p><strong>> Try:</strong> El código aquí, será sobre el cual se intentará capturar el error y
+            hacer algo con él.
+        </p>
+        <p><strong>> Catch:</strong> Se ejecuta cuando se produce un error dentro del bloque Try. El
+            error genera un tipo de excepción con la información del mismo, y se envía al catch.
+        </p>
+        <p><strong>> Finally: </strong> El código aquí, se ejecuta siempre, haya o no un error.
+        </p>
+
+        <p>El uso de <strong>Throws</strong> en el método es para omitir el error o hacer que el método acepte que dicho error va a ocurrir.</p>
+
+    </div>
+    <div id="portfolio_footer_section"></div>
+</div>

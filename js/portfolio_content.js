@@ -22,6 +22,7 @@ function loadPortfolioBody(url) {
         fetch(url)
             .then(response => response.text())
             .then(data => {
+                document.getElementById("portfolio_body").innerHTML = '';
                 document.getElementById("portfolio_body").innerHTML += data;
                 resolve();
                 loadListListener();
@@ -96,7 +97,7 @@ function addListenerToHorizontalNavForBook() {
 
     // Agregar un event listener a cada radio button para detectar el cambio de selección
     labels.forEach(function (label) {
-        label.addEventListener('click', moveGliderSpan); 
+        label.addEventListener('click', moveGliderSpan);
     });
 
 
@@ -106,12 +107,12 @@ function addListenerToHorizontalNavForBook() {
     });
 
     // Escuchar el evento scroll en el contenedor desplazable
-    contentTabs.addEventListener('scroll',  moveGliderSpan);
+    contentTabs.addEventListener('scroll', moveGliderSpan);
 
 }
 
 // Función para ajustar la posición y el ancho del span
-function moveGliderSpan(event) {
+async function moveGliderSpan(event) {
     const glider = document.querySelector('.glider');
     const contentTabs = document.querySelector('.content_tabs');
     const scrollHorizontal = contentTabs.scrollLeft;
@@ -120,5 +121,36 @@ function moveGliderSpan(event) {
     const rect = selectedLabel.getBoundingClientRect(); // Obtener las dimensiones del input
 
     glider.style.width = rect.width + 'px'; // Ajustar el ancho del span al ancho del input
-    glider.style.left = rect.left + window.pageXOffset + scrollHorizontal  + 'px'; // Ajustar la posición izquierda del span
+    glider.style.left = rect.left + window.pageXOffset + scrollHorizontal + 'px'; // Ajustar la posición izquierda del span
+
+
+    loadSelectedTabContent(selectedLabel)
+}
+
+// Función para cargar el contenido según el tab seleccionado
+async function loadSelectedTabContent(selectedLabel) {
+
+    const inputId = selectedLabel.getAttribute('for'); // Obtener el ID del input asociado al label
+
+    const associatedInput = document.getElementById(inputId); // Usar el ID para seleccionar el input correspondiente
+
+    // Asegurarte de que el input exista
+    if (associatedInput) {
+        // Obtén el valor del input radio seleccionado
+        const inputValue = associatedInput.value;
+
+        // Realizar la acción que deseas con el valor del input
+        console.log(`El valor del input radio seleccionado es: ${inputValue}`);
+
+        // Aquí puedes agregar la lógica para cargar un archivo HTML o realizar cualquier otra acción
+        // según el valor del input.
+        if (inputValue === 'POO') {
+            // Lógica para cargar un archivo HTML cuando el valor del input es 'POO'
+           loadPortfolioClocVolOneBodyPoo();
+        } else if (inputValue === 'JAVA') {
+            // Lógica para cargar un archivo HTML cuando el valor del input es 'JAVA - Conceptos básicos'
+            loadPortfolioClocVolOneBodyJAVA();
+        }
+        // Y así sucesivamente para los otros valores de input
+    }
 }

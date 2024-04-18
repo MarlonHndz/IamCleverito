@@ -13,3 +13,8 @@ async function loadPortfolioClocVolOneContentTabs() {
 async function loadPortfolioClocVolOneBodyPoo() {
     await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_poo.html");
 }
+
+// JAVA Body Content //
+async function loadPortfolioClocVolOneBodyJAVA() {
+    await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_java_concepts.html");
+}
