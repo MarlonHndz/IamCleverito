@@ -44,6 +44,12 @@ header {
     cursor: pointer;
 }
 
+.cloc_reading_logo{
+    height: 55px;
+    width: 120px;
+    margin: 10px 16px;  
+}
+
 /* -- HEADER TABS-- */
 .vol_one_content_tabs {
     height: 110px;
