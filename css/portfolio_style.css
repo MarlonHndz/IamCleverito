@@ -157,7 +157,7 @@ header {
 }
 
 .portfolio_list {
-    height: calc(100vh - 105px);
+    height: calc(100vh - 150px);
     width: 300px;
     padding-top: 30px;
     display: flex;
