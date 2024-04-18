@@ -1,0 +1,135 @@
+<div class="portfolio_list_section" id="portfolio_list_section">
+
+    <ul class="portfolio_list">
+
+        <li class="list_item">
+            <a href="#" class="list_title title_level_one">Web Services</a>
+        </li>
+        <li class="list_item">
+            <a href="#soap_services" class="list_title title_level_one">Servicios SOAP: Componentes de servicios web</a>
+        </li>
+        <li class="list_item">
+            <a href="#how_does_web_service_work" class="list_title title_level_one">¿Cómo funciona un servicio web?</a>
+        </li>
+        <li class="list_item">
+            <a href="#rest_services" class="list_title title_level_one">Servicios REST</a>
+        </li>
+        <li class="list_item">
+            <a href="#services_conclusion" class="list_title title_level_one">Conclusion</a>
+        </li>
+    </ul>
+</div>
+
+<div class="portfolio_content_section">
+    <!--Here goes the TEXT CONTENT-->
+
+    <div class="portfolio_text_section">
+
+        <h1 id="web_services_def">Web Services - SOAP vs REST</h1>
+        <p> Diferentes libros y diferentes organizaciones proporcionan diferentes definiciones a los servicios web.
+            Algunos de ellos se enumeran aquí:
+        </p>
+        <br>
+
+        <p class="indentado"><strong>> Def: </strong>Un servicio web es cualquier pieza de software que se pone a
+            disposición
+            a través de Internet y utiliza un sistema de mensajería XML estandarizado. XML se utiliza para codificar
+            todas las comunicaciones a un servicio web. Por ejemplo, un cliente invoca un servicio web enviando un
+            mensaje XML y luego espera una respuesta XML correspondiente. Como toda la comunicación está en XML, los
+            servicios web no están vinculados a ningún sistema operativo o lenguaje de programación; Java puede hablar
+            con Perl; Las aplicaciones de Windows pueden hablar con las aplicaciones de Unix.
+        </p>
+
+        <p class="indentado"><strong>> Def: </strong>Los servicios web son aplicaciones autónomas, modulares,
+            distribuidas y
+            dinámicas que se pueden describir, publicar, ubicar o invocar a través de la red para crear productos,
+            procesos y cadenas de suministro. Estas aplicaciones pueden ser locales, distribuidas o basadas en la web.
+            Los servicios web se basan en estándares abiertos como TCP / IP, HTTP, Java, HTML y XML.
+        </p>
+
+        <p class="indentado"><strong>> Def: </strong>Los servicios web son sistemas de intercambio de información
+            basados
+            ​​en XML que utilizan Internet para la interacción directa de aplicación a aplicación. Estos sistemas pueden
+            incluir programas, objetos, mensajes o documentos.
+        </p>
+
+        <p class="indentado"><strong>> Def: </strong>Un servicio web es una colección de protocolos y estándares
+            abiertos que
+            se utilizan para intercambiar datos entre aplicaciones o sistemas. Las aplicaciones de software escritas en
+            varios lenguajes de programación y que se ejecutan en varias plataformas pueden usar servicios web para
+            intercambiar datos a través de redes de computadoras como Internet de manera similar a la comunicación entre
+            procesos en una sola computadora. Esta interoperabilidad (p. Ej., Entre Java y Python, o aplicaciones de
+            Windows y Linux) se debe al uso de estándares abiertos.
+        </p>
+
+        <br>
+        <p><strong>En resumen, un servicio web completo es, por lo tanto, cualquier servicio que:</strong></p>
+
+        <p class="indentado"><strong>> </strong>Está disponible a través de Internet o redes privadas (intranet).</p>
+
+        <p class="indentado"><strong>> </strong>Utiliza un sistema de mensajería XML estandarizado.</p>
+
+        <p class="indentado"><strong>> </strong>No está vinculado a ningún sistema operativo o lenguaje de programación.
+        </p>
+
+        <p class="indentado"><strong>> </strong>Se autodescribe a través de una gramática XML común.</p>
+
+        <p class="indentado"><strong>> </strong>Se puede descubrir mediante un mecanismo de búsqueda simple.</p>
+
+        <br>
+        <p>Siendo un Web Service un <strong>conjunto de protocolos para intercambiar datos</strong> entre aplicaciones.
+            Estos, también conocidos como Servicios SOAP (Simple Object Access Protocol).</p>
+
+        <br>
+        <h2 id="soap_services">Servicios SOAP: Componentes de servicios web</h2>
+        <p>La plataforma básica de servicios web es XML + HTTP. Todos los servicios web estándar funcionan con los
+            siguientes componentes:</p>
+        <br>
+        <p class="indentado"><strong>> </strong>SOAP (Protocolo simple de acceso a objetos).</p>
+
+        <p class="indentado"><strong>> </strong>UDDI (Descripción universal, descubrimiento e integración).</p>
+
+        <p class="indentado"><strong>> </strong>WSDL (lenguaje de descripción de servicios web).</p>
+
+        <p>Todos estos componentes se han discutido en el capítulo Arquitectura de servicios web.</p>
+
+        <br>
+        <h2 id="how_does_web_service_work">¿Cómo funciona un servicio web?</h2>
+        <p>Un servicio web permite la comunicación entre varias aplicaciones mediante el uso de estándares abiertos como
+            HTML, XML, WSDL y SOAP. Un servicio web requiere la ayuda de:</p>
+
+        <br>
+        <p class="indentado"><strong>> XML </strong>para etiquetar los datos.</p>
+
+        <p class="indentado"><strong>> SOAP </strong>para transferir un mensaje.</p>
+
+        <p class="indentado"><strong>> WSDL </strong>para describir la disponibilidad del servicio.</p>
+
+        <p>Puede crear un servicio web basado en Java en Solaris al que pueda acceder desde su programa Visual Basic que
+            se ejecuta en Windows.
+            <br><br>
+            También puede usar C # para crear nuevos servicios web en Windows que se pueden invocar desde su aplicación
+            web basada en JavaServer Pages (JSP) y que se ejecuta en Linux.</p>
+
+        <br>
+        <h2 id="rest_services">Servicios REST</h2>
+        <p>REST (Representational State Transfer) no define tantos estándares como SOAP. REST es para exponer las API
+            públicas (es decir, la API de Facebook, la API de Google Maps) a través de Internet para manejar las
+            operaciones de CRUD en los datos. REST se enfoca en acceder a recursos nombrados a través de una única
+            interfaz consistente.
+            <br><br>
+            RESTful hace referencia a un servicio web que implementa la arquitectura REST.
+            <br><br>
+            SOAP usa XML para todos los mensajes, REST puede usar formatos de mensajes más pequeños como son texto
+            plano, HTML, XML, JSON etc.</p>
+
+        <br>
+        <h2 id="services_conclusion">Conclusión</h2>
+        <p>Un servicio SOAP es un conjunto de protocolos para el intercambio de datos como se vio anteriormente.
+            Mientras que REST define unos lineamientos para el intercambio de datos (Implementación de un servicio)
+            sobre HTTP. <strong>Android no tiene soporte nativo a SOAP como sí lo tiene a REST</strong>.</p>
+
+
+    </div>
+    <div id="portfolio_footer_section"></div>
+</div>

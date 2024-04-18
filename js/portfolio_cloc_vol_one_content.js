@@ -33,3 +33,8 @@ async function loadPortfolioClocVolOneBodySolid() {
 async function loadPortfolioClocVolOneBodyDryAndKiss() {
     await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_dry_and_kiss.html");
 }
+
+// Web Services Body Content //
+async function loadPortfolioClocVolOneBodyWebServices() {
+    await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_web_services.html");
+}

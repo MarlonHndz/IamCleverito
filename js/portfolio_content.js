@@ -159,6 +159,9 @@ async function loadSelectedTabContent(selectedLabel) {
         } else if (inputValue === 'Dry_Kiss') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'Dry_Kiss'
             loadPortfolioClocVolOneBodyDryAndKiss();
+        } else if (inputValue === 'web_services') {
+            // Lógica para cargar un archivo HTML cuando el valor del input es 'web_services'
+            loadPortfolioClocVolOneBodyWebServices();
         }
         // Y así sucesivamente para los otros valores de input
     }
