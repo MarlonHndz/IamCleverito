@@ -162,6 +162,9 @@ async function loadSelectedTabContent(selectedLabel) {
         } else if (inputValue === 'web_services') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'web_services'
             loadPortfolioClocVolOneBodyWebServices();
+        } else if (inputValue === 'Android_components') {
+            // Lógica para cargar un archivo HTML cuando el valor del input es 'Android_components'
+            loadPortfolioClocVolOneBodyAndroidComponents();
         }
         // Y así sucesivamente para los otros valores de input
     }

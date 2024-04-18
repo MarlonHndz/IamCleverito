@@ -38,3 +38,8 @@ async function loadPortfolioClocVolOneBodyDryAndKiss() {
 async function loadPortfolioClocVolOneBodyWebServices() {
     await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_web_services.html");
 }
+
+// Android Components Body Content //
+async function loadPortfolioClocVolOneBodyAndroidComponents() {
+    await loadPortfolioBody("../../ui/portfolio/cloc_vol_one/cloc_vol_one_android_components.html");
+}
