@@ -248,9 +248,9 @@ header {
 }
 
 .portfolio_text_section h1 {
-    font-size: 50px;
+    font-size: 55px;
     font-weight: 450;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 
     scroll-margin-block-start: 150px;
     /*Adds margin to the top of the viewport*/
@@ -260,9 +260,9 @@ header {
 }
 
 .portfolio_text_section h2 {
-    font-size: 34px;
+    font-size: 30px;
     font-weight: 450;
-    margin: 18px 0 0 0;
+    margin: 20px 0 0 0;
 
     scroll-margin-block-start: 150px;
     /*Adds margin to the top of the viewport*/
@@ -285,9 +285,11 @@ header {
     content: ">";
     margin-right: 5px;
 }
+
+/* Párrafos: */
 .portfolio_text_section h3 p {
     color: #2f323d;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 400;
     text-align: justify;
     margin-left: 20px;
@@ -295,7 +297,7 @@ header {
 
 .portfolio_text_section p {
     color: #2f323d;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 400;
     margin: 8px 0px;
     text-align: justify;
