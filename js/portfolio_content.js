@@ -107,12 +107,14 @@ function addListenerToHorizontalNavForBook() {
     });
 
     // Escuchar el evento scroll en el contenedor desplazable
-    contentTabs.addEventListener('scroll', moveGliderSpan);
+    contentTabs.addEventListener('scroll', moveGliderSpan({
+        target: document.querySelector('input[type="radio"]:checked')
+    }));
 
 }
 
 // Función para ajustar la posición y el ancho del span
-async function moveGliderSpan(event) {
+function moveGliderSpan(event) {
     const glider = document.querySelector('.glider');
     const contentTabs = document.querySelector('.content_tabs');
     const scrollHorizontal = contentTabs.scrollLeft;
@@ -120,8 +122,12 @@ async function moveGliderSpan(event) {
     const selectedLabel = event.target; // Obtener el input seleccionado
     const rect = selectedLabel.getBoundingClientRect(); // Obtener las dimensiones del input
 
+    // Calcular la posición izquierda relativa al contenedor .content_tabs
+    const contentTabsRect = contentTabs.getBoundingClientRect();
+    const leftOffset = rect.left - contentTabsRect.left + scrollHorizontal;
+
     glider.style.width = rect.width + 'px'; // Ajustar el ancho del span al ancho del input
-    glider.style.left = rect.left + window.pageXOffset + scrollHorizontal + 'px'; // Ajustar la posición izquierda del span
+    glider.style.left = leftOffset + 'px'; // Ajustar la posición izquierda del span
 
 
     loadSelectedTabContent(selectedLabel)
@@ -146,7 +152,7 @@ async function loadSelectedTabContent(selectedLabel) {
         // según el valor del input.
         if (inputValue === 'POO') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'POO'
-           loadPortfolioClocVolOneBodyPoo();
+            loadPortfolioClocVolOneBodyPoo();
         } else if (inputValue === 'JAVA') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'JAVA - Conceptos básicos'
             loadPortfolioClocVolOneBodyJAVA();
@@ -167,5 +173,10 @@ async function loadSelectedTabContent(selectedLabel) {
             loadPortfolioClocVolOneBodyAndroidComponents();
         }
         // Y así sucesivamente para los otros valores de input
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Desplazamiento suave
+        });
     }
 }
