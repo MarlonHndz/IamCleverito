@@ -74,14 +74,16 @@ function loadPortfolioFooterSection(url) {
     });
 }
 
-// List click event for small devices //
+// List menu click event for small devices //
 function addListenerToNavListForBook() {
-    var bookContentMenu = document.getElementById('book_content_menu_icon');
+    var bookContentMenu = document.getElementById('checkbox_list_menu_icon');
     var portfolioListSection = document.getElementById('portfolio_list_section');
+
+    const checkbox = document.getElementById('checkbox_list_menu_icon');
     let isDisplayed = false;
 
-    bookContentMenu.addEventListener('click', () => {
-        if (isDisplayed) {
+    bookContentMenu.addEventListener('change', () => {
+        if (isDisplayed && !event.target.checked) {
             portfolioListSection.style.width = `0px`;
         } else {
             portfolioListSection.style.width = `300px`;
@@ -178,5 +180,8 @@ async function loadSelectedTabContent(selectedLabel) {
             top: 0,
             behavior: 'smooth' // Desplazamiento suave
         });
+
+        var bookContentMenu = document.getElementById('checkbox_list_menu_icon');
+        bookContentMenu.checked = false;
     }
 }
