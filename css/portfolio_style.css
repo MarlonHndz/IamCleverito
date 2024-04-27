@@ -51,6 +51,11 @@ header {
     margin: 10px 16px;
 }
 
+.portfolio_nav {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
 .portfolio_nav>a {
     text-decoration: none;
     color: white;
@@ -98,7 +103,7 @@ header {
     margin-left: 6px;
     margin-right: 6PX;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     color: #FFF;
     border-radius: 99px;
     border: 0px solid #ccc;
@@ -515,5 +520,22 @@ header {
 
     .portfolio_nav>a {
         margin-left: 15px;
+    }
+
+    .tab {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .bar--top {
+        bottom: calc(40% + 11px + 4px/ 2);
+    }
+    
+    .bar--middle {
+        top: calc(50% - 4px/ 2);
+    }
+    
+    .bar--bottom {
+        top: calc(40% + 11px + 4px/ 2);
     }
 }
