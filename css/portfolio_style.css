@@ -501,4 +501,19 @@ header {
         font-weight: 450;
         margin-bottom: 0px;
     }
+
+    .cloc_library_logo {
+        display: none;
+    }
+
+    .portfolio_nav {
+        height: 75px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .portfolio_nav>a {
+        margin-left: 15px;
+    }
 }
