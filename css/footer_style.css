@@ -1,8 +1,12 @@
 footer {
-  background: #ffffff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00132E, #032B4F, #011633);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00132E, #032B4F, #011633);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 40px 0 30px 0;
   margin: auto;
-  border-top: 1px solid #E1E2E6;
+  border-top: 2px solid #00132E;
 }
 
 .container-footer {
@@ -44,18 +48,18 @@ footer {
 .content-foo h4 {
   font-size: 15px;
   font-weight: 400;
-  color: #000;
+  color: #FFF;
   transition: all 0.2s;
 }
 
 .content-foo h3 {
   font-size: 20px;
-  font-weight: 650;
-  color: #000;
+  font-weight: 450;
+  color: #FFF;
 }
 
 .content-foo p {
-  color: #000;
+  color: #FFF;
   font-size: 15px;
   font-weight: 400;
 }

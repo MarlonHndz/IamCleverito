@@ -15,22 +15,8 @@ body {
     overflow: hidden;
 }
 
-.navigate{
-    background-color: #FFF;
-    border-radius: 8px;
-    border: solid 2px #000;
-   
-}
 
-.navigate:hover {
-    box-shadow: 0 0 6px rgba(0, 0, 0, .35);
-}
 
-.navigate-black-bg{
-    background-color: #000;
-    border: solid 2px #FFF;
-    box-shadow: 0 0 6px rgba(0, 0, 0, .35);
-}
 
 /* -- HEADER -- */
 header {
