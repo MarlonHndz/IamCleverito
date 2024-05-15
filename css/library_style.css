@@ -484,3 +484,19 @@ header {
     }
 
 }
+
+/* -- Responsive 400px -- */
+@media screen and (max-width:400px) {
+    /* -- HEADER -- */
+    #header_stain_right_img {
+        margin-top: 180px;
+        width: 90%;
+    }
+    #header_robot_img {
+        width: 30%;
+    }
+    .texts-header {
+        padding: 0px 20px;
+    }
+
+}
