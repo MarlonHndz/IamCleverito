@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    loadHeaderNav();
     loadPortfolioContentClocVolOne();
+    loadPortfolioFooter();
 });
 
 // Header //
@@ -26,7 +28,6 @@ function loadPortfolioBody(url) {
                 document.getElementById("portfolio_body").innerHTML += data;
                 resolve();
                 loadListListener();
-                loadPortfolioFooter();
                 addListenerToNavListForBook();
             })
             .catch(error => console.log(error));

@@ -1,6 +1,6 @@
 async function loadHeaderNav() {
-     await loadHeader("/IamCleverito/ui/nav/nav_section.html"); // Production
-    // await loadHeader("/ui/nav/nav_section.html");            // Testing
+    // await loadHeader("/IamCleverito/ui/nav/nav_section.html"); // Production
+     await loadHeader("/ui/nav/nav_section.html");            // Testing
 }
 
 function loadHeader(url) {

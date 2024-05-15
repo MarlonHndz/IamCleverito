@@ -14,6 +14,8 @@ body {
 }
 
 
+
+
 /* -- HEADER -- */
 header {
     width: 100%;
@@ -23,48 +25,60 @@ header {
     flex-direction: column;
     overflow: hidden;
     position: fixed;
-    background: #000;
     box-shadow: 0 0 6px rgba(0, 0, 0, .35);
+    background: #00132E;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #00132E, #032B4F, #011633);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #00132E, #032B4F, #011633);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.vol_one_header {
+.header_background_images {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px 0 5px;
+    margin-top: 0px;
 }
 
-.cloc_library_logo {
-    height: 55px;
-    width: 120px;
-    margin: 10px 16px;
+#header_stain_left_img {
+    margin-top: -60px;
+    width: 30%;
+    transform: scaleX(1) rotate(90deg);
 }
 
-.cloc_library_logo:hover {
-    cursor: pointer;
+#header_stain_right_img {
+    margin-top: -60px;
+    width: 48%;
+    transform: scaleX(-1);
 }
 
-.cloc_reading_logo {
-    height: 55px;
-    width: 120px;
-    margin: 10px 16px;
+
+
+
+/* -- Nav adaptation -- */
+.nav-menu {
+    margin-top: 11px;
+    /* Así queda centrado para un header de heigth: 150px*/
 }
 
-.portfolio_nav {
-    white-space: nowrap;
-    overflow-x: auto;
+.nav-menu>img {
+    width: 60px;
+    height: 45px;
 }
 
-.portfolio_nav>a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-weight: 400;
-    margin-left: 20px;
-}
+
+
 
 /* -- HEADER TABS-- */
+.book_content_tabs {
+    margin-top: 75px;
+}
+
 .vol_one_content_tabs {
     height: 110px;
     background: #1580A4;
@@ -102,7 +116,7 @@ header {
     padding: 0 20px;
     margin-left: 6px;
     margin-right: 6PX;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     color: #FFF;
     border-radius: 99px;
@@ -110,6 +124,7 @@ header {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
     cursor: pointer;
     transition: color 0.15s ease-in;
+    z-index: 5;
 }
 
 .glider {
@@ -125,14 +140,16 @@ header {
 
 .content_tabs input[type="radio"]:checked+label {
     color: #000;
+    font-weight: 600;
     /*Selected color*/
     border: 2px solid #ffffff;
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.778);
 }
 
 
-/* -- Menu drawer icon for list -- */
 
+
+/* -- Menu drawer icon for list -- */
 .book_content_menu_icon {
     height: 45px;
     width: 40px;
@@ -152,7 +169,7 @@ header {
 
 .toggle {
     position: relative;
-    width: 35px;
+    width: 30px;
     cursor: pointer;
     margin: auto;
     display: block;
@@ -171,25 +188,24 @@ header {
     transition: width 0.35s cubic-bezier(.5, -0.35, .35, 1.5) 0s;
 }
 
-/***** Spin Animation *****/
-
+/***** Spin Animation for menu icon *****/
 .bar--top {
     width: 100%;
-    bottom: calc(50% + 11px + 4px/ 2);
+    bottom: calc(50% + 11px + 1px/ 2);
     transition-property: bottom, transform;
     transition-delay: calc(0s + 0.35s), 0s;
 }
 
 .bar--middle {
-    width: 90%;
+    width: 88%;
     top: calc(50% - 4px/ 2);
     transition-property: opacity;
     transition-delay: calc(0s + 0.35s);
 }
 
 .bar--bottom {
-    width: 80%;
-    top: calc(50% + 11px + 4px/ 2);
+    width: 75%;
+    top: calc(50% + 11px + 1px/ 2);
     transition-property: top, transform;
     transition-delay: calc(0s + 0.35s), 0s;
 }
@@ -214,6 +230,7 @@ header {
     transition-delay: 0s, calc(0s + 0.35s);
     width: 100%;
 }
+
 
 
 
@@ -427,6 +444,16 @@ header {
     transform: rotateY(19deg);
 }
 
+/* -- Footer for portfolio -- */
+#portfolio_footer_section {
+    margin-left: 300px;
+}
+
+#portfolio_footer_section .content-foo {
+    width: 25%;
+}
+
+
 
 
 /* -/-/-/-/-/- Responsive -/-/-/-/-/-/-*/
@@ -436,22 +463,45 @@ header {
     .content_tabs {
         padding-left: 50px;
     }
+
+    #header_stain_left_img {
+        margin-top: -50px;
+    }
+
+    #header_stain_right_img {
+        margin-top: -50px;
+    }
 }
 
-/* -- Responsive 1400px -- */
-@media screen and (max-width:1400px) {
-    .content_tabs {
-        padding-left: 50px;
+/* -- Responsive 1350px -- */
+@media screen and (max-width:1350px) {
+    #header_stain_left_img {
+        margin-top: -40px;
+    }
+
+    #header_stain_right_img {
+        margin-top: -40px;
     }
 }
 
 /* -- Responsive 1285px -- */
 @media screen and (max-width:1285px) {
+
+    /* -- Header -- */
+    #header_stain_left_img {
+        margin-top: -30px;
+    }
+
+    #header_stain_right_img {
+        margin-top: -30px;
+    }
+
+    /* -- Book tabs -- */
     .book_content_menu_icon {
         display: block;
         position: fixed;
         margin-top: 22px;
-        left: 2%;
+        left: 1.5%;
     }
 
     .content_tabs {
@@ -459,6 +509,7 @@ header {
         padding-left: 0px;
     }
 
+    /* -- Portfolio -- */
     .portfolio_list_section {
         min-width: 0px;
         width: 0px;
@@ -472,10 +523,30 @@ header {
     .portfolio_text_section {
         width: 95%;
     }
+
+    /* -- Footer for portfolio -- */
+    #portfolio_footer_section {
+        margin-left: 0px;
+    }
+
+    #portfolio_footer_section .content-foo {
+        width: 20%;
+    }
 }
 
-/* -- Responsive 1000px -- */
-@media screen and (max-width:1000px) {
+/* -- Responsive 1110px -- */
+@media screen and (max-width:1110px) {
+
+    /* -- Header -- */
+    #header_stain_left_img {
+        margin-top: -10px;
+    }
+
+    #header_stain_right_img {
+        margin-top: -10px;
+    }
+
+    /* -- Portfolio -- */
     .portfolio_content_section {
         padding-left: 0px;
     }
@@ -495,10 +566,67 @@ header {
     }
 }
 
+/* -- Responsive 950px -- */
+@media screen and (max-width:950px) {
+
+    /* -- Header -- */
+    #header_stain_left_img {
+        margin-top: -20px;
+        width: 40%;
+    }
+
+    #header_stain_right_img {
+        margin-top: -40px;
+        width: 50%;
+    }
+
+    /* -- Book tabs -- */
+    .book_content_menu_icon {
+        left: 2%;
+    }
+
+    .portfolio_text_section {
+        width: 100%;
+    }
+}
+
+/* -- Responsive 800px -- */
+@media screen and (max-width:800px) {
+
+    /* -- Header -- */
+    #header_stain_left_img {
+        width: 0%;
+    }
+
+    #header_stain_right_img {
+        margin-top: -20px;
+        width: 68%;
+    }
+
+
+    /* -- Book tabs -- */
+    .book_content_menu_icon {
+        left: 2.2%;
+    }
+
+    .tab {
+        font-size: 17px;
+    }
+}
+
 /* -- Responsive 680px -- */
 @media screen and (max-width:680px) {
+
+    /* -- Header -- */
+    #header_stain_right_img {
+        margin-top: -20px;
+        width: 100%;
+    }
+
+    /* -- Portfolio -- */
     .portfolio_text_section {
-        padding: 15px;
+        width: 100%;
+        padding: 30px;
     }
 
     .portfolio_text_section h1 {
@@ -507,21 +635,15 @@ header {
         margin-bottom: 0px;
     }
 
-    .cloc_library_logo {
-        display: none;
+    .portfolio_text_section p {
+        text-align: start;
     }
 
-    .portfolio_nav {
-        height: 75px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    .portfolio_text_section h3 p {
+        text-align: start;
     }
 
-    .portfolio_nav>a {
-        margin-left: 15px;
-    }
-
+    /* -- Tabs -- */
     .tab {
         font-size: 16px;
         font-weight: 400;
@@ -530,12 +652,45 @@ header {
     .bar--top {
         bottom: calc(40% + 11px + 4px/ 2);
     }
-    
+
     .bar--middle {
         top: calc(50% - 4px/ 2);
     }
-    
+
     .bar--bottom {
         top: calc(40% + 11px + 4px/ 2);
+    }
+}
+
+/* -- Responsive 550px -- */
+@media screen and (max-width:550px) {
+
+    /* -- Header -- */
+    #header_stain_right_img {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    /* -- Portfolio -- */
+    .portfolio_text_section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .portfolio_text_section h1 {
+        font-size: 30px;
+    }
+
+    .portfolio_text_section h2 {
+        font-size: 25px;
+    }
+
+    .portfolio_text_section h3 {
+        font-size: 20px;
+    }
+
+    /* -- Footer -- */
+    #portfolio_footer_section .content-foo {
+        width: 100%;
     }
 }
