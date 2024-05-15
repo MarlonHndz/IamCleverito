@@ -568,6 +568,7 @@ footer {
   .content-foo {
     width: 100%;
     text-align: center;
+    margin-bottom: 30px;
   }
 
   .container-footer a {
