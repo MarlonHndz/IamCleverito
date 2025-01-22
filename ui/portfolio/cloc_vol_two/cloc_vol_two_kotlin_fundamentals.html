@@ -1,0 +1,290 @@
+<div class="portfolio_list_section" id="portfolio_list_section">
+
+    <ul class="portfolio_list">
+
+        <li class="list_item">
+            <a href="#" class="list_title title_level_one">Declaración de variables</a>
+        </li>
+        <li class="list_item">
+            <a href="#access_modifiers" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Modificadores de acceso</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#access_modifiers_public" class="list_title title_level_two">Public</a>
+                </li>
+                <li class="list_item">
+                    <a href="#access_modifiers_internal" class="list_title title_level_two">Internal</a>
+                </li>
+                <li class="list_item">
+                    <a href="#access_modifiers_private" class="list_title title_level_two">Private</a>
+                </li>
+                <li class="list_item">
+                    <a href="#access_modifiers_protected" class="list_title title_level_two">Protected</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#strings" class="list_title title_level_one">Strings</a>
+        </li>
+        <li class="list_item ">
+            <a href="#nullability" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Nulabilidad</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#elvis_operator" class="list_title title_level_two">Operador Elvis (?:)</a>
+                </li>
+                <li class="list_item">
+                    <a href="#double_bang" class="list_title title_level_two">Double Bang (!!)</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item ">
+            <a href="#lists_arrays_loops" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Lists, Arrays y Loops</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#lists" class="list_title title_level_two">Lists</a>
+                </li>
+                <li class="list_item">
+                    <a href="#arrays" class="list_title title_level_two">Arrays</a>
+                </li>
+                <li class="list_item">
+                    <a href="#loops" class="list_title title_level_two">Loops</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#switch_vs_when" class="list_title title_level_one">Switch vs When</a>
+        </li>
+    </ul>
+</div>
+
+<div class="portfolio_content_section">
+    <!--Here goes the TEXT CONTENT-->
+
+    <div class="portfolio_text_section">
+
+        <h1 id="Kotlin">Kotlin</h1>
+        <br>
+        <p>En esta primera sección se van a abordar las bases del lenguaje basándonos en el Bootcamp de Google,
+            así como la documentación oficial de Kotlin. Además, destacar una herramienta que te podrá ser de utilidad
+            como lo es el
+            <a href="https://play.kotlinlang.org/" style="color: blue;">compilador web de Kotlin</a>
+            .</p>
+
+
+        <h2 id="declaration_of_variables">Declaración de variables</h2>
+        <p>Kotlin utiliza dos palabras clave diferentes para declarar variables: val y var:</p>
+        <br>
+        <p class="indentado"><strong>> val</strong>: Para una variable cuyo valor <strong>no cambia nunca</strong>.
+        </p>
+        <p class="indentado"><strong>> var</strong>: Para una variable cuyo valor <strong>puede cambiar</strong>.
+        </p>
+        <p class="indentado"><strong>> const val</strong>: Para crear <strong>constantes</strong> en tiempo de
+            compilación.
+        </p>
+        <br>
+        <p><strong>const val</strong> difiere de <strong>val</strong> en que el valor de ésta última se determina en
+            tiempo de ejecución,
+            lo que significa que, por ejemplo, el valor de un <strong>val</strong> puede ser asignado por una función
+            durante la ejecución del código.
+        </p>
+
+
+        <h2 id="access_modifiers">Modificadores de acceso</h2>
+        <p>Los modificadores de acceso en Kotlin son un poco diferentes a Java:</p>
+
+        <h3 id="access_modifiers_public">Public:
+            <p>Por Default todo es Public en Kotlin. Otorga acceso desde cualquier clase y método en cualquier lugar.
+            </p>
+        </h3>
+
+        <h3 id="access_modifiers_internal">Internal:
+            <p>Permite el acceso únicamente desde el mismo módulo.
+            </p>
+        </h3>
+
+        <h3 id="access_modifiers_private">Private:
+            <p>Visibles desde su clase contenedora y sus métodos.
+            </p>
+        </h3>
+        <h3 id="access_modifiers_protected">Protected:
+            <p>Permite el acceso solo a subclases y clases que están dentro del mismo paquete que la clase de miembros
+                protegidos .
+            </p>
+        </h3>
+
+
+        <h2 id="strings">Strings</h2>
+        <p>Los Strings en Kotlin funcionan de manera muy similar a las cadenas en cualquier otro lenguaje de
+            programación
+            usando <strong>"</strong> para cadenas y <strong>'</strong> para caracteres individuales, y puede concatenar
+            cadenas con el operador <strong>+</strong>.
+            Puede crear plantillas de String combinandolas con valores; usando <strong>$variable</strong> se reemplazará
+            con el texto que representa el valor. Esto se llama <strong>interpolación de variables</strong>.
+
+            <br><br>Además de esto, también es posible insertar una expresión dentro de un String
+            usando <strong>${kotlin expression}</strong> con la
+            expresión dentro de las llaves ({}).</p>
+
+
+        <h2 id="nullability">Nulabilidad</h2>
+        <p>En kotlin, por defecto una variable no puede ser nula (null) por lo que para poder asignar el valor nulo a
+            una variable hacemos uso del operador de signo de interrogación (<strong>?</strong>) después del tipo. Por
+            ejemplo:</p>
+        <br>
+        <div class="code_snippet">
+            <p>val number: Int? = null</p>
+        </div>
+        <br>
+        <p>Generalmente, cuando usamos variables con posible asignación nula debemos validar si esta contiene o no un
+            valor antes de aplicar una operación en la misma; para ello usamos una sentencia <strong>if… else</strong>
+            sin embargo en
+            kotlin contamos con el Operador Elvis para esta tarea.
+        </p>
+
+        <h2 id="elvis_operator">Operador Elvis (?:)</h2>
+        <p>El operador Elvis o <strong>?:</strong> nos permite realizar una comprobación de seguridad (safe nullability)
+            donde si la expresión de la izquierda al ?: no es nula, el operador la devuelve, de lo contrario,
+            devuelve la expresión de la derecha.
+            Ejemplo:
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                val a : String? = ”Nullable String value”
+                <br>
+                val b : Int = a?.length ?: -1
+            </p>
+        </div>
+        <br>
+        <p>Para este caso tenemos que la variable <strong>b</strong> no puede ser nula y requerimos una comprobación de
+            seguridad sobre
+            <strong>a</strong> quien puede o no tener un valor nulo. Para ello usamos el operador Elvis o
+            <strong>?:</strong> que nos retorna
+            la 'longitud de a' (<strong>a?.length</strong>) si 'a' no es nula o <strong>-1</strong> en caso de que 'a
+            sea nulo'. </p>
+
+        
+        <h2 id="double_bang">Double Bang (!!)</h2>
+        <p>El operador de aserción no nula o <strong>!!</strong> (double-bang) nos permite mantener la posibilidad de
+            obtener un
+            <strong>NullPointerException</strong> cuando nos encontramos con una variable nula.
+            Un ejemplo siguiendo el orden de los anteriores sería:
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                val c : Int = a!!.length
+                <br>
+                //Arroja un NullPointerException si 'a' es nulo
+            </p>
+        </div>
+        <br>
+
+
+        <h2 id="lists_arrays_loops">Lists, Arrays y Loops</h2>
+        <p>Al igual que en otros lenguajes, en kotlin existen list, arrays y loops que se pueden definir de la siguiente
+            manera:
+        </p>
+
+        <h3 id="lists">List:
+            <p>Para la creación de listas en kotlin tenemos dos opciones:</p>
+            <p class="indentado"><strong>> </strong>Usar <strong>listOf</strong> para crear una lista que NO puede ser
+                cambiada.</p>
+            <p class="indentado"><strong>> </strong>Usar <strong>mutableListOf</strong> para una lista cuyos valores
+                pueden cambiar.</p>
+        </h3>
+
+        <h3 id="arrays">Arrays:
+            <p>Los arrays en kotlin <strong>no son mutables</strong>; una vez creados, el tamaño de este es fijo.
+                No es posible agregar o remover el tamaño de los elementos, a menos que le copiemos a un nuevo array.
+                <br><br>
+                Para declarar un array utilizamos <strong>arrayOf</strong> y al no tener un tipo de elemento asociado,
+                podemos crear una array
+                que puede llegar a contener <strong>diferentes tipos de elementos</strong>.
+                <br><br>
+                Si deseamos crear un array de un tipo específico, existen constructores para ciertos tipos, por ejemplo
+                <strong>intArrayOf()</strong>
+                que nos permite crear un array de números enteros.
+            </p>
+        </h3>
+
+        <h3 id="loops">Loops:
+            <p>Para la creación de loops podemos utilizar las siguientes declaraciones:</p>
+            <p class="indentado"><strong>> </strong>Usar <strong>for</strong> para en los elementos de un array o
+                retroceder usando <strong>downTo</strong> así como el uso de otros operadores.</p>
+            <p class="indentado"><strong>> </strong>Usar <strong>while</strong> para repetir la siguiente línea una vez
+                cerrada la condición.</p>
+            <p class="indentado"><strong>> </strong>Usar <strong>do… while</strong> donde repetirá la línea luego de
+                cerrar el while, mientras se cumpla la condición.</p>
+            <p class="indentado"><strong>> </strong>Usar <strong>repeat()</strong>que repetirá lo indicado dentro, las
+                veces
+                indicadas como parámetro de la función.</p>
+        </h3>
+
+
+        <h2 id="switch_vs_when">Switch vs When</h2>
+        <p>En Java tenemos el uso de <strong>switch</strong> quien se encarga de comparar la variable que le pasemos por
+            parámetro con
+            varias declaraciones <strong>case</strong> presentes correspondientes a ella y realiza la operación
+            pertinente.
+            <br><br>
+            Por otro lado, en kotlin tenemos <strong>when</strong> que compara la variable con varias opciones
+            disponibles; si
+            encuentra más de una coincidencia solo se considerará la que se produzca primero y en caso de no encontrar
+            ninguna se ejecutará el <strong>else</strong>.
+        </p>
+        <br><br>
+
+        <div class="code_snippet">
+            <p>
+                when(number) { <br>
+                1 -> println("One")- - - - - - - - - - - - - - - //statement 1 <br>
+                2,3 -> println("Two or Three")- - - - - - - - - -//statement 2 <br>
+                in 4..8 -> println("Number between 4 and 8")- - -//statement 3 <br>
+                else -> println("Number is not between 1 and 8") //statement 4 <br>
+                }
+            </p>
+        </div>
+        <br>
+        <div class="code_snippet">
+            <p>
+                when { <br>
+                number < 1 -> println("Number is less than 1")- -//statement 5 <br>
+                    number > 1 -> println("Number is greater than 1")//statement 6 <br>
+                    }
+            </p>
+        </div>
+        <br>
+        <div class="code_snippet">
+            <p>
+                when(x) { <br>
+                is Int -> println("X is integer")- - - - - - - - //statement 7 <br>
+                is String -> println("X is string")- - - - - - - //statement 8 <br>
+                }
+            </p>
+        </div>
+        <br>
+        <p>Además, podemos ver varias de las ventajas de when permitiendo:
+        </p>
+        <p class="indentado"><strong>> </strong>Verificar o comparar <strong>más de una condición</strong>que llevan al
+            mismo resultado (statement 2).</p>
+        <p class="indentado"><strong>> </strong>Uso de condiciones o <strong>rama de condición</strong>, donde el cuerpo
+            de la declaración se ejecutará cuando se cumpla la condición (statement 3).</p>
+        <p class="indentado"><strong>> when sin argumento</strong>, que nos permite utilizar el parámetro de la función
+            directamente en las declaraciones condicionales (statements 5 y 6).</p>
+        <p class="indentado"><strong>> Transmisión inteligente</strong>, que permite una transmisión automática si está
+            usando una expresión <strong>is</strong> en el bloque condicional (statements 7 y 8).</p>
+
+    </div>
+</div>
+
+<div class="portfolio_volume_logo">
+    <div class="reading_card">
+        <img class="" src="../../../img/book_covers/CLOC_Vol_two_book_cover.png" alt="">
+    </div>
+</div>

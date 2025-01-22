@@ -90,6 +90,17 @@ header {
     display: flex;
 }
 
+.vol_two_content_tabs {
+    height: 110px;
+    background: #a41585;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #E2455E, #C513E2, #943FF6, #7030A0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #E2455E, #C513E2, #943FF6, #7030A0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+}
+
 .content_tabs {
     white-space: nowrap;
     overflow-x: auto;
@@ -406,6 +417,29 @@ header {
     text-indent: 2em;
 }
 
+.code_snippet{
+    width: fit-content;
+    font-family: 'Roboto Mono';
+    background: #E4E4E4;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+    margin-left: 4em;
+}
+.code_snippet p{
+    color: #000;
+ }
+
+ .console_snippet{
+    width: fit-content;
+    font-family: 'Roboto Mono';
+    background: #695353;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+    margin-left: 4em;
+}
+.console_snippet p{
+    color: #F5F5F5;
+}
 
 /* -- Portfolio Volume Logo Content -- */
 .portfolio_volume_logo {

@@ -1,0 +1,340 @@
+<div class="portfolio_list_section" id="portfolio_list_section">
+
+    <ul class="portfolio_list">
+
+        <li class="list_item">
+            <a href="#" class="list_title title_level_one">Eager & Lazy filters</a>
+        </li>
+        <li class="list_item">
+            <a href="#lambdas" class="list_title title_level_one">Lambdas y funciones de higher-order</a>
+        </li>
+        <li class="list_item">
+            <a href="#extension_functions" class="list_title title_level_one">Funciones de extensión</a>
+        </li>
+        <li class="list_item">
+            <a href="#extension_properties" class="list_title title_level_one">Propiedades de extensión</a>
+        </li>
+        <li class="list_item">
+            <a href="#nullable_receivers" class="list_title title_level_one">Nullable receivers</a>
+        </li>
+        <li class="list_item">
+            <a href="#scope_functions" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Scope Functions</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#scope_characteristics" class="list_title title_level_two">Características principales</a>
+                </li>
+                <li class="list_item">
+                    <a href="#scope_uses" class="list_title title_level_two">Uso principal</a>
+                </li>
+                <li class="list_item">
+                    <a href="#scope_return" class="list_title title_level_two">Valores de retorno</a>
+                </li>
+                <li class="list_item">
+                    <a href="#scope_uses_for_each" class="list_title title_level_two">Cuándo usar cada scope function</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="portfolio_content_section">
+    <!--Here goes the TEXT CONTENT-->
+
+    <div class="portfolio_text_section">
+
+        <h1 id="Kotlin">Funciones avanzadas en Kotlin</h1>
+        <br>
+        <p> En esta sección exploraremos conceptos avanzados que hacen de Kotlin un lenguaje flexible y
+            expresivo; herramientas que no solo simplifican el código, sino que también mejoran el rendimiento y la
+            legibilidad. Estas características te permitirán escribir soluciones más elegantes, reutilizables y
+            eficientes, adaptadas a los desafíos del desarrollo actual.</p>
+
+
+        <h2>Eager y Lazy filters / Sequence (ansiosos o perezosos)</h2>
+        <p>
+            Así como en otros lenguajes, en Kotlin existe la posibilidad de fijar si un filtro (<strong>filter</strong>)
+            será <strong>Eager</strong> o <strong>Lazy</strong> es decir, si la lista resultante es creada
+            inmediatamente o cuando la lista es accedida, respectivamente.
+            <br><br>
+            <strong>Por defecto</strong>, en kotlin los filtros son <strong>Eager</strong>, y cada vez que utilices un
+            filtro, una lista es creada.
+            <br><br>
+            Para hacer que un filter sea <strong>Lazy</strong> usamos <strong>Sequence</strong>, el cual es una
+            Collection que solo puede observar un ítem a la vez; comenzando por el principio y yendo hasta el final.
+            Cuando usamos sequence por medio de <strong>.asSequence()</strong> la variable resultante no va a mantener
+            una lista nueva, va a mantener una secuencia de los elementos de la lista y el conocimiento del filtro que
+            aplicará a dichos elementos. Y siempre que se acceda a los elementos de la secuencia o Sequence, el filtro
+            será aplicado y los resultados serán retornados.
+        </p>
+
+
+        <h2 id="lambdas">Lambdas y funciones de higher-order</h2>
+        <p>
+            Una Lambda es una <strong>expresión</strong> que hace una función. Pero en lugar de declarar una función con
+            nombre, declaras una función que <strong>no tiene nombre</strong>. Parte de lo que hace que esto sea útil es
+            que la expresión lambda ahora se puede pasar como dato. En otros lenguajes, las lambdas se denominan
+            <strong><em>funciones anónimas, funciones literales</em></strong> u otros nombres similares.
+            <br><br>
+            Para lambdas, los <strong>parámetros</strong> (y sus tipos, si es necesario) van a la izquierda de lo que se
+            llama <strong>flecha de función (->)</strong>. El código a ejecutar va a la derecha de la flecha de función.
+            Una vez que la lambda se asigna a una variable, puede llamarla como una función.
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                val dirtyLevel = 20 <br>
+                val waterFilter = { dirty: Int -> dirty / 2} <br>
+                println("waterFilter : ${waterFilter(dirtyLevel)}")
+            </P>
+        </div>
+        <br>
+
+        <div class="console_snippet">
+            <p>
+                ⇒ waterFilter : 10
+            </P>
+        </div>
+        <br>
+        <p>
+            De igual manera podemos re escribir la segunda línea para declarar limpiamente una variable que alberga una
+            función:
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                val waterFilter: (Int) -> Int = { dirty -> dirty / 2}
+            </P>
+        </div>
+        <br>
+        <p>Sin embargo, hasta aquí las Lambdas lucen igual que una función. El poder real de las lambdas es usarlas para
+            crear <strong>funciones de orden superior (higher-order functions), donde el argumento de una función es
+                otra
+                función.</strong>
+            <br><br>
+            Veamos un ejemplo sencillo para entenderlo:
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                fun updateDirty(dirty: Int, operation: (Int) -> Int): Int { <br>
+                return operation(dirty) <br>
+                }
+            </P>
+        </div>
+        <br>
+        <p>
+            Tenemos entonces una función que toma dos argumentos. El primer argumento es un número entero. El segundo
+            argumento es una función que toma un número entero y devuelve un número entero.
+            <br><br>
+            El cuerpo del código llama a la función que se pasó como segundo argumento y le pasa el primer argumento.
+            <br><br>
+            Llamemos entonces nuestra función:
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                println("updateDirty : ${updateDirty(30, waterFilter)}")
+            </P>
+        </div>
+        <br>
+        <div class="console_snippet">
+            <p>
+                ⇒ updateDirty : 15
+            </P>
+        </div>
+        <br>
+        <p>
+            La función que se pasa no tiene que ser una lambda; en su lugar, puede ser una función con nombre regular.
+            Para especificar el segundo parámetro como una función regular, use el operador <strong>::</strong> conocido
+            como <strong>operador de referencia de miembro</strong> o referencia de clase. De esta manera, Kotlin sabe
+            que <strong>está pasando la referencia de la función como un argumento</strong>, sin intentar llamar a la
+            función.
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                fun increaseDirty( start: Int) = start + 1 <br>
+                println("increaseDirty : ${updateDirty(15, ::increaseDirty)}")
+            </P>
+        </div>
+        <br>
+        <div class="console_snippet">
+            <p>
+                ⇒ increaseDirty: 16
+            </P>
+        </div>
+        <br>
+        <p>
+            Finalmente, destacar que Kotlin tiene una sintaxis especial llamada
+            <a href="https://kotlinlang.org/docs/reference/lambdas.html#passing-a-lambda-to-the-last-parameter"
+                style="color: blue;">last parameter call syntax</a>,
+            la cual permite hacer el código aún más conciso. En este caso, puede pasar una lambda para el parámetro de
+            función, pero <strong>no es necesario colocar la lambda entre el paréntesis</strong>.
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                var dirtyLevel = 19 <br>
+                dirtyLevel = updateDirty(dirtyLevel) { dirtyLevel -> dirtyLevel + 23} <br>
+                println("updateDirty : $dirtyLevel")
+            </P>
+        </div>
+        <br>
+        <div class="console_snippet">
+            <p>
+                ⇒ updateDirty : 42
+            </P>
+        </div>
+
+
+        <h2 id="extension_functions">Funciones de extensión</h2>
+        <p>
+            Las funciones de extensión le permiten agregar funciones a una clase existente sin tener que acceder a su
+            código fuente. Esto en realidad no modifica la clase, pero le permite usar la notación de punto
+            (myObj.newFunc) al llamar a la función en objetos de dicha clase.
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                fun String.hasSpaces(): Boolean { <br>
+                val found = this.find { it == ' '} <br>
+                return found != null <br>
+                } <br>
+                println(“Does it have spaces?”.hasSpaces()) <br>
+            </p>
+        </div>
+        <br>
+        <div class="console_snippet">
+            <p>
+                ⇒ true
+            </P>
+        </div>
+        <br>
+        <p>
+            que puede simplificarse de la siguiente manera:
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                fun String.hasSpaces()= find { it == ' ' } != null
+            </p>
+        </div>
+
+
+        <h2 id="extension_properties">Propiedades de extensión</h2>
+        <p>
+            Las funciones de extensión solo tienen acceso a la API pública de la clase que están extendiendo. No se
+            puede acceder a las variables que son privadas.
+            <br><br>
+            Además de las funciones de extensión, kotlin permite crear propiedades de extensión. Para ello, debes
+            especificar la clase a extender, seguida de un punto, seguido del nombre de la propiedad, y de esta manera
+            todos los objetos de dicha clase obtendrán la nueva propiedad:
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                val PlantClass.isGreen : Boolean <br>
+                get() = color == “green”
+            </p>
+        </div>
+        <br>
+        <p>
+            Siendo color un atributo de tipo String de la clase PlantClass, tenemos que para cada objeto de dicha clase
+            al usar la propiedad isGreen, dará como resultado true si tiene como valor “green”:
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                val myPlant = PlantClass(“green”) <br>
+                println(myPlant.isGreen)
+            </p>
+        </div>
+        <br>
+        <div class="console_snippet">
+            <p>
+                ⇒ true
+            </P>
+        </div>
+
+
+        <h2 id="nullable_receivers">Nullable receivers</h2>
+        <p>
+            El concepto de Nullable receiver es <strong>el mismo que el de Extension Function</strong> con la pequeña
+            diferencia de que la clase sobre la que extendemos puede llegar a ser nula, a esta se le conocerá como
+            receiver, y básicamente lo que hacemos es aplicar una scope function para que solo se ejecute la función en
+            caso de no ser nulo el valor del objeto:
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                fun PlantClass?.isGreen(): String{ <br>
+                this?.apply { <br>
+                println(“My plant is green”) <br>
+                }}
+            </p>
+        </div>
+
+
+        <h2 id="scope_functions">Scope Functions</h2>
+        <p>
+            Las scope functions en Kotlin son un conjunto de funciones estándar que permiten ejecutar un bloque de
+            código en un contexto limitado de un objeto. Estas funciones proporcionan una forma concisa y expresiva de
+            trabajar con objetos, al facilitar la inicialización, configuración, o aplicación de operaciones sobre ellos
+            sin necesidad de referencias explícitas repetitivas. Las principales scope functions son: <strong>let, run,
+                with, apply</strong> y <strong>also</strong>.
+        </p>
+
+        <h3 id="scope_characteristics">Características principales:
+            <p>Cada scope function opera sobre un receptor o contexto, que es el objeto al que aplica la función.
+                <br> <br>
+                Este receptor se expone dentro del bloque de la función como:
+            </p>
+            <p class="indentado"><strong>> this</strong>: El objeto receptor se accede implícitamente (sin necesidad de
+                referencia explícita).
+            </p>
+            <p class="indentado"><strong>> it</strong>: El objeto receptor se accede explícitamente como un argumento
+                (por defecto, llamado it).
+            </p>
+        </h3>
+
+        <h3 id="scope_uses">Uso principal:
+            <p><strong>> </strong>Realizar operaciones sobre un objeto (como inicializar, modificar o transformar) de
+                forma breve y legible.
+                <br><br>
+                <strong>> </strong>Evitar redundancias al no tener que referenciar explícitamente el objeto.
+            </p>
+        </h3>
+
+        <h3 id="scope_return">Valores de retorno:
+            <p> Dependiendo de la scope function, pueden devolver:
+            </p>
+            <p class="indentado"><strong>> El resultado del bloque de código</strong>: por ejemplo con let, run, with
+            </p>
+            <p class="indentado"><strong>> El objeto receptor</strong>: por ejemplo con apply y also
+            </p>
+        </h3>
+
+        <h3 id="scope_uses_for_each">Cuándo usar cada scope function:
+            <p><strong>> Let</strong>: cuando necesites trabajar con un objeto temporal o cuando el receptor pueda ser
+                nulo (uso con safe calls ?.).
+                <br><br>
+                <strong>> run</strong>: para ejecutar operaciones agrupadas y devolver un resultado.
+                <br><br>
+                <strong>> with</strong>: cuando no necesites una extensión y desees operar en un objeto sin cambiarlo.
+                <br><br>
+                <strong>> apply</strong>: para configurar propiedades de un objeto y devolverlo directamente.
+                <br><br>
+                <strong>> also</strong>: cuando quieras realizar acciones adicionales en un objeto, como registrar información.
+            </p>
+        </h3>
+
+    </div>
+</div>
+
+<div class="portfolio_volume_logo">
+    <div class="reading_card">
+        <img class="" src="../../../img/book_covers/CLOC_Vol_two_book_cover.png" alt="">
+    </div>
+</div>
