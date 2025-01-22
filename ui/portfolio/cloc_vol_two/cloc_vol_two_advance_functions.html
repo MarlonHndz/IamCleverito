@@ -32,7 +32,8 @@
                     <a href="#scope_return" class="list_title title_level_two">Valores de retorno</a>
                 </li>
                 <li class="list_item">
-                    <a href="#scope_uses_for_each" class="list_title title_level_two">Cuándo usar cada scope function</a>
+                    <a href="#scope_uses_for_each" class="list_title title_level_two">Cuándo usar cada scope
+                        function</a>
                 </li>
             </ul>
         </li>
@@ -119,7 +120,7 @@
         <div class="code_snippet">
             <p>
                 fun updateDirty(dirty: Int, operation: (Int) -> Int): Int { <br>
-                return operation(dirty) <br>
+                &emsp;return operation(dirty) <br>
                 }
             </P>
         </div>
@@ -177,7 +178,9 @@
         <div class="code_snippet">
             <p>
                 var dirtyLevel = 19 <br>
-                dirtyLevel = updateDirty(dirtyLevel) { dirtyLevel -> dirtyLevel + 23} <br>
+                dirtyLevel = updateDirty(dirtyLevel) { dirtyLevel -> <br>
+                &emsp;dirtyLevel + 23 <br>
+                } <br>
                 println("updateDirty : $dirtyLevel")
             </P>
         </div>
@@ -199,8 +202,8 @@
         <div class="code_snippet">
             <p>
                 fun String.hasSpaces(): Boolean { <br>
-                val found = this.find { it == ' '} <br>
-                return found != null <br>
+                &emsp;val found = this.find { it == ' '} <br>
+                &emsp;return found != null <br>
                 } <br>
                 println(“Does it have spaces?”.hasSpaces()) <br>
             </p>
@@ -270,9 +273,10 @@
         <div class="code_snippet">
             <p>
                 fun PlantClass?.isGreen(): String{ <br>
-                this?.apply { <br>
-                println(“My plant is green”) <br>
-                }}
+                &emsp;this?.apply { <br>
+                &emsp;&emsp;println(“My plant is green”) <br>
+                &emsp;} <br>
+                }
             </p>
         </div>
 
@@ -326,7 +330,8 @@
                 <br><br>
                 <strong>> apply</strong>: para configurar propiedades de un objeto y devolverlo directamente.
                 <br><br>
-                <strong>> also</strong>: cuando quieras realizar acciones adicionales en un objeto, como registrar información.
+                <strong>> also</strong>: cuando quieras realizar acciones adicionales en un objeto, como registrar
+                información.
             </p>
         </h3>
 

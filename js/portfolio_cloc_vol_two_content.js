@@ -29,16 +29,10 @@ async function loadSelectedTabContent(selectedLabel) {
             loadPortfolioClocVolTwoBodyAdvanceFunctions();
         } else if (inputValue === 'classes_in_kotlin') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'classes_in_kotlin'
-            loadPortfolioClocVolTwoBodyDesignPatterns();
-        } else if (inputValue === 'coroutines') {
-            // Lógica para cargar un archivo HTML cuando el valor del input es 'coroutines'
-            loadPortfolioClocVolTwoBodySolid();
-        } else if (inputValue === 'flow_livedata') {
-            // Lógica para cargar un archivo HTML cuando el valor del input es 'flow_livedata'
-            loadPortfolioClocVolTwoBodyDryAndKiss();
+            loadPortfolioClocVolTwoBodyClassesInKotlin();
         } else if (inputValue === 'kotlin_in_android') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'kotlin_in_android'
-            loadPortfolioClocVolTwoBodyWebServices();
+            loadPortfolioClocVolTwoBodyKotlinInAndroid();
         }
 
         window.scrollTo({
@@ -62,37 +56,22 @@ async function loadPortfolioClocVolTwoContentTabs() {
     await loadPortfolioHeader("../../../ui/portfolio/cloc_vol_two/cloc_vol_two_content_tabs.html");
 }
 
-// POO Body Content //
+// Kotlin fundamentals Body Content //
 async function loadPortfolioClocVolTwoBodyFundamentals() {
     await loadPortfolioBody("../../../ui/portfolio/cloc_vol_two/cloc_vol_two_kotlin_fundamentals.html");
 }
 
-// JAVA Body Content //
+// Advance functions Body Content //
 async function loadPortfolioClocVolTwoBodyAdvanceFunctions() {
     await loadPortfolioBody("../../../ui/portfolio/cloc_vol_two/cloc_vol_two_advance_functions.html");
 }
 
-// Design Partens Body Content //
-async function loadPortfolioClocVolTwoBodyDesignPatterns() {
-    await loadPortfolioBody("../../../ui/portfolio/cloc_vol_Two/cloc_vol_Two_design_patterns.html");
+// Classes in Kotlin Body Content //
+async function loadPortfolioClocVolTwoBodyClassesInKotlin() {
+    await loadPortfolioBody("../../../ui/portfolio/cloc_vol_two/cloc_vol_two_classes_in_kotlin.html");
 }
 
-// Solid Body Content //
-async function loadPortfolioClocVolTwoBodySolid() {
-    await loadPortfolioBody("../../../ui/portfolio/cloc_vol_Two/cloc_vol_Two_solid.html");
-}
-
-// Dry & Kiss Body Content //
-async function loadPortfolioClocVolTwoBodyDryAndKiss() {
-    await loadPortfolioBody("../../../ui/portfolio/cloc_vol_Two/cloc_vol_Two_dry_and_kiss.html");
-}
-
-// Web Services Body Content //
-async function loadPortfolioClocVolTwoBodyWebServices() {
-    await loadPortfolioBody("../../../ui/portfolio/cloc_vol_Two/cloc_vol_Two_web_services.html");
-}
-
-// Android Components Body Content //
-async function loadPortfolioClocVolTwoBodyAndroidComponents() {
-    await loadPortfolioBody("../../../ui/portfolio/cloc_vol_Two/cloc_vol_Two_android_components.html");
+// Kotlin in Android Body Content //
+async function loadPortfolioClocVolTwoBodyKotlinInAndroid() {
+    await loadPortfolioBody("../../../ui/portfolio/cloc_vol_two/cloc_vol_two_kotlin_in_android.html");
 }

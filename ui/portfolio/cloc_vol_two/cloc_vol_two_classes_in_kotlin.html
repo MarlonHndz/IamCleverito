@@ -1,0 +1,211 @@
+<div class="portfolio_list_section" id="portfolio_list_section">
+
+    <ul class="portfolio_list">
+
+        <li class="list_item">
+            <a href="#" class="list_title title_level_one">Herencia en Kotlin (open classes)</a>
+        </li>
+        <li class="list_item">
+            <a href="#data_class" class="list_title title_level_one">Data class</a>
+        </li>
+        <li class="list_item">
+            <a href="#extension_functions" class="list_title title_level_one">Funciones de extensión</a>
+        </li>
+        <li class="list_item">
+            <a href="#extension_properties" class="list_title title_level_one">Propiedades de extensión</a>
+        </li>
+        <li class="list_item">
+            <a href="#nullable_receivers" class="list_title title_level_one">Nullable receivers</a>
+        </li>
+        <li class="list_item">
+            <a href="#scope_functions" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Scope Functions</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#scope_characteristics" class="list_title title_level_two">Características principales</a>
+                </li>
+                <li class="list_item">
+                    <a href="#scope_uses" class="list_title title_level_two">Uso principal</a>
+                </li>
+                <li class="list_item">
+                    <a href="#scope_return" class="list_title title_level_two">Valores de retorno</a>
+                </li>
+                <li class="list_item">
+                    <a href="#scope_uses_for_each" class="list_title title_level_two">Cuándo usar cada scope
+                        function</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="portfolio_content_section">
+    <!--Here goes the TEXT CONTENT-->
+
+    <div class="portfolio_text_section">
+
+        <h1>Clases en Kotlin</h1>
+        <br>
+        <p> En kotlin existen diferentes tipos de clases, así como algunas diferencias en cuanto a herencia respecto a
+            Java. Conceptos que veremos a continuación.</p>
+
+
+        <h2>Herencia en Kotlin (open classes)</h2>
+        <p>
+            En Kotlin, <strong>de forma predeterminada, las clases no pueden ser heredadas</strong> o padres (tener
+            subclases). De manera similar, las propiedades y las variables de <strong>una clase padre no pueden ser
+                sobreescritas</strong> o anuladas (overridden) por las subclases (aunque se puede acceder a ellas).
+            <br><br>
+            Una clase debe ser marcada como <strong>open</strong> para <strong>permitirle ser</strong> padre o
+            <strong>heredada</strong> (tener subclases). De igual manera, las propiedades y las variables deben marcarse
+            como open para poder ser sobreescritas (override) en las subclases.
+            <br><br>
+            La palabra clave <strong>open</strong> es requerida para evitar filtrar accidentalmente detalles de
+            implementación como parte de la interfaz de la clase.
+        </p>
+
+
+        <h2 id="data_class">Data class</h2>
+        <p>
+            En Kotlin, una data class es una clase diseñada específicamente para contener datos. Se utiliza cuando el
+            propósito principal de la clase es almacenar información y no define un comportamiento adicional
+            significativo. <br><br> Simplifican el manejo de datos al proporcionar automáticamente implementaciones de
+            métodos comunes como <strong>toString(), equals(), hashCode()</strong> y <strong>copy()</strong>. Esto
+            permite a los desarrolladores escribir menos código repetitivo y enfocarse en la lógica principal.
+            <br><br> Además, una data class <strong>no puede ser abstract, open, sealed</strong> o
+            <strong>inner</strong>.
+        </p>
+
+
+        <h2 id="object_class">Object class</h2>
+        <p>
+            En Kotlin, una object class (o simplemente un object) es una clase declarada como un único objeto. Este
+            patrón se utiliza para crear <strong>singletons</strong>, es decir, clases que tienen una única instancia en
+            todo el ciclo de vida de la aplicación. Las object classes son especialmente útiles cuando se necesita un
+            objeto único para gestionar estados, constantes, utilidades, o cuando se requiere implementar
+            comportamientos específicos como companion objects.
+        </p>
+        <h3 id="object_singleton">Object como singleton:
+            <p>Al declarar una clase como object, automáticamente se crea su instancia única en tiempo de ejecución.No
+                necesitas crear una instancia manualmente ni preocuparte por sincronización, ya que Kotlin garantiza que
+                solo habrá una instancia.
+                <br> Además, un object puede heredar de una clase o implementar interfaces, lo que permite que ese
+                object tenga funcionalidad adicional. Sin embargo, no es posible heredar de un singleton.
+            </p>
+        </h3>
+        <div class="code_snippet">
+            <p>
+                object Singleton { }
+            </p>
+        </div>
+        <h3 id="object_anonymous">Object como clase anónima:
+            <p>Útiles para instancias rápidas que implementan interfaces o clases abstractas. No tienen un nombre y
+                suelen usarse en bloques locales
+            </p>
+        </h3>
+        <div class="code_snippet">
+            <p>
+                interface ClickListener { <br>
+                &emsp;fun onClick() <br>
+                }
+            </p>
+        </div>
+        <br>
+        <div class="code_snippet">
+            <p>
+                val buttonClickListener = object : ClickListener { <br>
+                &emsp;override fun onClick() { <br>
+                &emsp;&emsp;println("clicked") <br>
+                &emsp; } <br>
+                }
+            </p>
+        </div>
+        <h3 id="object_companion">Companion object:
+            <p>
+                Toda clase puede tener un companion object, que es un objeto que es común a todas las instancias de esa
+                clase. Lo cual vendría a ser similar a los campos estáticos en Java. Al estar asociados a una clase,
+                funcionan como un espacio compartido para métodos y propiedades estáticas. Puedes nombrarlos si es
+                necesario.
+            </p>
+        </h3>
+        <div class="code_snippet">
+            <p>
+                class User(val name: String) { <br>
+                &emsp;companion object Factory { <br>
+                &emsp;&emsp;fun createGuest() = User("Guest") <br>
+                &emsp;} <br>
+                }
+            </p>
+        </div>
+        <h3 id="object_companion_vs_object">Diferencia entre companion object y object:
+            <p>
+                La diferencia básica entre los companion object y los object regulares es que:
+                <br><br>
+                <strong>> </strong>Los <strong>companion object</strong> se inicializan desde el constructor estático de
+                la clase contenedora, es decir, se
+                crean cuando se crea el objeto.
+                <br><br>
+                <strong>> </strong>Los <strong>object</strong> normales se inicializan de manera lazy en el primer
+                acceso a ese objeto; es decir, cuando se
+                utilizan por primera vez.
+            </p>
+        </h3>
+
+
+        <h2 id="enum_class">Enum class</h2>
+        <p>
+            Un enum se utiliza para representar un conjunto fijo y definido de valores
+            constantes únicos. Es ideal para casos en los que tienes opciones predefinidas, como estados o categorías, y
+            todos los valores posibles son conocidos en tiempo de compilación.
+            <br><br>
+            <strong>> </strong>Todos los valores de un enum están predefinidos y no pueden ser modificados en tiempo de
+            ejecución.
+            <br><br>
+            <strong>> </strong>Se declaran como instancias estáticas únicas dentro de la clase.
+            <br><br>
+            <strong>> </strong>Cada valor de un enum puede tener propiedades y métodos personalizados.
+        </p>
+
+
+        <h2 id="sealed_class">Sealed class</h2>
+        <p>
+            Una sealed class se utiliza para <strong>representar una jerarquía de tipos restringida</strong>, en la que
+            todas las subclases están controladas y definidas dentro del mismo módulo y paquete (Hasta Kotlin 1.5.0
+            debía ser dentro del mismo archivo). Esto permite un manejo exhaustivo y seguro de los casos en tiempo de
+            compilación, especialmente cuando se usa con expresiones when.
+            <br><br>
+            <strong>La diferencia radica</strong> en que en los enumerados sólo tenemos un único objeto por tipo,
+            mientras que en las sealed classes podemos tener varios objetos de la misma clase, permitiendo así que
+            podamos <strong>almacenar estados</strong>.
+            <br><br>
+            <strong>> </strong>Cada subclase puede tener diferentes propiedades y métodos.
+            <br><br>
+            <strong>> </strong>Las subclases pueden ser objetos (object), clases, o data classes.
+        </p>
+
+
+        <h2 id="interface_delegation">Interface Delegation</h2>
+        <p>
+            La delegación de interfaces en Kotlin es una característica que permite a una clase delegar <strong>la
+                implementación de una o más interfaces a un objeto (object)</strong> que implementa esas interfaces.
+            <br>Esto <strong>simplifica la composición</strong> y evita la necesidad de escribir código repetitivo,
+            permitiendo reutilizar la funcionalidad de otras clases <strong>sin necesidad de herencia</strong>.
+            <br><br>
+            <strong>> </strong>Puedes reutilizar la funcionalidad de un objeto sin heredar de él.
+            <br><br>
+            <strong>> </strong>Evita las restricciones de la herencia única.
+            <br><br>
+            <strong>> </strong>Permite que una clase delegue diferentes interfaces a diferentes objetos.
+            <br><br>
+            <strong>> </strong>No necesitas implementar métodos manualmente si otro objeto ya lo hace.
+        </p>
+
+    </div>
+</div>
+
+<div class="portfolio_volume_logo">
+    <div class="reading_card">
+        <img class="" src="../../../img/book_covers/CLOC_Vol_two_book_cover.png" alt="">
+    </div>
+</div>
