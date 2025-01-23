@@ -30,6 +30,9 @@ async function loadSelectedTabContent(selectedLabel) {
         } else if (inputValue === 'classes_in_kotlin') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'classes_in_kotlin'
             loadPortfolioClocVolTwoBodyClassesInKotlin();
+        } else if (inputValue === 'kotlin_coroutines') {
+            // Lógica para cargar un archivo HTML cuando el valor del input es 'kotlin_coroutines'
+            loadPortfolioClocVolTwoBodyKotlinCoroutines();
         } else if (inputValue === 'kotlin_in_android') {
             // Lógica para cargar un archivo HTML cuando el valor del input es 'kotlin_in_android'
             loadPortfolioClocVolTwoBodyKotlinInAndroid();
@@ -69,6 +72,11 @@ async function loadPortfolioClocVolTwoBodyAdvanceFunctions() {
 // Classes in Kotlin Body Content //
 async function loadPortfolioClocVolTwoBodyClassesInKotlin() {
     await loadPortfolioBody("../../../ui/portfolio/cloc_vol_two/cloc_vol_two_classes_in_kotlin.html");
+}
+
+// Kotlin coroutines Body Content //
+async function loadPortfolioClocVolTwoBodyKotlinCoroutines() {
+    await loadPortfolioBody("../../../ui/portfolio/cloc_vol_two/cloc_vol_two_kotlin_coroutines.html");
 }
 
 // Kotlin in Android Body Content //

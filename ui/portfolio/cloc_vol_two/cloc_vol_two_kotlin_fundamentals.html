@@ -25,6 +25,12 @@
             </ul>
         </li>
         <li class="list_item">
+            <a href="#lateinit" class="list_title title_level_one">lateinit</a>
+        </li>
+        <li class="list_item">
+            <a href="#lazy" class="list_title title_level_one">lazy</a>
+        </li>
+        <li class="list_item">
             <a href="#strings" class="list_title title_level_one">Strings</a>
         </li>
         <li class="list_item ">
@@ -69,8 +75,9 @@
 
         <h1>Fundamentos de Kotlin</h1>
         <br>
-        <p>En esta primera sección se van a abordar las bases del lenguaje basándonos en el Bootcamp de Google,
-            así como la documentación oficial de Kotlin. Además, destacar una herramienta que te podrá ser de utilidad
+        <p>En este volumen 2 de CLOC, encontrarás los conceptos necesarios para ser un cleverito en Kotlin. No obstante,
+            he optado por ampliar algunas secciones, ya que al tratarse de conceptos más extensos, era conveniente
+            ofrecer una definición más detallada. Además, destacar una herramienta que te podrá ser de utilidad
             como lo es el
             <a href="https://play.kotlinlang.org/" style="color: blue;">compilador web de Kotlin</a>
             .</p>
@@ -118,6 +125,39 @@
         </h3>
 
 
+        <h2 id="lateinit">lateinit</h2>
+        <p>
+            Palabra clave utilizada para declarar propiedades (variables) que se inicializarán más tarde, pero que
+            <strong>no pueden ser nulas</strong>. Es aplicable <strong>solo para</strong> propiedades
+            <strong>var</strong> y para <strong>tipos
+                no primitivos</strong>.
+            <br><br>
+            Debes <strong>inicializar</strong> estas propiedades <strong>manualmente</strong> antes de usarlas, de lo
+            contrario se lanza una excepción
+            (<strong><em>UninitializedPropertyAccessException</em></strong>) si intentas acceder a ellas antes de la
+            inicialización.
+            <br><br>
+            Se usa cuando sabes que la variable se inicializará antes de que se acceda, pero no puedes inicializarla en
+            el momento de la declaración (por ejemplo, en onCreate de Android para variables que dependen de un
+            contexto).
+        </p>
+
+
+        <h2 id="lazy">lazy</h2>
+        <p>
+            Es una delegación que se utiliza para inicializar una propiedad de forma perezosa (en su primer acceso). Es
+            aplicable únicamente a propiedades <strong>val</strong> (inmutables), y estas <strong>pueden o no ser
+                nulas</strong>.
+            <br><br>
+            Se usa para <strong>inicializar</strong> recursos costosos o diferidos <strong>de forma
+                automática</strong>, como cargar un archivo, establecer conexiones o realizar cálculos pesados. La
+            inicialización ocurre solo <strong>la primera vez que se accede a la propiedad</strong>.
+            <br><br>
+            Es ideal para situaciones en las que no necesitas inicializar un valor inmediatamente, sino solo cuando es
+            realmente necesario.
+        </p>
+
+
         <h2 id="strings">Strings</h2>
         <p>Los Strings en Kotlin funcionan de manera muy similar a las cadenas en cualquier otro lenguaje de
             programación
@@ -128,7 +168,8 @@
 
             <br><br>Además de esto, también es posible insertar una expresión dentro de un String
             usando <strong>${kotlin expression}</strong> con la
-            expresión dentro de las llaves ({}).</p>
+            expresión dentro de las llaves ({}).
+        </p>
 
 
         <h2 id="nullability">Nulabilidad</h2>
@@ -168,7 +209,7 @@
             la 'longitud de a' (<strong>a?.length</strong>) si 'a' no es nula o <strong>-1</strong> en caso de que 'a
             sea nulo'. </p>
 
-        
+
         <h2 id="double_bang">Double Bang (!!)</h2>
         <p>El operador de aserción no nula o <strong>!!</strong> (double-bang) nos permite mantener la posibilidad de
             obtener un
@@ -215,7 +256,7 @@
 
         <h3 id="loops">Loops:
             <p>Para la creación de loops podemos utilizar las siguientes declaraciones:</p>
-            <p class="indentado"><strong>> </strong>Usar <strong>for</strong> para en los elementos de un array o
+            <p class="indentado"><strong>> </strong>Usar <strong>for</strong> para iterar en los elementos de un array o
                 retroceder usando <strong>downTo</strong> así como el uso de otros operadores.</p>
             <p class="indentado"><strong>> </strong>Usar <strong>while</strong> para repetir la siguiente línea una vez
                 cerrada la condición.</p>

@@ -1,0 +1,348 @@
+<div class="portfolio_list_section" id="portfolio_list_section">
+
+    <ul class="portfolio_list">
+
+        <li class="list_item">
+            <a href="#" class="list_title title_level_one">Importancia de las corrutinas y el manejo asíncrono</a>
+        </li>
+        <li class="list_item">
+            <a href="#coroutine_what_is" class="list_title title_level_one">¿Qué es una corrutina?</a>
+        </li>
+        <li class="list_item">
+            <a href="#builders" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Builders de corrutinas</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#builder_launch" class="list_title title_level_two">launch</a>
+                </li>
+                <li class="list_item">
+                    <a href="#builder_async" class="list_title title_level_two">async</a>
+                </li>
+                <li class="list_item">
+                    <a href="#builder_run_blocking" class="list_title title_level_two">runBlocking</a>
+                </li>
+                <li class="list_item">
+                    <a href="#builder_produce" class="list_title title_level_two">produce</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#scopes" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Scopes de corrutinas</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#scope_global" class="list_title title_level_two">GlobalScope</a>
+                </li>
+                <li class="list_item">
+                    <a href="#scope_coroutine" class="list_title title_level_two">CoroutineScope</a>
+                </li>
+                <li class="list_item">
+                    <a href="#scope_android" class="list_title title_level_two">Scopes en Android</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#dispatcher" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Dispatchers de corrutinas</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#dispatcher_main" class="list_title title_level_two">Dispatchers.Main</a>
+                </li>
+                <li class="list_item">
+                    <a href="#dispatcher_io" class="list_title title_level_two">Dispatchers.IO</a>
+                </li>
+                <li class="list_item">
+                    <a href="#dispatcher_default" class="list_title title_level_two">Dispatchers.Default</a>
+                </li>
+                <li class="list_item">
+                    <a href="#dispatcher_unconfined" class="list_title title_level_two">Dispatchers.Unconfined</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#suspend_func" class="list_title title_level_one">Funciones suspendidas</a>
+        </li>
+        <li class="list_item">
+            <a href="#concurrence_parallelism" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Diferencia entre concurrencia y paralelismo</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#concurrence_def" class="list_title title_level_two">Concurrencia</a>
+                </li>
+                <li class="list_item">
+                    <a href="#parallelism_def" class="list_title title_level_two">Paralelismo</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="portfolio_content_section">
+    <!--Here goes the TEXT CONTENT-->
+
+    <div class="portfolio_text_section">
+
+        <h1>Corrutinas de Kotlin</h1>
+        <br>
+        <p>
+            Las corrutinas son una de las características más destacadas de Kotlin, diseñadas para simplificar el manejo
+            de operaciones asíncronas y concurrentes de una manera más legible y eficiente. Esta sección cubrirá los
+            conceptos fundamentales de las corrutinas, desde su implementación básica hasta su uso en flujos de datos
+            reactivos con <strong>Flow</strong>.
+        </p>
+
+
+        <h2>Importancia de las corrutinas y el manejo asíncrono</h2>
+        <p>
+            El manejo asincrónico es esencial en aplicaciones modernas para garantizar fluidez y evitar bloqueos durante
+            operaciones intensivas como el acceso a APIs o bases de datos. Métodos tradicionales como callbacks o hilos
+            suelen generar código complejo y difícil de mantener.
+            <br><br>
+            Las corrutinas de Kotlin simplifican este proceso al ofrecer una concurrencia estructurada, permitiendo
+            escribir código asíncrono de forma secuencial y clara, eliminando la complejidad de los hilos tradicionales
+            y mejorando el control del ciclo de vida de las tareas, optimizando el rendimiento y la legibilidad del
+            código.
+        </p>
+
+
+        <h2 id="coroutine_what_is">¿Qué es una corrutina?</h2>
+        <p>
+            <em>Es la manera que tiene kotlin para manejar los hilos o datos asíncronos de manera secuencial.</em>
+            <br><br>
+            Una corrutina es una construcción ligera que permite realizar <strong>operaciones asincrónicas de manera
+                secuencial</strong>, evitando el bloqueo de los hilos subyacentes. Aunque pueden parecer similares a los
+            <em>hilos</em>, las corrutinas son mucho más eficientes, ya que comparten un mismo hilo y se suspenden de
+            manera no
+            bloqueante mientras esperan que una tarea se complete. Esto las hace ideales para operaciones como
+            solicitudes de red, acceso a bases de datos o cualquier tarea que implique una espera prolongada.
+            <br><br>
+            Las corrutinas de Kotlin se enfocan en la <strong>concurrencia estructurada</strong> (concepto que
+            contrastaremos más adelante con el de <em>paralelismo</em>), lo que garantiza un manejo seguro y
+            controlado de las tareas concurrentes.
+        </p>
+
+
+        <h2 id="builders">Builders de corrutinas</h2>
+        <p>
+            Kotlin proporciona constructores (builders) para iniciar corrutinas. Los más comunes son:
+        </p>
+
+        <h3 id="builder_launch">launch:
+            <p>
+                Inicia una corrutina que no devuelve un valor. Es útil para realizar tareas que no requieren un
+                resultado, como actualizaciones en la interfaz de usuario.
+            </p>
+        </h3>
+
+        <h3 id="builder_async">async:
+            <p>
+                Inicia una corrutina que devuelve un resultado mediante un objeto <strong>Deferred</strong>. Puedes usar
+                el método <strong>await()</strong> para obtener el valor resultante.
+            </p>
+        </h3>
+
+        <p>
+            Ambos builders se suspenden automáticamente cuando el hilo principal necesita continuar con otras tareas.
+        </p>
+
+        <h3 id="builder_run_blocking">runBlocking:
+            <p>
+                Inicia una corrutina <strong>bloqueando el hilo actual</strong> hasta que la corrutina termina su
+                ejecución, lo que va en contra de lo que se quiere hacer con una corrutina. Sin embargo, es muy útil
+                para implementar test sobre tareas suspendidas.
+                <br>
+                En un test, al envolver tu tarea suspendida con <em>runBlocking</em> podrás realizar el <em>assert</em>
+                sobre el resultado de dicha tarea y evitar que el test finalice antes de que finalice la tarea en
+                segundo plano.
+            </p>
+        </h3>
+
+        <h3 id="builder_produce">produce:
+            <p>
+                No es muy común verlo en aplicaciones Android. Es un builder especializado en producir flujos de datos
+                en forma de un <strong>Channel</strong>. Útil cuando necesitas enviar datos a consumidores en un canal
+                de comunicación, es decir, es un builder con retorno.
+                <br>
+            </p>
+        </h3>
+
+
+        <h2 id="scopes">Scopes de corrutinas</h2>
+        <p>
+            El alcance (scope) define el ciclo de vida de una corrutina y asegura que las tareas se cancelen
+            correctamente cuando ya no son necesarias. Kotlin proporciona varios scopes para manejar corrutinas:
+        </p>
+
+        <h3 id="scope_global">GlobalScope:
+            <p>
+                Permite iniciar corrutinas con un alcance global. Aunque es útil para pruebas rápidas, no se recomienda
+                usarlo en la mayoría de los casos, ya que no está vinculado a ningún ciclo de vida y puede generar fugas
+                de memoria (memory leaks).
+            </p>
+        </h3>
+
+        <h3 id="scope_coroutine">CoroutineScope:
+            <p>
+                Permite crear un alcance controlado y seguro, vinculado al ciclo de vida de una clase o componente. Por
+                ejemplo, puedes crear un scope personalizado para manejar tareas de una clase.
+            </p>
+        </h3>
+
+        <h3 id="scope_android">Scopes en Android:
+            <p>
+                En aplicaciones Android, es común usar scopes específicos como <strong>viewModelScope</strong> o
+                <strong>lifecycleScope</strong>, que están vinculados al ciclo de vida de los componentes, evitando
+                tareas innecesarias o fugas de memoria.
+            </p>
+        </h3>
+
+
+        <h2 id="dispatcher">Dispatchers de corrutinas</h2>
+        <p>
+            Determinan el hilo o el grupo de hilos en los que se ejecutará una corrutina. Los dispatchers permiten
+            optimizar el rendimiento al ejecutar tareas en el contexto más adecuado, ya sea en un hilo dedicado para
+            operaciones intensivas en CPU, un hilo de entrada/salida, o el hilo principal para actualizaciones de la
+            interfaz de usuario.
+            <br><br>
+            Kotlin ofrece varios dispatchers predefinidos, cada uno diseñado para un caso de uso específico:
+        </p>
+
+        <h3 id="dispatcher_main">Dispatchers.Main:
+            <p>
+                <strong>> Propósito</strong>:
+                Ejecuta la corrutina en el hilo principal, que es el encargado de manejar la interfaz de usuario.
+                <br><br>
+                <strong>> Uso común</strong>:
+                Actualizar elementos visuales de la aplicación Android.
+            </p>
+        </h3>
+
+        <h3 id="dispatcher_io">Dispatchers.IO:
+            <p>
+                <strong>> Propósito</strong>:
+                Diseñado para tareas de entrada/salida intensivas (como acceder a archivos, bases de datos o realizar
+                solicitudes de red).
+                <br><br>
+                <strong>> Uso común</strong>:
+                Operaciones que requieren esperar respuestas externas y no son intensivas en CPU.
+            </p>
+        </h3>
+
+        <h3 id="dispatcher_default">Dispatchers.Default:
+            <p>
+                <strong>> Propósito</strong>:
+                Ejecuta corrutinas en un grupo de hilos optimizado para operaciones intensivas en CPU.
+                <br><br>
+                <strong>> Uso común</strong>:
+                Tareas que realizan cálculos complejos, como procesamiento de datos o algoritmos.
+            </p>
+        </h3>
+
+        <h3 id="dispatcher_unconfined">Dispatchers.Unconfined:
+            <p>
+                <strong>> Propósito</strong>:
+                Este dispatcher no confina la corrutina a ningún hilo en particular. Comienza ejecutándose en el hilo
+                actual y, si se encuentra una suspensión, se reanuda en el hilo que esté disponible.
+                <br><br>
+                <strong>> Uso común</strong>:
+                Situaciones especiales donde no se necesita confinar la corrutina. No recomendado para la mayoría de los
+                casos, ya que puede provocar comportamientos impredecibles en entornos con múltiples hilos.
+            </p>
+        </h3>
+
+        <p>
+            En Kotlin, es posible <strong>cambiar de dispatcher dentro de una corrutina</strong> utilizando
+            <strong>withContext</strong>. Esto es útil para realizar tareas en diferentes contextos dentro de una misma
+            corrutina.
+        </p>
+        <br>
+        <div class="code_snippet">
+            <p>
+                GlobalScope.launch(Dispatchers.Main) { <br>
+                &emsp;println("Ejecutando en el hilo principal") <br>
+
+                &emsp;withContext(Dispatchers.IO) { <br>
+                &emsp;&emsp;println("Cambiando a I/O para operación intensiva") <br>
+                &emsp;&emsp;delay(1000) <br>
+                &emsp;} <br>
+
+                &emsp;println("De vuelta al hilo principal") <br>
+                }
+            </p>
+        </div>
+
+        <h2 id="suspend_func">Funciones suspendidas</h2>
+        <p>
+            <em>Es una función con la capacidad de bloquear o suspender la ejecución de una corrutina.</em>
+            <br><br>
+            Una función de suspensión es una función que utiliza la palabra clave <strong>suspend</strong> y que puede
+            ser <strong><em>llamada desde una corrutina o desde otra función de suspensión</em></strong>. Una función de
+            suspensión puede ser
+            pausada y reanudada sin bloquear el hilo subyacente, este enfoque permite <strong>escribir código asíncrono
+                de forma
+                secuencial</strong> y mucho más legible.
+            <br><br>
+            Cuando una función suspend se encuentra con una operación que puede tomar tiempo (por ejemplo, delay o una
+            llamada a una API), la <strong>ejecución se pausa de manera no bloqueante</strong>, permitiendo que otros
+            procesos sigan ejecutándose en el mismo hilo.
+        </p>
+
+        <h2 id="concurrence_parallelism">Diferencia entre concurrencia y paralelismo</h2>
+        <p>
+            Se mencionó anteriormente que las corrutinas de Kotlin se enfocan en la concurrencia estructurada.Es
+            importante distinguir entre concurrencia y paralelismo. La concurrencia implica manejar múltiples tareas al
+            mismo tiempo, alternando entre ellas, mientras que el paralelismo consiste en ejecutar varias tareas
+            simultáneamente en diferentes núcleos. veamos estos dos conceptos a profundidad:
+        </p>
+
+        <h3 id="concurrence_def">Concurrencia:
+            <p>
+                La concurrencia implica gestionar múltiples tareas que progresan al mismo tiempo, pero no necesariamente
+                se ejecutan simultáneamente. En términos prácticos, esto significa que el sistema alterna entre
+                diferentes tareas, dándoles pequeñas porciones de tiempo de ejecución, una tras otra. Esto es útil
+                cuando tienes muchas tareas que deben realizarse, pero no todas necesitan ejecutarse al mismo tiempo.
+                <br><br>
+                Ejemplo:
+                <br>
+                <em>Imagina que estás cocinando y lavando platos al mismo tiempo. Mientras se calienta el agua para
+                    hervir, aprovechas ese tiempo para lavar algunos platos. Estás trabajando en ambas tareas
+                    alternadamente, pero no haces ambas simultáneamente.</em>
+                <br><br>
+                En el contexto de Kotlin, las corrutinas son una herramienta que facilita la concurrencia, ya que te
+                permiten suspender una tarea (como esperar datos de una red) y reanudarla más tarde sin bloquear el hilo
+                subyacente. Esto optimiza el uso del sistema sin consumir recursos adicionales.
+            </p>
+        </h3>
+
+        <h3 id="parallelism_def">Paralelismo:
+            <p>
+                El paralelismo, en cambio, implica ejecutar múltiples tareas simultáneamente en diferentes núcleos de un
+                procesador. Esto ocurre cuando el sistema distribuye tareas a varios núcleos físicos o virtuales,
+                logrando que se ejecuten literalmente al mismo tiempo. El paralelismo es ideal para operaciones
+                intensivas en CPU o para maximizar el rendimiento en sistemas con múltiples núcleos.
+                <br><br>
+                Ejemplo:
+                <br>
+                <em>Imagina que tienes dos hornos y estás cocinando dos platos diferentes. Ambos platos se están
+                    cocinando al mismo tiempo en sus respectivos hornos. Aquí, las dos tareas no alternan, sino que
+                    progresan simultáneamente.</em>
+                <br><br>
+                En Kotlin, puedes lograr paralelismo utilizando corrutinas en múltiples hilos. Esto implica asignar
+                tareas a diferentes <em>Dispatchers</em> que aprovechan los recursos de hardware disponibles, como
+                <em>Dispatchers.Default</em> o configuraciones personalizadas.
+            </p>
+        </h3>
+
+
+    </div>
+</div>
+
+<div class="portfolio_volume_logo">
+    <div class="reading_card">
+        <img class="" src="../../../img/book_covers/CLOC_Vol_two_book_cover.png" alt="">
+    </div>
+</div>

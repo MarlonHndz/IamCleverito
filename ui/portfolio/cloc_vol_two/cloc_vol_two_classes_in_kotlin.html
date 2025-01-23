@@ -6,6 +6,9 @@
             <a href="#" class="list_title title_level_one">Herencia en Kotlin (open classes)</a>
         </li>
         <li class="list_item">
+            <a href="#inner_class" class="list_title title_level_one">Inner class</a>
+        </li>
+        <li class="list_item">
             <a href="#data_class" class="list_title title_level_one">Data class</a>
         </li>
         <li class="list_item">
@@ -23,7 +26,8 @@
                     <a href="#object_companion" class="list_title title_level_two">Companion object</a>
                 </li>
                 <li class="list_item">
-                    <a href="#object_companion_vs_object" class="list_title title_level_two">Diferencia entre companion object
+                    <a href="#object_companion_vs_object" class="list_title title_level_two">Diferencia entre companion
+                        object
                         y object</a>
                 </li>
             </ul>
@@ -63,6 +67,34 @@
             <br><br>
             La palabra clave <strong>open</strong> es requerida para evitar filtrar accidentalmente detalles de
             implementación como parte de la interfaz de la clase.
+        </p>
+
+
+        <h2 id="inner_class">Inner class</h2>
+        <p>
+            Una inner class es una clase anidada que mantiene una referencia implícita al objeto de la clase externa que
+            la contiene.
+            Esto permite que una inner class acceda a los miembros (propiedades y funciones) de la clase externa
+            directamente, incluso si son privados.
+            <br><br>
+            Por defecto, todas las clases anidadas en Kotlin son estáticas (es decir, no tienen acceso al contexto de la
+            clase externa). Sin embargo, <strong>al usar</strong> la palabra clave <strong>inner</strong>, puedes hacer
+            que <strong>una clase anidada no sea estática y mantenga la referencia al objeto de la clase
+                externa</strong>,
+            permitiendole acceder a las propiedades y métodos de ésta última.
+            <br><br>
+            Un caso de uso común es cuando una clase interna necesita múltiples propiedades de la clase externa. Es más
+            limpio usar una inner class que pasar todas esas propiedades como argumentos.
+            <br><br>
+            Ten en cuenta que:
+            <br><br>
+            <strong>> Inner puede causar fugas de memoria (memory leaks)</strong>: Dado que la clase interna mantiene
+            una referencia a la instancia de la clase externa, si la clase interna vive más tiempo que la externa, puede
+            provocar fugas de memoria. Esto es especialmente importante en Android.
+            <br><br>
+            <strong>> Para evitar fugas de memoria</strong>: Necesitas hacer uso de clases anidadas (nested class) o
+            eliminar las referencias manualmente si no es necesario que la clase interna acceda a los datos de la
+            externa.
         </p>
 
 
