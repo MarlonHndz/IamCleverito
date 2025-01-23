@@ -45,7 +45,8 @@
         </li>
         <li class="list_item">
             <a href="#dispatcher" class="list_title title_level_one list_title_father">
-                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Dispatchers de corrutinas</a>
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Dispatchers de
+                corrutinas</a>
 
             <ul class="list_child">
                 <li class="list_item">
@@ -67,7 +68,8 @@
         </li>
         <li class="list_item">
             <a href="#concurrence_parallelism" class="list_title title_level_one list_title_father">
-                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Diferencia entre concurrencia y paralelismo</a>
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Diferencia entre
+                concurrencia y paralelismo</a>
 
             <ul class="list_child">
                 <li class="list_item">
@@ -77,6 +79,9 @@
                     <a href="#parallelism_def" class="list_title title_level_two">Paralelismo</a>
                 </li>
             </ul>
+        </li>
+        <li class="list_item">
+            <a href="#flow" class="list_title title_level_one">Flow y corrutinas</a>
         </li>
     </ul>
 </div>
@@ -336,6 +341,23 @@
                 <em>Dispatchers.Default</em> o configuraciones personalizadas.
             </p>
         </h3>
+
+        <h2 id="flow">Flow y corrutinas</h2>
+        <p>
+            <strong>Flow como librería</strong> es una herramienta poderosa para manejar datos reactivos de manera
+            asíncrona, basada en la programación funcional. A diferencia de los tradicionales callbacks o
+            notificaciones, Flow permite manejar flujos de datos que pueden ser emitidos de manera secuencial y en
+            tiempo real, sin bloquear el hilo principal de ejecución.
+            <br><br>
+            <strong>Un Flow (como flujo de datos)</strong> es una secuencia de valores asíncronos que se emiten a lo
+            largo del tiempo. Se puede considerar como una versión asíncrona de una colección (como una lista) que puede
+            contener múltiples valores y que se produce a lo largo del tiempo, permitiendo a los consumidores reaccionar
+            a esos valores conforme son emitidos.
+            <br><br>
+            Flow es especialmente útil cuando necesitamos manejar grandes volúmenes de datos o flujos que pueden no
+            estar disponibles inmediatamente. Se puede combinar con operadores como <strong>map(), filter(), collect(),
+                onEach()</strong>, entre otros, para manipular y reaccionar a los valores emitidos.
+        </p>
 
 
     </div>
