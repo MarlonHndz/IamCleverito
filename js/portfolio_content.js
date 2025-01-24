@@ -1,19 +1,17 @@
 // -+-+-+-+-+- Portfolio General Functions -+-+-+-+-+-//
 // Header //
-function loadPortfolioHeader(url) {
+function loadHeader(url) {
     return new Promise((resolve, reject) => {
         fetch(url)
             .then(response => response.text())
             .then(data => {
                 document.querySelector("header").innerHTML += data;
                 resolve();
-                addListenerToHorizontalNavForBook();
             })
             .catch(error => console.log(error));
     });
 }
 
-// Header //
 function loadPortfolioHeader(url) {
     return new Promise((resolve, reject) => {
         fetch(url)

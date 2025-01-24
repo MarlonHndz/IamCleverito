@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
     loadPortfolioFooter();
 });
 
+// Cargar Header
+async function loadHeaderNav() {
+    await loadHeader("../../../ui/portfolio/cloc_vol_one/cloc_vol_one_nav_section.html");            
+}
+
 // Función para cargar el contenido según el tab seleccionado
 async function loadSelectedTabContent(selectedLabel) {
 
