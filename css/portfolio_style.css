@@ -19,7 +19,7 @@ body {
 /* -- HEADER -- */
 header {
     width: 100%;
-    height: 150px;
+    height: 140px;
     /* En caso de cambiar height, mover también en portfolio_list_section y portfolio_content_section*/
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@ header {
 }
 
 .vol_one_content_tabs {
-    height: 110px;
+    height: 67px;
     background: #1580A4;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #00D2B2, #1580A4, #1B5492, #1580A4);
@@ -91,7 +91,7 @@ header {
 }
 
 .vol_two_content_tabs {
-    height: 110px;
+    height: 67px;
     background: #a41585;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #E2455E, #C513E2, #943FF6, #7030A0);
@@ -122,7 +122,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 45px;
+    height: 35px; /* En caso de cambiar height, mover también en GLIDER */
     width: fit-content;
     padding: 0 20px;
     margin-left: 6px;
@@ -141,7 +141,7 @@ header {
 .glider {
     position: absolute;
     display: flex;
-    height: 45px;
+    height: 35px;
     background-color: #ffffff6c;
     box-shadow: 0 0 6px rgba(255, 255, 255, .5);
     z-index: 1;
@@ -252,7 +252,7 @@ header {
 }
 
 .portfolio_list_section {
-    margin-top: 150px;
+    margin-top: 140px;
     /* Mueve la posición del nav vertical*/
     position: fixed;
     overflow-y: auto;
@@ -266,7 +266,7 @@ header {
 }
 
 .portfolio_content_section {
-    margin-top: 150px;
+    margin-top: 140px;
     /* Mueve la posición del contenido*/
     flex: 1;
     overflow-y: auto;
