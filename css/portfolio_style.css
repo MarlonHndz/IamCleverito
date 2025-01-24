@@ -77,28 +77,27 @@ header {
 /* -- HEADER TABS-- */
 .book_content_tabs {
     margin-top: 75px;
+    height: 67px;
+    display: flex;
 }
 
-.vol_one_content_tabs {
-    height: 67px;
+.vol_one_color_bg {
     background: #1580A4;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #00D2B2, #1580A4, #1B5492, #1580A4);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #00D2B2, #1580A4, #1B5492, #1580A4);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    display: flex;
+    
 }
 
-.vol_two_content_tabs {
-    height: 67px;
+.vol_two_color_bg {
     background: #a41585;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #E2455E, #C513E2, #943FF6, #7030A0);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #E2455E, #C513E2, #943FF6, #7030A0);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    display: flex;
 }
 
 .content_tabs {
@@ -240,6 +239,28 @@ header {
     transform: rotate(225deg);
     transition-delay: 0s, calc(0s + 0.35s);
     width: 100%;
+}
+
+
+
+
+/* -- Other Books navigation -- */
+.next_book_navigation{
+    width: 80px;
+    height: 40px;
+    margin-top: 13px;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 0.8%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.next_book_navigation img{
+    width: 60px;
+    align-items: center;
 }
 
 
@@ -735,6 +756,10 @@ header {
 
     .content_tabs {
         margin-left: 45px;
+    }
+
+    .previous_book_navigation{
+        display: none;
     }
 
     /* -- Footer -- */
