@@ -256,6 +256,7 @@ header {
     position: fixed;
     right: 0.8%;
     border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
     cursor: pointer;
 }
 .next_book_navigation img{
