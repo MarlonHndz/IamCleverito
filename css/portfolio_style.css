@@ -107,6 +107,7 @@ header {
     position: relative;
     /* Necesario para poder mover el glider con el scroll */
     padding: 1rem;
+    margin-right: 90px;
 }
 
 .content_tabs * {
