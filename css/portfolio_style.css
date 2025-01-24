@@ -420,13 +420,13 @@ header {
 .code_snippet{
     width: fit-content;
     font-family: 'Roboto Mono';
-    background: #E4E4E4;
+    background: #00132E;
     border-radius: 5px;
     padding: 5px 15px 5px 15px;
     margin-left: 4em;
 }
 .code_snippet p{
-    color: #000;
+    color: #FFF;
  }
 
  .console_snippet{

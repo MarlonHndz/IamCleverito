@@ -3,40 +3,38 @@
     <ul class="portfolio_list">
 
         <li class="list_item">
-            <a href="#" class="list_title title_level_one">Eager & Lazy filters</a>
-        </li>
-        <li class="list_item">
-            <a href="#lambdas" class="list_title title_level_one">Lambdas y funciones de higher-order</a>
-        </li>
-        <li class="list_item">
-            <a href="#extension_functions" class="list_title title_level_one">Funciones de extensión</a>
-        </li>
-        <li class="list_item">
-            <a href="#extension_properties" class="list_title title_level_one">Propiedades de extensión</a>
-        </li>
-        <li class="list_item">
-            <a href="#nullable_receivers" class="list_title title_level_one">Nullable receivers</a>
-        </li>
-        <li class="list_item">
-            <a href="#scope_functions" class="list_title title_level_one list_title_father">
-                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Scope Functions</a>
+            <a href="#" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Compatibilidad con Java</a>
 
             <ul class="list_child">
                 <li class="list_item">
-                    <a href="#scope_characteristics" class="list_title title_level_two">Características principales</a>
-                </li>
-                <li class="list_item">
-                    <a href="#scope_uses" class="list_title title_level_two">Uso principal</a>
-                </li>
-                <li class="list_item">
-                    <a href="#scope_return" class="list_title title_level_two">Valores de retorno</a>
-                </li>
-                <li class="list_item">
-                    <a href="#scope_uses_for_each" class="list_title title_level_two">Cuándo usar cada scope
-                        function</a>
+                    <a href="#annotations" class="list_title title_level_two">Anotaciones @Jvm</a>
                 </li>
             </ul>
         </li>
+        <li class="list_item">
+            <a href="#view_binding" class="list_title title_level_one">ViewBinding</a>
+        </li>
+        <li class="list_item">
+            <a href="#data_binding" class="list_title title_level_one">DataBinding</a>
+        </li>
+        <li class="list_item">
+            <a href="#flow" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Flow</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#cold_flow" class="list_title title_level_two">Cold Flow</a>
+                </li>
+                <li class="list_item">
+                    <a href="#hot_flow" class="list_title title_level_two">Hot Flow</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#livedata" class="list_title title_level_one">LiveData</a>
+        </li>
+
     </ul>
 </div>
 
@@ -49,13 +47,304 @@
         <br>
         <p>
             Kotlin se ha convertido en el lenguaje preferido para el desarrollo de aplicaciones Android gracias a su
-            sintaxis concisa, moderna y expresiva. En esta sección, exploraremos desde conceptos básicos como el uso de
-            View Binding y Data Binding, hasta prácticas avanzadas como la implementación de arquitecturas recomendadas
-            como MVVM.
+            sintaxis concisa, moderna y expresiva. En esta sección, exploraremos conceptos esenciales que destacan
+            el uso de Kotlin en el desarrollo de aplicaciones Android.
         </p>
 
 
-    
+        <h2>Compatibilidad con Java</h2>
+        <p>
+            Kotlin está diseñado para ser 100% interoperable con Java, lo que significa que puedes usar ambas lenguas en
+            un mismo proyecto sin problemas. Esta compatibilidad facilita la adopción progresiva de Kotlin en proyectos
+            existentes escritos en Java.
+            <br><br>
+            Cuando trabajas <strong>en un proyecto Kotlin, puedes usar cualquier clase o método escrito en Java</strong>
+            como si fuera nativo de Kotlin. El compilador de Kotlin traduce automáticamente las estructuras de Java para
+            que sean compatibles con Kotlin.
+            <br><br>
+            Y como el código Kotlin se compila en bytecode compatible con la JVM, <strong>puedes llamar clases Kotlin
+                desde Java</strong> sin problemas. Sin embargo, hay algunos detalles a <strong>tener en cuenta</strong>:
+            <br><br>
+            <strong>> Funciones estáticas</strong>:
+            Kotlin no tiene funciones estáticas, pero puedes usar la anotación <em>@JvmStatic</em> para hacer que las
+            funciones de un objeto se comporten como estáticas en Java.
+            <br><br>
+            <strong>> Null Safety</strong>:
+            Kotlin maneja la nulabilidad de manera estricta. Al llamar funciones o acceder a propiedades desde Java,
+            estas son tratadas como de tipo anulable (<em>nullable</em>).
+            <br><br>
+            También destacar que en Android Studio o IntelliJ IDEA, puedes convertir automáticamente clases Java a
+            Kotlin haciento uso del convertidor automático de Java a Kotlin. Con esta compatibilidad, puedes integrar
+            Kotlin en cualquier proyecto existente o mezclarlo con Java para aprovechar lo mejor de ambos lenguajes.
+        </p>
+
+        <h3 id="annotations">Anotaciones @Jvm:
+            <p>
+                Kotlin proporciona varias anotaciones para mejorar la interoperabilidad con Java:
+                <br><br>
+                <strong>> @JvmOverloads</strong>:
+                Genera sobrecargas para funciones con parámetros predeterminados.
+                <br><br>
+                <strong>> @JvmField</strong>:
+                Expone propiedades como campos públicos en Java, evitando el uso de getters y setters.
+                <br><br>
+                <strong>> @Throws</strong>:
+                Indica las excepciones que una función puede lanzar en Java.
+            </p>
+        </h3>
+
+
+        <h2 id="view_binding">ViewBinding</h2>
+        <p>
+            <em>Permite acceder a las vistas de forma segura y sin necesidad de realizar castings
+                manuales.</em>
+            <br><br>
+            Es una característica de Android que permite generar clases de enlace (binding) seguras y tipadas para
+            acceder a las vistas definidas en los archivos <em>XML</em> de diseño. Esta funcionalidad elimina la
+            necesidad de usar métodos como <em>findViewById()</em> y reduce los errores relacionados con vistas nulas o
+            incorrectamente casteadas.
+            <br><br>
+            Por cada archivo XML de diseño, se genera una clase Binding con el nombre del archivo en formato
+            <em>PascalCase</em> seguido de la palabra Binding. Por ejemplo, para un archivo <em>activity_main.xml</em>,
+            se genera la clase <em>ActivityMainBinding</em>.
+            <br><br>
+            Como solo permite acceder a las vistas que están definidas en el archivo de diseño asociado, <strong>evita
+                errores en tiempo de ejecución</strong>, reduciendo significativamente los errores por referencias a
+            vistas inexistentes.
+        </p>
+
+
+        <h2 id="data_binding">DataBinding</h2>
+        <p>
+            <em>Permite asociar variables, expresiones o propiedades del modelo de datos directamente a las vistas en el
+                archivo XML.</em>
+            <br><br>
+            Es una funcionalidad más avanzada de Android que permite enlazar datos directamente al diseño XML de una
+            aplicación. A diferencia de ViewBinding, DataBinding permite <strong>establecer conexiones bidireccionales
+                entre el diseño y el código</strong>, lo que facilita el desarrollo de aplicaciones con patrones como
+            MVVM (Model-View-ViewModel).
+            <br><br>
+            Las actualizaciones en el modelo de datos se reflejan automáticamente en las vistas, y viceversa,
+            permitiendo entonces trabajar con <strong>lógica declarativa en el archivo XML</strong> mediante
+            expresiones.
+        </p>
+
+
+        <h2 id="flow">Flow</h2>
+        <p>
+            Flow es una API asíncrona y reactiva de Kotlin que pertenece a la biblioteca <em>kotlinx.coroutines</em>. Es
+            ideal para manejar flujos de datos que se emiten de manera secuencial y en tiempo real. Su principal
+            objetivo es proporcionar un mecanismo simple y eficiente para manejar datos dinámicos, como resultados de
+            consultas, eventos o cambios en el estado de la aplicación.
+            <br><br>
+            Sus principales características son:
+            <br><br>
+            <strong>> Manejo de datos secuenciales</strong>:
+            Flow emite una secuencia de valores a lo largo del tiempo, lo que lo hace ideal para operaciones como
+            recibir datos desde un servidor o procesar eventos continuos.
+            <br><br>
+            <strong>> Suspensión y asincronía</strong>:
+            Flow está diseñado para trabajar dentro del ecosistema de corutinas, lo que permite suspender la ejecución
+            sin bloquear el hilo.
+            <br><br>
+            <strong>> Operadores funcionales</strong>:
+            Flow incluye una variedad de operadores como <strong><em>map, filter, collect, flatMapConcat</em></strong>,
+            entre otros, para transformar y manipular flujos de datos.
+            <br><br>
+            <strong>> Cancelación automática</strong>:
+            Los flujos en Kotlin son cooperativos y respetan la cancelación, por lo que se detienen automáticamente
+            cuando ya no son necesarios.
+        </p>
+
+        <h3 id="cold_flow">Cold Flows:
+            <p>
+                Un cold flow (flujo frío) es un flujo que no produce datos hasta que alguien comienza a recolectarlos
+                (es decir, hasta que se llama al método <em>collect</em>). Cada recolector tiene (o activa) su propia
+                ejecución del flujo, como si fuera una instancia separada.
+                <br><br>
+                El ejemplo clásico es el uso de <em>flow { }</em> o <em>asFlow { }</em> para emitir datos.
+                <br><br>
+                Es ideal cuando los datos deben generarse independientemente para cada observador (por ejemplo, al
+                realizar solicitudes de red o leer archivos). O para cálculos bajo demanda.
+            </p>
+        </h3>
+        <br>
+        <div class="code_snippet">
+            <p>
+                fun createColdFlow(): Flow<Int> = flow { <br>
+                    &emsp;println("Produciendo datos...") <br>
+                    &emsp;emit(1) <br>
+                    &emsp;emit(2) <br>
+                    &emsp;emit(3) <br>
+                    }
+            </p>
+        </div>
+        <br>
+        <div class="code_snippet">
+            <p>
+                fun main() = runBlocking { <br>
+                &emsp;val coldFlow = createColdFlow() <br>
+                <br>
+                &emsp;// Cada recolector dispara la producción de datos desde cero. <br>
+                &emsp;coldFlow.collect { println("Recolector 1: $it") } <br>
+                &emsp;coldFlow.collect { println("Recolector 2: $it") } <br>
+                }
+            </p>
+        </div>
+        <br>
+        <div class="console_snippet">
+            <p>
+                ⇒ Produciendo datos... <br>
+                Recolector 1: 1 <br>
+                Recolector 1: 2 <br>
+                Recolector 1: 3 <br>
+                Produciendo datos... <br>
+                Recolector 2: 1 <br>
+                Recolector 2: 2 <br>
+                Recolector 2: 3 <br>
+            </P>
+        </div>
+
+        <h3 id="hot_flow">Hot Flows:
+            <p>
+                Un hot flow (flujo caliente) produce datos independientemente de si hay recolectores activos. Los datos
+                se generan constantemente, y los recolectores solo reciben los valores emitidos a partir del momento en
+                que comienzan a recolectar (a menos que uses mecanismos para almacenar los últimos valores, como
+                <em>StateFlow</em>). Es decir, el flujo sigue produciendo datos incluso sin recolectores, por lo que
+                todos los recolectores comparten la misma fuente de datos (<em>multicasting</em>).
+                <br><br>
+                El ejemplo clásico es el uso de <em>StateFlow</em> o <em>SharedFlow</em>.
+
+                <br><br>
+                <strong style="font-size: 19px;">StateFlow:</strong>
+                <br>
+                <strong>> </strong>Mantiene y emite el último estado emitido, similar a un <strong><em>LiveData</em></strong>.
+                <br>
+                <strong>> </strong>Ideal para exponer estados en una arquitectura de UI reactiva.
+                <br>
+                <strong>> </strong>Solo emite el último valor almacenado a nuevos recolectores.
+
+                <br><br>
+                <div class="code_snippet">
+                    <p style="color: #FFF;">
+                        val stateFlow = MutableStateFlow("Inicial") <br>
+                        <br>
+                        fun main() = runBlocking { <br>
+                        &emsp;stateFlow.value = "Actualizado" <br>
+                        &emsp;stateFlow.collect { println(it) } // Imprime "Actualizado" <br>
+                        }
+                    </p>
+                </div>
+            </p>
+            <br>
+            <p>
+                <strong style="font-size: 19px;">SharedFlow:</strong>
+                <br>
+                <strong>> </strong>No mantiene estado, diseñado para manejar eventos o transmisiones multicasting..
+                <br>
+                <strong>> </strong>Los nuevos recolectores solo reciben valores emitidos después de suscribirse (a menos
+                que configures un buffer de reproducción).
+
+                <br><br>
+                <div class="code_snippet">
+                    <p style="color: #FFF;">
+                        val sharedFlow = MutableSharedFlow<String>()
+
+                            fun main() = runBlocking { <br>
+                            &emsp;sharedFlow.emit("Evento 1") <br>
+                            &emsp;sharedFlow.collect { println(it) } <br>
+                            &emsp;// No recibe "Evento 1" porque ocurrió antes de recolectar. <br>
+                            }
+                    </p>
+                </div>
+            </p>
+            <br>
+            <p>
+                En resumen, un hot flow es ideal cuando necesitas que los datos se produzcan continuamente, incluso sin
+                recolectores (por
+                ejemplo, datos en tiempo real, eventos de UI o valores compartidos). O cuando necesitas multicasting, es
+                decir, compartir un flujo único entre múltiples recolectores.
+            </p>
+        </h3>
+
+        <p>
+            Ambos tipos de <em>Flow</em> son herramientas potentes y se pueden combinar según las necesidades del proyecto. Por
+            ejemplo, un <strong>cold flow puede ser transformado en un hot flow usando</strong> operadores como
+            <strong><em>stateIn</em></strong> o <strong><em>shareIn</em></strong>.
+        </p>
+
+
+        <h2 id="livedata">LiveData</h2>
+        <p>
+            LiveData es una clase específica de Android diseñada para manejar datos reactivos en un contexto de ciclo de
+            vida. Es parte de las bibliotecas de Arquitectura de Android y permite que las vistas, como actividades y
+            fragmentos, reaccionen automáticamente a los cambios en los datos de forma segura respecto al ciclo de vida.
+            <br><br>
+            Sus principales características son:
+            <br><br>
+            <strong>> Ciclo de vida consciente</strong>:
+            LiveData solo notifica a los observadores activos, es decir, aquellos que están en un estado de ciclo de
+            vida como <em>STARTED</em> o <em>RESUMED</em>.
+            <br><br>
+            <strong>> Datos reactivos</strong>:
+            Permite a las vistas observar los datos y reaccionar automáticamente cuando estos cambian.
+            <br><br>
+            <strong>> Uso sencillo</strong>:
+            Es fácil de integrar en ViewModels y se usa comúnmente con patrones arquitecturales como MVVM.
+            <br><br>
+            <strong>> Sin memoria extra</strong>:
+            LiveData libera automáticamente observadores cuando su propietario (actividad o fragmento) está destruido.
+        </p>
+
+
+        <h2 id="flow_vs_livedata">Diferencias clave entre Flow y LiveData</h2>
+        <p>
+            Aunque Flow y LiveData son herramientas para manejar datos reactivos, cada una tiene características y casos
+            de uso distintos:
+            <br><br>
+            <strong>> Flow</strong>:
+            No está limitado a Android, por lo que no conoce el ciclo de vida. Tiene una amplia gama de operadores. Flow
+            respeta la cancelación de las corrutinas. Ideal para flujos de datos complejos, la capa de data o backend.
+            <br><br>
+            <strong>> LiveData</strong>:
+            Es específico para Android, por lo cual respeta el ciclo de vida de las vistas. Se cancela automáticamente
+            cuando la vista se destruye. Ideal para manejo de datos en la capa de presentación (UI).
+        </p>
+
+        <h2 id="flow_usages">¿Cuándo usar Flow?</h2>
+        <p>
+            <strong>> </strong>Es útil en capas de datos como repositorios y fuentes remotas.
+            <br><br>
+            <strong>> </strong>Cuando quieres realizar transformaciones avanzadas en los datos ya que tiene operadores
+            poderosos.
+            <br><br>
+            <strong>> </strong>Si tienes una base de datos con <em>Room</em>, ya que tiene integración directa con Flow.
+            <br><br>
+            <strong>> </strong>Cuando necesitas procesar datos en segundo plano antes de enviarlos a la UI.
+            <br><br>
+            <strong>> </strong>Para procesos que no están directamente vinculados al ciclo de vida de Android.
+        </p>
+
+
+        <h2 id="flow_usages">¿Cuándo usar LiveData?</h2>
+        <p>
+            <strong>> </strong>Es perfecto para manejar datos observables en componentes de UI.
+            <br><br>
+            <strong>> </strong>Cuando deseas que los datos se detengan automáticamente al salir del componente de UI.
+            <br><br>
+            <strong>> </strong>Cuando tienes datos directamente relacionados con la interfaz de usuario que cambian en
+            función de la lógica de la app (por ejemplo, el estado de carga o datos de entrada del usuario).
+        </p>
+
+
+        <h2 id="flow_usages">¿Cuándo usar Flow con LiveData?</h2>
+        <p>
+            En muchos casos, se combinan las fortalezas de ambos. Es muy común ver en aplicaciones Android es uso de
+            <strong>Flow</strong> en las capas de datos, como en un DataSource de una base de datos hecha con Room o en
+            los respositorios. Y, eventualmente, exponer dichos datos usando <strong>LiveData</strong> hacía la capa de
+            presentación o UI.
+        </p>
+
     </div>
 </div>
 
