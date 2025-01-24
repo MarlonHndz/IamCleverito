@@ -426,6 +426,7 @@ header {
     margin-left: 4em;
 }
 .code_snippet p{
+    font-size: 15px;
     color: #FFF;
  }
 
@@ -439,6 +440,7 @@ header {
 }
 .console_snippet p{
     color: #F5F5F5;
+    font-size: 15px;
 }
 
 /* -- Portfolio Volume Logo Content -- */
