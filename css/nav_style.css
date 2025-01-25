@@ -9,8 +9,8 @@ nav {
 }
 
 .nav-menu {
-    margin-top: 30px;
-    width: 80%;
+    margin-top: 2rem;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,31 +19,57 @@ nav {
     color: #ccc;
 }
 
-
-.nav-menu>a {
-    color: #fff;
-    font-size: 22px;
-    font-weight: 400;
-    width: 200px;
-    padding: 10px;
-    margin: 0;
-    text-decoration: none;
-    transition: color .3s;
+.left_nav_content {
+    width: fit-content;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
-.nav-menu> img {
-    width: 70px;
+.left_nav_content>a {
+    font-size: 18px;
+    font-weight: 400;
+    width: fit-content;
+    text-decoration: none;
+    transition: color .3s;
+    margin-left: 25px;
+    padding: 5px 30px;
+    border: black;
+    border-radius: 40px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    color: white;
+    background: #011633;
+}
+
+.left_nav_content>img {
+    width: auto;
     height: 55px;
 }
 
-
-.nav-menu>a:hover {
-   color: #F9AF5D;
+.left_nav_content>a:hover {
+    font-weight: 500;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    color: black;
+    background: white;
 }
+
+.right_nav_content>a {
+    font-size: 18px;
+    font-weight: 400;
+    width: fit-content;
+    text-decoration: none;
+    transition: color .3s;
+    padding-left: 25px;
+    color: white;
+}
+
+.right_nav_content>a:hover {
+    color: #F9AF5D;
+}
+
+
+
 
 
 /* -- Responsive 800px -- */
@@ -56,7 +82,7 @@ nav {
         font-size: 18px;
     }
 
-    .nav-menu> img {
+    .nav-menu>img {
         width: 65px;
         height: 50px;
     }
@@ -68,7 +94,7 @@ nav {
         font-size: 17px;
     }
 
-    .nav-menu> img {
+    .nav-menu>img {
         width: 58px;
         height: 45px;
     }
@@ -80,7 +106,7 @@ nav {
         font-size: 15px;
     }
 
-    .nav-menu> img {
+    .nav-menu>img {
         width: 50px;
         height: 30px;
     }
@@ -92,7 +118,7 @@ nav {
         font-size: 16px;
     }
 
-    .nav-menu> img {
+    .nav-menu>img {
         display: none;
     }
 }
