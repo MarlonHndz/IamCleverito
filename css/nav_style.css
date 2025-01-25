@@ -126,3 +126,19 @@ nav {
         font-size: 14px;
     }
 }
+
+/* -- Responsive 360px -- */
+@media screen and (max-width:360px) {
+    .nav-menu {
+        width: 100%;
+    }
+
+    .left_nav_content>a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .right_nav_content>a {
+        font-size: 12px;
+    }
+}

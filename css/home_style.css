@@ -750,3 +750,47 @@ main .home-introduction {
     }
 }
 
+
+/* -- Responsive 400px -- */
+@media screen and (max-width:400px) {
+    /* -- Header -- */
+    header {
+        height: 50vh;
+        min-height: 0px;
+    }
+    #header_me_img {
+        width: 110px;
+    }
+
+    .my_name {
+        font-size: 12px;
+        margin-bottom: 60px;
+        margin-left: 220px;
+
+    }
+
+    .texts_header>h1 {
+        font-size: 22px;
+        width: 220px;
+    }
+
+    .texts_header>h2 {
+        font-size: 13px;
+        margin-top: 20px;
+    }
+
+     /* -- Portfolio -- */
+     .galery-portfolio {
+        height: 130px;
+    }
+
+    .card {
+        width: 100px;
+        border-radius: 14px;
+    }
+
+    .card_content_title {
+        height: 60px;
+    }
+}
+
