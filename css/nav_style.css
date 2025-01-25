@@ -116,4 +116,13 @@ nav {
     .left_nav_content>img {
         display: none;
     }
+
+    .left_nav_content>a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .right_nav_content>a {
+        font-size: 14px;
+    }
 }
