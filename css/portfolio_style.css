@@ -774,6 +774,14 @@ header {
     .tab {
         font-size: 17px;
     }
+
+    .code_snippet {
+        margin-left: 1em;
+    }
+    
+    .console_snippet {
+        margin-left: 1em;
+    }
 }
 
 /* -- Responsive 680px -- */
