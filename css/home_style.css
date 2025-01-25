@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-link[rel="shortcut icon"] {
-    width: 5px;
-    height: auto;
-  }
-
 body {
     font-family: 'Poppins';
 }
@@ -17,14 +12,6 @@ body {
     width: 100%;
     margin: auto;
     overflow: hidden;
-}
-
-.title {
-    color: #FFF;
-    font-size: 60px;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 60px;
 }
 
 
@@ -226,6 +213,8 @@ main .home-introduction {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #00132E, #032B4F, #011633);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: visible;
+    z-index: 3;
 }
 
 .container-portfolio-galery {
@@ -237,10 +226,13 @@ main .home-introduction {
 
 .galery-portfolio {
     display: flex;
-    padding-top: 40px;
+    padding-top: 0px;
     justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     flex-wrap: wrap;
-    height: 250px;
+    height: 200px;
 
 }
 
@@ -251,6 +243,7 @@ main .home-introduction {
     /* max-height es Necesario para que funcione la animación*/
     background: black;
     border-radius: 30px;
+    z-index: 4;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -282,7 +275,7 @@ main .home-introduction {
 
 .card:hover #cloc_logo {
     width: 65%;
-    filter: blur(7px);
+    filter: blur(4px);
     animation: anim 3s infinite;
     margin-bottom: 20px;
 }
@@ -392,7 +385,8 @@ main .home-introduction {
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #00132E, #032B4F, #011633);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #00132E, #032B4F, #011633);    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #00132E, #032B4F, #011633);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .developer-presentation-container {
@@ -476,15 +470,6 @@ main .home-introduction {
 /* -- Responsive 1400px -- */
 @media screen and (max-width:1400px) {
 
-    /* -- Header -- */
-    .texts-header h1 {
-        font-size: 80px;
-    }
-
-    .texts-header h2 {
-        font-size: 50px;
-    }
-
     /* -- Introduction -- */
     .home-introduction .container-introduction-texts {
         width: 50%;
@@ -495,29 +480,32 @@ main .home-introduction {
 /* -- Responsive 1200px -- */
 @media screen and (max-width:1200px) {
 
-    .title {
-        font-size: 50px;
-    }
-
     /* -- Header -- */
-    .texts-header {
-        width: 90%;
+    header {
+        height: 60vh;
+        min-height: 600px;
     }
 
-    .texts-header h1 {
-        font-size: 70px;
-        font-weight: 550;
+    #header_me_img {
+        width: 160px;
     }
 
-    .texts-header h2 {
+    .my_name {
+        margin-bottom: 80px;
+        margin-left: 300px;
+
+    }
+
+    .texts_header>h1 {
         font-size: 40px;
-        font-weight: 450;
+        width: 400px;
     }
 
-    header .texts-header img {
-        width: 350px;
-        height: 60px;
+    .texts_header>h2 {
+        font-size: 20px;
+        margin-top: 20px;
     }
+
 
     /* -- Introduction -- */
     .home-introduction .container-introduction-texts {
@@ -535,11 +523,15 @@ main .home-introduction {
 
     /* -- Portfolio -- */
     .galery-portfolio {
-        height: 800px;
+        height: 200px;
     }
 
     .card {
-        margin: 20px;
+        width: 200px;
+    }
+
+    .card_content_title {
+        height: 85px;
     }
 
     /* -- Developer -- */
@@ -557,33 +549,29 @@ main .home-introduction {
 /* -- Responsive 900px -- */
 @media screen and (max-width:900px) {
 
-    .title {
-        font-size: 40px;
-    }
-
     /* -- Header -- */
-    header {
-        height: 80vh;
+
+
+    /* -- Portfolio -- */
+    .galery-portfolio {
+        height: 170px;
     }
 
-    .texts-header {
-        width: 100%;
+    .card {
+        width: 150px;
     }
 
-    .texts-header h1 {
-        font-size: 60px;
-        font-weight: 550;
+    .card_content_title {
+        height: 70px;
     }
 
-    .texts-header h2 {
-        font-size: 35px;
-        font-weight: 450;
+    .card h4 {
+        font-size: 18px;
+    }
+    #outrageous_logo {
+        width: 32%;
     }
 
-    header .texts-header img {
-        width: 260px;
-        height: 45px;
-    }
 
     /* -- Introduction -- */
     .container-home-introduction {
@@ -660,29 +648,47 @@ main .home-introduction {
 
     /* -- Header -- */
     header {
-        height: 65vh;
-        min-height: 500px;
+        min-height: 200px;
     }
 
-    .texts-header {
-        padding: 0;
-        justify-content: end;
+    #header_me_img {
+        width: 140px;
     }
 
-    header .texts-header img {
-        width: 220px;
-        height: 40px;
+    .my_name {
+        margin-bottom: 60px;
+        margin-left: 300px;
+        padding: 5px 15px;
     }
 
-    .texts-header h1 {
-        font-size: 50px;
-        font-weight: 550;
-    }
-
-    .texts-header h2 {
+    .texts_header>h1 {
         font-size: 30px;
-        font-weight: 450;
+        width: 300px;
     }
+
+    .texts_header>h2 {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    /* -- Portfolio -- */
+    .galery-portfolio {
+        height: 170px;
+    }
+
+    .card {
+        width: 110px;
+        border-radius: 20px;
+    }
+
+    .card_content_title {
+        height: 60px;
+    }
+
+    .card h4 {
+        font-size: 15px;
+    }
+
 
     /* -- Introduction -- */
     .home-introduction .container-introduction-texts {
@@ -693,19 +699,5 @@ main .home-introduction {
         font-size: 30px;
     }
 
-
-}
-
-
-/* -- Responsive 620px -- */
-@media screen and (max-width:620px) {
-    .title {
-        margin-bottom: 20px;
-    }
-
-    /* -- Portfolio -- */
-    .galery-portfolio {
-        height: 1460px;
-    }
 
 }
