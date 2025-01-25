@@ -676,6 +676,7 @@ main .home-introduction {
         height: 170px;
     }
     .container-portfolio-galery {
+        padding: 0px 5px;
         border-radius: 0 0 40px 40px;
     }
 
