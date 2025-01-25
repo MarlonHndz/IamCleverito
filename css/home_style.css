@@ -675,6 +675,9 @@ main .home-introduction {
     .galery-portfolio {
         height: 170px;
     }
+    .container-portfolio-galery {
+        border-radius: 0 0 40px 40px;
+    }
 
     .card {
         width: 110px;
@@ -701,3 +704,49 @@ main .home-introduction {
 
 
 }
+
+
+/* -- Responsive 620px -- */
+@media screen and (max-width:620px) {
+    /* -- Header -- */
+    header {
+        height: 60vh;
+        min-height: 500px;
+        border-radius: 0 0 40px 40px;
+    }
+    #header_me_img {
+        width: 110px;
+    }
+
+    .my_name {
+        font-size: 12px;
+        margin-bottom: 60px;
+        margin-left: 220px;
+
+    }
+
+    .texts_header>h1 {
+        font-size: 30px;
+        width: 300px;
+    }
+
+    .texts_header>h2 {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+     /* -- Portfolio -- */
+     .galery-portfolio {
+        height: 130px;
+    }
+
+    .card {
+        width: 100px;
+        border-radius: 14px;
+    }
+
+    .card_content_title {
+        height: 60px;
+    }
+}
+
