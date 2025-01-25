@@ -756,7 +756,7 @@ main .home-introduction {
     /* -- Header -- */
     header {
         height: 50vh;
-        min-height: 0px;
+        min-height: 427px;
     }
     #header_me_img {
         width: 110px;
