@@ -745,14 +745,18 @@ main .home-introduction {
         border-radius: 14px;
     }
 
+    .card h4 {
+        font-size: 12px;
+    }
+
     .card_content_title {
         height: 60px;
     }
 }
 
 
-/* -- Responsive 400px -- */
-@media screen and (max-width:400px) {
+/* -- Responsive 450px -- */
+@media screen and (max-width:450px) {
     /* -- Header -- */
     header {
         height: 50vh;
@@ -781,16 +785,16 @@ main .home-introduction {
 
      /* -- Portfolio -- */
      .galery-portfolio {
-        height: 130px;
+        height: 80px;
     }
 
     .card {
-        width: 100px;
+        width: 80px;
         border-radius: 14px;
     }
 
     .card_content_title {
-        height: 60px;
+        height: 50px;
     }
 }
 
