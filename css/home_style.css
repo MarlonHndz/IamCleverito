@@ -651,7 +651,10 @@ main .home-introduction {
     }
 
     .image-introduction {
-        display: none;
+        position: absolute;
+        align-self: end;
+        width: 10%;
+        right: 1%;
     }
 }
 
@@ -705,6 +708,10 @@ main .home-introduction {
 
     .container-introduction-texts h3 {
         font-size: 30px;
+    }
+
+    .image-introduction {
+        display: none;
     }
 }
 
