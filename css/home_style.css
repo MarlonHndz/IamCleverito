@@ -478,15 +478,17 @@ main .home-introduction {
 }
 
 /* -- Responsive 1200px -- */
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1300px) {
 
     /* -- Header -- */
     header {
-        height: 60vh;
-        min-height: 600px;
+        height: fit-content;
+        padding-top: 10%;
+        min-height: 0px;
     }
 
     #header_me_img {
+        margin-top: 30%;
         width: 160px;
     }
 
@@ -497,13 +499,15 @@ main .home-introduction {
     }
 
     .texts_header>h1 {
-        font-size: 40px;
-        width: 400px;
+        font-size: 35px;
+        width: 350px;
     }
 
     .texts_header>h2 {
-        font-size: 20px;
+        font-size: 25px;
         margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 5px 20px;
     }
 
 
@@ -550,6 +554,26 @@ main .home-introduction {
 @media screen and (max-width:900px) {
 
     /* -- Header -- */
+    #header_me_img {
+        width: 145px;
+    }
+
+    .my_name {
+        font-size: 14px;
+        margin-bottom: 70px;
+        margin-left: 280px;
+        padding: 5px 17px;
+    }
+
+    .texts_header>h1 {
+        font-size: 32px;
+        width: 320px;
+    }
+
+    .texts_header>h2 {
+        font-size: 22px;
+        margin-top: 20px;
+    }
 
 
     /* -- Portfolio -- */
@@ -558,11 +582,12 @@ main .home-introduction {
     }
 
     .card {
-        width: 150px;
+        width: 20%;
     }
 
     .card_content_title {
-        height: 70px;
+        height: fit-content;
+        padding-bottom: 15px;
     }
 
     .card h4 {
@@ -647,17 +672,13 @@ main .home-introduction {
 @media screen and (max-width:680px) {
 
     /* -- Header -- */
-    header {
-        min-height: 200px;
-    }
-
     #header_me_img {
         width: 140px;
     }
 
     .my_name {
-        margin-bottom: 60px;
-        margin-left: 300px;
+        margin-bottom: 75px;
+        margin-left: 270px;
         padding: 5px 15px;
     }
 
@@ -681,12 +702,7 @@ main .home-introduction {
     }
 
     .card {
-        width: 110px;
         border-radius: 20px;
-    }
-
-    .card_content_title {
-        height: 60px;
     }
 
     .card h4 {
@@ -711,8 +727,6 @@ main .home-introduction {
 @media screen and (max-width:620px) {
     /* -- Header -- */
     header {
-        height: 60vh;
-        min-height: 500px;
         border-radius: 0 0 40px 40px;
     }
     #header_me_img {
@@ -742,16 +756,11 @@ main .home-introduction {
     }
 
     .card {
-        width: 100px;
         border-radius: 14px;
     }
 
     .card h4 {
         font-size: 12px;
-    }
-
-    .card_content_title {
-        height: 60px;
     }
 }
 
@@ -759,10 +768,6 @@ main .home-introduction {
 /* -- Responsive 450px -- */
 @media screen and (max-width:450px) {
     /* -- Header -- */
-    header {
-        height: 50vh;
-        min-height: 427px;
-    }
     #header_me_img {
         width: 110px;
     }
@@ -789,13 +794,53 @@ main .home-introduction {
         height: 80px;
     }
 
-    .card {
-        width: 80px;
-        border-radius: 14px;
+    .card_content_title {
+        padding-bottom: 10px;
     }
 
-    .card_content_title {
-        height: 50px;
+    #cloc_logo {
+        margin-top: 10px;
+    }
+
+    #shuffle_logo{
+        margin-top: 10px;
+    }
+
+    #outrageous_logo{
+        margin-top: 10px;
+    }
+
+    #kotlin_logo{
+        margin-top: 10px;
     }
 }
 
+
+/* -- Responsive 350px -- */
+@media screen and (max-width:350px) {
+    /* -- Header -- */
+    #header_me_img {
+        width: 90px;
+    }
+
+    .my_name {
+        font-size: 9px;
+        margin-bottom: 50px;
+        margin-left: 170px;
+    }
+
+    .texts_header>h1 {
+        font-size: 18px;
+        width: 200px;
+    }
+
+    .texts_header>h2 {
+        font-size: 11px;
+        margin-top: 20px;
+    }
+
+     /* -- Portfolio -- */
+     .galery-portfolio {
+        height: 80px;
+    }
+}
