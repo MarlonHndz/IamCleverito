@@ -595,6 +595,7 @@ main .home-introduction {
         justify-content: center;
         align-items: center;
         height: fit-content;
+        padding-top: 20px;
     }
 
     #developer_profile_pic {
@@ -647,7 +648,6 @@ main .home-introduction {
     .container-introduction-texts {
         width: 90%;
         margin-top: 1rem;
-        margin-bottom: 2rem;
     }
 
     .image-introduction {
@@ -701,7 +701,6 @@ main .home-introduction {
     /* -- Introduction -- */
     .container-introduction-texts {
         width: 95%;
-        margin-bottom: 1rem;
     }
 
     .container-introduction-texts h3 {
