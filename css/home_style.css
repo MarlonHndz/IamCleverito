@@ -110,8 +110,7 @@ header {
 
 /* -- Introduction -- */
 main .home-introduction {
-    margin-top: 0px;
-    padding: 0px 0 20px 0;
+    height: fit-content;
     background: #032B4F;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #00132E, #032B4F, #011633);
@@ -126,23 +125,22 @@ main .home-introduction {
     display: flex;
     justify-content: space-evenly;
     padding-top: 40px;
+    padding-bottom: 50px;
 }
 
 .image-introduction {
     width: 35%;
     height: auto;
-    z-index: 4;
 }
 
-.home-introduction .container-introduction-texts {
+.container-introduction-texts {
     color: white;
-    width: 40%;
-    padding-top: 200px;
-    z-index: 4;
+    width: 50%;
     overflow: hidden;
+    align-content: center;
 }
 
-.home-introduction .container-introduction-texts ul {
+.container-introduction-texts ul {
     display: flex;
     padding: 0;
     width: 400%;
@@ -151,7 +149,7 @@ main .home-introduction {
     animation: slide 40s infinite alternate;
 }
 
-.home-introduction .container-introduction-texts li {
+.container-introduction-texts li {
     width: 100%;
     list-style: none;
 }
@@ -384,11 +382,16 @@ main .home-introduction {
 /* -- Developer -- */
 .developer {
     width: 100%;
+    height: 100vh;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #00132E, #032B4F, #011633);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #00132E, #032B4F, #011633);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .developer-presentation-container {
@@ -409,20 +412,19 @@ main .home-introduction {
 }
 
 #developer_name_img {
-    width: 53%;
-    margin-top: 3%;
+    width: 80%;
+    margin-top: 20%;
     margin-bottom: 5%;
 }
 
 #developer_profile_pic {
-    width: 550px;
-    height: auto;
-    margin-top: 50px;
-    margin-bottom: 60px;
+    width: auto;
+    height: 80%;
+    margin-left: 5%;
     object-fit: cover;
     align-self: center;
     display: block;
-    border-radius: 300px;
+    border-radius: 500px;
     border: solid 8px #ffffff;
     box-shadow: 0 0 20px rgba(0, 0, 0, .8);
 }
@@ -469,15 +471,6 @@ main .home-introduction {
 
 
 
-/* -- Responsive 1400px -- */
-@media screen and (max-width:1400px) {
-
-    /* -- Introduction -- */
-    .home-introduction .container-introduction-texts {
-        width: 50%;
-        padding-top: 150px;
-    }
-}
 
 /* -- Responsive 1300px -- */
 @media screen and (max-width:1300px) {
@@ -513,11 +506,6 @@ main .home-introduction {
 
 
     /* -- Introduction -- */
-    .home-introduction .container-introduction-texts {
-        width: 60%;
-        padding-top: 120px;
-    }
-
     .container-introduction-texts h3 {
         font-size: 35px;
     }
@@ -540,14 +528,6 @@ main .home-introduction {
     }
 
     /* -- Developer -- */
-    .developer-presentation-container .card {
-        width: 90%;
-        height: 400px;
-    }
-
-    .container-developer-text {
-        width: 70%;
-    }
 }
 
 
@@ -600,48 +580,38 @@ main .home-introduction {
 
 
     /* -- Introduction -- */
-    .container-home-introduction {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 20px;
-    }
-
-    .home-introduction .container-introduction-texts {
-        width: 90%;
-        padding-top: 20px;
+    .container-introduction-texts {
+        width: 70%;
     }
 
     .image-introduction {
-        width: 40%;
-        margin-bottom: 0px;
+        width: 25%;
     }
 
     /* -- Developer -- */
-    .developer-presentation-container {
+    .developer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-
-    .container-developer-text {
-        width: 90%;
-    }
-
-    .container-developer-text p {
-        font-size: 18px;
-    }
-
-    #developer_name_img {
-        align-self: center;
-        width: 80%;
+        height: fit-content;
     }
 
     #developer_profile_pic {
         width: 70%;
-        height: 70%;
-        margin-top: 0px;
+        height: auto;
+        margin: 0px;
     }
+
+    .container-developer-text p {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    #developer_name_img {
+       margin-top: 7%;
+    }
+
+   
 
     /* -- Services -- */
     .service-container {
@@ -666,6 +636,21 @@ main .home-introduction {
 
     .service-ind p {
         font-size: 18px;
+    }
+}
+
+/* -- Responsive 850px -- */
+@media screen and (max-width:850px) {
+    /* -- Introduction -- */
+    .container-introduction-texts {
+        width: 90%;
+        margin-top: 100px; 
+        margin-bottom: 100px;
+
+    }
+
+    .image-introduction {
+        display: none;
     }
 }
 
@@ -751,7 +736,7 @@ main .home-introduction {
         margin-top: 20px;
     }
 
-     /* -- Portfolio -- */
+    /* -- Portfolio -- */
      .galery-portfolio {
         height: 130px;
     }
@@ -762,6 +747,11 @@ main .home-introduction {
 
     .card h4 {
         font-size: 12px;
+    }
+
+     /* -- Developer -- */
+    .container-developer-text p {
+        font-size: 16px; 
     }
 }
 
@@ -844,4 +834,10 @@ main .home-introduction {
      .galery-portfolio {
         height: 80px;
     }
+
+     /* -- Developer -- */
+     .container-developer-text p {
+        font-size: 15px; 
+    }
+
 }
