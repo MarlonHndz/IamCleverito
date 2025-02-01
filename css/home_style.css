@@ -296,9 +296,9 @@ main .home-introduction {
 }
 
 #outrageous_logo {
-    margin-top: 15px;
+    margin-top: 12px;
     height: auto;
-    width: 30%;
+    width: 35%;
     transition: 0.4s ease-in-out;
     z-index: 1;
 }
@@ -313,13 +313,13 @@ main .home-introduction {
 #kotlin_logo {
     margin-top: 15px;
     height: auto;
-    width: 27%;
+    width: 20%;
     transition: 0.4s ease-in-out;
     z-index: 1;
 }
 
 .card:hover #kotlin_logo {
-    width: 30%;
+    width: 25%;
     filter: blur(7px);
     animation: anim 3s infinite;
     margin-bottom: 20px;
