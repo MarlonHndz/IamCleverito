@@ -114,13 +114,19 @@ nav {
 
 /* -- Responsive 465px -- */
 @media screen and (max-width:465px) {
+    .nav-menu {
+        width: 100%;
+    }
+
     .left_nav_content>img {
-        display: none;
+        margin-left: 5px;
+        height: 30px;
     }
 
     .left_nav_content>a {
         font-size: 14px;
         padding: 5px 10px;
+        margin-left: 5px;
     }
 
     .right_nav_content>a {
@@ -130,10 +136,6 @@ nav {
 
 /* -- Responsive 360px -- */
 @media screen and (max-width:360px) {
-    .nav-menu {
-        width: 100%;
-    }
-
     .left_nav_content>a {
         font-size: 12px;
         padding: 5px 10px;
@@ -146,8 +148,8 @@ nav {
 
 /* -- Responsive 320px -- */
 @media screen and (max-width:320px) {
-    .nav-menu {
-        width: 100%;
+    .left_nav_content>img {
+        height: 25px;
     }
 
     .left_nav_content>a {
