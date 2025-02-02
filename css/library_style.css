@@ -80,15 +80,15 @@ header {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: 80px 0;
+    padding: 64px 64px;
     overflow: visible;
 }
 
 .card-portfolio {
     width: 35%;
-    height: 600px;
+    height: 650px;
     max-width: 400px;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 32px;
     flex-direction: column;
     justify-content: space-evenly;
@@ -101,9 +101,10 @@ header {
     /*box-shadow: 0 0 6px rgba(0, 0, 0, .35);*/
 }
 
-.container-card-buy:hover {
-    cursor: pointer;
-    text-decoration: underline;
+.circle_logo{
+    margin-bottom: 0px;
+    height: auto;
+    width: 30%;
 }
 
 .card-portfolio h4 {
@@ -131,7 +132,13 @@ header {
     margin-top: 16px;
     margin-bottom: 16px;
     text-align: center;
-    color: #0101a7;
+    color: #1B5492;
+}
+
+.container-card-buy:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #1B5492;
 }
 
 .library-galery-portfolio .card-portfolio>.container-card-text {
@@ -161,7 +168,7 @@ header {
 .container-card-button:hover {
     cursor: pointer;
     color: #000;
-    background: #8a8ab3;
+    background: #D2E3FC;
 }
 
 .container-card-button:hover > p {
@@ -320,7 +327,7 @@ header {
 
     /* -- portfolio -- */
     .card-portfolio {
-        width: 25%;
+        width: 32%;
     }
 
     /* -- Context -- */
@@ -356,8 +363,8 @@ header {
 
     /* -- portfolio -- */
     .card-portfolio {
-        width: 26%;
-        height: 550px;
+        width: 30%;
+        height: 600px;
     }
 
     .card-portfolio h4 {
@@ -391,9 +398,17 @@ header {
     }
 
     /* -- portfolio -- */
+    .library-galery-portfolio {
+        padding: 64px 20px;
+    }
+
     .card-portfolio {
         width: 30%;
-        height: 530px;
+        height: 580px;
+    }
+
+    .circle_logo{
+        width: 40%;
     }
 
     .card-portfolio h4 {
@@ -443,6 +458,10 @@ header {
 
 
     /* -- Portfolio -- */
+    .library-galery-portfolio {
+        padding: 64px 0px;
+    }
+
     .card-portfolio {
         width: 60%;
         margin: 20px;
@@ -495,7 +514,8 @@ header {
 
     /* -- portfolio -- */
     .card-portfolio {
-        width: 40%;
+        width: 42%;
+        margin: 10px;
     }
 
     .card-portfolio h4 {
@@ -574,7 +594,7 @@ header {
         width: 80%;
         margin: 0px;
         margin-bottom: 20px;
-        height: 400px;
+        height: 530px;
         max-width: 100%;
     }
 
@@ -614,7 +634,7 @@ header {
         width: 90%;
         margin: 0px;
         margin-bottom: 20px;
-        height: 500px;
+        height: 550px;
         
     }
 }
