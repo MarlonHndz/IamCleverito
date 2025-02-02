@@ -101,12 +101,6 @@ header {
     /*box-shadow: 0 0 6px rgba(0, 0, 0, .35);*/
 }
 
-.container-card-button:hover {
-    cursor: pointer;
-    background: #000;
-    color: #FFF;
-}
-
 .container-card-buy:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -155,11 +149,23 @@ header {
 .container-card-button {
     width: 90%;
     padding: 10px 25px;
-    border: 2px solid #000;
+    border: 0px solid #000;
     border-radius: 90px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background: #000;
+    color: #FFF;
+}
+
+.container-card-button:hover {
+    cursor: pointer;
+    color: #000;
+    background: #8a8ab3;
+}
+
+.container-card-button:hover > p {
+    font-weight: 450;
 }
 
 .container-card-button img {
