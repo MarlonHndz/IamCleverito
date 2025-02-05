@@ -493,6 +493,11 @@ header {
     font-size: 15px;
 }
 
+.collections_decision_tree {
+    height: auto;
+    width: 100%;
+}
+
 /* -- Portfolio Volume Logo Content -- */
 .portfolio_volume_logo {
     width: 20%;

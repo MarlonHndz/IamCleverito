@@ -71,125 +71,163 @@
         </p>
 
 
+
+
         <h2 id="lambdas">Lambdas y funciones de higher-order</h2>
         <p>
-            Una Lambda es una <strong>expresión</strong> que hace una función. Pero en lugar de declarar una función con
-            nombre, declaras una función que <strong>no tiene nombre</strong>. Parte de lo que hace que esto sea útil es
-            que la expresión lambda ahora se puede pasar como dato. En otros lenguajes, las lambdas se denominan
-            <strong><em>funciones anónimas, funciones literales</em></strong> u otros nombres similares.
-            <br><br>
-            Para lambdas, los <strong>parámetros</strong> (y sus tipos, si es necesario) van a la izquierda de lo que se
-            llama <strong>flecha de función (->)</strong>. El código a ejecutar va a la derecha de la flecha de función.
-            Una vez que la lambda se asigna a una variable, puede llamarla como una función.
+            Son funciones que pueden recibir otras funciones como parámetros o devolver funciones como resultado. Estas
+            funciones permiten una mayor flexibilidad y reutilización del código, facilitando un estilo declarativo y
+            funcional en la programación.
         </p>
+
+        <h3 id="func_as_parameter">Pasando una función como parámetro
+            <p>
+                Kotlin permite pasar funciones como argumentos usando lambdas o <strong>el operador de
+                    referencia</strong> a función
+                (<strong>::</strong>), el cual hace referencia a una función existente sin necesidad de invocarla
+                directamente.
+            </p>
+        </h3>
         <br>
         <div class="code_snippet">
             <p>
-                val dirtyLevel = 20 <br>
-                val waterFilter = { dirty: Int -> dirty / 2} <br>
-                println("waterFilter : ${waterFilter(dirtyLevel)}")
+                fun sum(a: Int, b: Int): Int { <br>
+                &emsp;return a + b <br>
+                } <br>
+                <br>
+                fun operate(a: Int, b: Int, operation: (Int, Int) -> Int): Int { <br>
+                &emsp;return operation(a, b) <br>
+                } <br>
+                <br>
+                fun main() { <br>
+                &emsp;val result = operate(5, 3, ::sum) <br>
+                &emsp;println(result) <br>
+                }
             </P>
         </div>
         <br>
 
         <div class="console_snippet">
             <p>
-                ⇒ waterFilter : 10
+                ⇒ 8
             </P>
         </div>
         <br>
+
+        <p style="margin-left: 20px;">
+            Aquí, <strong><em>::sum</em></strong> hace referencia a la función sum, permitiendo que operate la use sin
+            necesidad de llamarla explícitamente.
+        </p>
+
+        <h3 id="lambd_instead_of_reference">Usando una lambda en lugar de una referencia
+            <p>
+                Si no queremos definir una función separada, podemos usar una lambda directamente:
+            </p>
+        </h3>
+
+        <br>
+        <div class="code_snippet">
+            <p>
+                val result = operate(5, 3) { x, y -> x * y } <br>
+                println(result)
+            </P>
+        </div>
+        <br>
+        <div class="console_snippet">
+            <p>
+                ⇒ 15
+            </P>
+        </div>
+        <br>
+
         <p>
-            De igual manera podemos re escribir la segunda línea para declarar limpiamente una variable que alberga una
-            función:
+            Ambas formas son válidas y dependen del nivel de reutilización que se necesite.
         </p>
+
+        <h3 id="returning_func">Retornando una función
+            <p>
+                También es posible devolver una función desde otra función, permitiendo construir comportamientos
+                dinámicos.
+            </p>
+        </h3>
         <br>
         <div class="code_snippet">
             <p>
-                val waterFilter: (Int) -> Int = { dirty -> dirty / 2}
-            </P>
-        </div>
-        <br>
-        <p>Sin embargo, hasta aquí las Lambdas lucen igual que una función. El poder real de las lambdas es usarlas para
-            crear <strong>funciones de orden superior (higher-order functions), donde el argumento de una función es
-                otra
-                función.</strong>
-            <br><br>
-            Veamos un ejemplo sencillo para entenderlo:
-        </p>
-        <br>
-        <div class="code_snippet">
-            <p>
-                fun updateDirty(dirty: Int, operation: (Int) -> Int): Int { <br>
-                &emsp;return operation(dirty) <br>
+                fun getOperation(type: String): (Int, Int) -> Int { <br>
+                &emsp;return when (type) { <br>
+                &emsp;&emsp;"sum" -> ::sum <br>
+                &emsp;&emsp;"multiply" -> { a, b -> a * b } <br>
+                &emsp;&emsp;else -> { _, _ -> 0 } <br>
+                &emsp;} <br>
                 }
             </P>
         </div>
         <br>
-        <p>
-            Tenemos entonces una función que toma dos argumentos. El primer argumento es un número entero. El segundo
-            argumento es una función que toma un número entero y devuelve un número entero.
-            <br><br>
-            El cuerpo del código llama a la función que se pasó como segundo argumento y le pasa el primer argumento.
-            <br><br>
-            Llamemos entonces nuestra función:
+        <p style="margin-left: 20px;">
+            Tenemos entonces que:
         </p>
         <br>
         <div class="code_snippet">
             <p>
-                println("updateDirty : ${updateDirty(30, waterFilter)}")
+                fun main() { <br>
+                &emsp;val operation = getOperation("sum") <br>
+                &emsp;println(operation(4, 2)) <br>
+                }
             </P>
         </div>
         <br>
         <div class="console_snippet">
             <p>
-                ⇒ updateDirty : 15
+                ⇒ 6
             </P>
         </div>
         <br>
-        <p>
-            La función que se pasa no tiene que ser una lambda; en su lugar, puede ser una función con nombre regular.
-            Para especificar el segundo parámetro como una función regular, use el operador <strong>::</strong> conocido
-            como <strong>operador de referencia de miembro</strong> o referencia de clase. De esta manera, Kotlin sabe
-            que <strong>está pasando la referencia de la función como un argumento</strong>, sin intentar llamar a la
-            función.
+        <p style="margin-left: 20px;">
+            En este caso, <strong><em>getOperation</em></strong> devuelve la referencia a sum si se solicita una suma, o
+            bien una lambda si se solicita una multiplicación.
         </p>
-        <br>
-        <div class="code_snippet">
-            <p>
-                fun increaseDirty( start: Int) = start + 1 <br>
-                println("increaseDirty : ${updateDirty(15, ::increaseDirty)}")
-            </P>
-        </div>
-        <br>
-        <div class="console_snippet">
-            <p>
-                ⇒ increaseDirty: 16
-            </P>
-        </div>
-        <br>
+
+
+
+
+        <h2 id="inline_func">Funciones inline</h2>
         <p>
-            Finalmente, destacar que Kotlin tiene una sintaxis especial llamada
-            <a href="https://kotlinlang.org/docs/reference/lambdas.html#passing-a-lambda-to-the-last-parameter"
-                style="color: blue;">last parameter call syntax</a>,
-            la cual permite hacer el código aún más conciso. En este caso, puede pasar una lambda para el parámetro de
-            función, pero <strong>no es necesario colocar la lambda entre el paréntesis</strong>.
+            Son una característica del lenguaje que optimiza el rendimiento cuando se usan funciones de orden superior.
+            <br> <br>
+            Cuando una función es declarada con la palabra clave <em>inline</em>, el compilador sustituye directamente
+            el cuerpo de la función en cada lugar donde es llamada. Esto evita la sobrecarga de creación de objetos y
+            llamadas adicionales a funciones, lo que mejora el rendimiento en casos específicos.
         </p>
-        <br>
-        <div class="code_snippet">
+
+        <h3 id="why_inline">¿Por qué usar inline?
             <p>
-                var dirtyLevel = 19 <br>
-                dirtyLevel = updateDirty(dirtyLevel) { dirtyLevel -> <br>
-                &emsp;dirtyLevel + 23 <br>
-                } <br>
-                println("updateDirty : $dirtyLevel")
-            </P>
-        </div>
-        <br>
-        <div class="console_snippet">
-            <p>
-                ⇒ updateDirty : 42
-            </P>
-        </div>
+                En Kotlin, cuando pasamos una función como argumento a otra función (por ejemplo, una lambda), el
+                compilador genera internamente una clase adicional para representar la función y crea una instancia en
+                cada uso. Esto puede generar un costo en memoria y rendimiento.
+                <br><br>
+                El modificador inline elimina esta sobrecarga al insertar el código de la función directamente en el
+                lugar donde es llamada, evitando la creación de objetos innecesarios.
+            </p>
+        </h3>
+
+        <h3 id="when_inline">¿Cuándo usar inline?
+            <p>Usa inline cuando:</p>
+            <p class="indentado"><strong>> </strong>Estás usando funciones de orden superior y quieres evitar la
+                sobrecarga de objetos y llamadas adicionales.
+            </p>
+            <p class="indentado"><strong>> </strong>La función es pequeña y se usa frecuentemente en el código.
+            </p>
+            <p class="indentado"><strong>> </strong>Buscas optimizar el rendimiento en funciones de alto uso, como
+                transformaciones en colecciones.
+            </p>
+        </h3>
+
+        <h3 id="when_no_inline">¿Cuándo no usar inline?
+            <p>No uses inline en funciones grandes porque puede hacer que el código compilado sea más grande, afectando
+                el tamaño del APK o ejecutable.</p>
+        </h3>
+
+
 
 
         <h2 id="extension_functions">Funciones de extensión</h2>
@@ -224,6 +262,8 @@
                 fun String.hasSpaces()= find { it == ' ' } != null
             </p>
         </div>
+
+
 
 
         <h2 id="extension_properties">Propiedades de extensión</h2>
@@ -262,6 +302,8 @@
         </div>
 
 
+
+
         <h2 id="nullable_receivers">Nullable receivers</h2>
         <p>
             El concepto de Nullable receiver es <strong>el mismo que el de Extension Function</strong> con la pequeña
@@ -280,6 +322,7 @@
             </p>
         </div>
 
+        
 
         <h2 id="scope_functions">Scope Functions</h2>
         <p>
