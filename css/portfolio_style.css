@@ -161,7 +161,7 @@ header {
     display: flex;
     position: relative;
     /* Necesario para poder mover el glider con el scroll */
-    padding: 1rem;
+    padding: 16px;
 }
 
 .content_tabs * {
