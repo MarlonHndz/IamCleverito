@@ -73,16 +73,16 @@ header {
     color: #ccc;
 }
 
-.book_nav_menu>img {
-    max-height: 60px;
+.book_nav_menu>img:hover {
+    transform: scale(1.1);
 }
 
 .book_nav_menu>a {
     color: #fff;
     font-size: 22px;
     font-weight: 400;
-    width: 200px;
-    padding: 10px;
+    width: 130px;
+    padding: 10px 0px;
     margin: 0;
     text-decoration: none;
     transition: color .3s;
@@ -100,6 +100,7 @@ header {
     width: auto;
     height: 45px;
     margin-left: 20px;
+    margin-right: 10px;
 }
 
 .books_navigation {
@@ -112,6 +113,11 @@ header {
 .books_navigation>img {
     height: 30px;
     width: auto;
+}
+
+.navigation_img:hover {
+    transform: scale(0.9);
+    cursor: pointer;
 }
 
 .current_book {
@@ -641,15 +647,19 @@ header {
     #header_stain_right_img {
         margin-top: -10px;
     }
+
     header {
         height: 100px;
     }
+
     .portfolio_list_section {
         margin-top: 100px;
     }
+
     .portfolio_list {
         height: calc(100vh - 100px);
     }
+
     .portfolio_content_section {
         margin-top: 100px;
     }
@@ -657,20 +667,30 @@ header {
     .book_nav_menu {
         margin-top: 0px;
     }
+
     .book_nav_menu>a {
         font-size: 20px;
-        width: 160px;
+        width: 110px;
     }
+
     .nav_home_logo {
         height: 35px;
         margin-left: 0.5rem;
     }
+
+    .books_navigation>img {
+        height: 25px;
+    }
+
+
     .book_content_tabs {
         margin-top: 50px;
     }
+
     .content_tabs {
         padding: 0.5rem;
     }
+
     .book_content_menu_icon {
         margin-top: 0.5rem;
     }
@@ -714,10 +734,6 @@ header {
         width: 60%;
     }
 
-    .books_navigation>img {
-        height: 25px;
-    }
-
     /* -- Book tabs -- */
     .book_content_menu_icon {
         left: 1%;
@@ -747,9 +763,10 @@ header {
 
     .book_nav_menu>a {
         font-size: 17px;
-        width: 100px;
+        width: 90px;
         margin-top: 3px;
     }
+
     .nav_home_logo {
         height: 28px;
     }
@@ -767,6 +784,7 @@ header {
     .portfolio_text_section h3 p {
         text-align: start;
     }
+
     .books_navigation>img {
         height: 20px;
     }
@@ -788,7 +806,7 @@ header {
     .code_snippet {
         margin-left: 1em;
     }
-    
+
     .console_snippet {
         margin-left: 1em;
     }
@@ -796,12 +814,6 @@ header {
 
 /* -- Responsive 680px -- */
 @media screen and (max-width:680px) {
-
-    /* -- Header -- */
-    #header_stain_right_img {
-        margin-top: -20px;
-        width: 100%;
-    }
 
     /* -- Portfolio -- */
     .portfolio_text_section {
@@ -829,16 +841,50 @@ header {
     }
 }
 
+/* -- Responsive 600px -- */
+@media screen and (max-width:600px) {
+
+    /* -- Header -- */
+    .book_nav_menu {
+        margin-top: 0px;
+    }
+
+    .book_nav_menu>a {
+        font-size: 16px;
+        width: 80px;
+    }
+
+    .nav_home_logo {
+        height: 25px;
+        margin-right: 5px;
+    }
+
+    .books_navigation>img {
+        height: 18px;
+    }
+}
+
 /* -- Responsive 550px -- */
 @media screen and (max-width:550px) {
 
     /* -- Header -- */
-    #header_stain_right_img {
-        margin-top: 20px;
-        width: 100%;
+    .book_nav_menu {
+        margin-top: 2px;
     }
-    .books_navigation{
-        display: none;
+
+    .book_nav_menu>a {
+        font-size: 14px;
+        width: fit-content;
+        margin-right: 10px;
+    }
+
+    .books_navigation>img {
+        height: 16px;
+    }
+
+    .current_book {
+        margin-left: 5px;
+        margin-right: 5px;
     }
 
     /* -- Portfolio -- */
@@ -870,5 +916,45 @@ header {
     /* -- Footer -- */
     #portfolio_footer_section .content-foo {
         width: 100%;
+    }
+}
+
+/* -- Responsive 475px -- */
+@media screen and (max-width:475px) {
+    .book_nav_menu {
+        margin-top: 2px;
+    }
+
+    .books_navigation>img {
+        height: 15px;
+        margin-left: 10px;
+    }
+
+    .current_book {
+        display: none;
+    }
+}
+
+/* -- Responsive 360px -- */
+@media screen and (max-width:360px) {
+    .nav_home_logo {
+        height: 20px;
+        margin-right: 2px;
+    }
+
+    .books_navigation {
+        margin-top: 5px;
+    }
+    .book_nav_menu>a {
+        font-size: 12px;
+    }
+
+    .books_navigation>img {
+        height: 13px;
+        margin-left: 8px;
+    }
+
+    .current_book {
+        display: none;
     }
 }

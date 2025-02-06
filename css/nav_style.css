@@ -47,6 +47,10 @@ nav {
     height: 55px;
 }
 
+.left_nav_content>img:hover {
+    transform: scale(1.1);
+}
+
 .left_nav_content>a:hover {
     font-weight: 500;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
