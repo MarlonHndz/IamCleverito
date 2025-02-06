@@ -649,12 +649,11 @@ header {
     }
 
     .content_tabs {
-        padding: 0.5rem;
+        padding: 8px;
     }
 
     .book_content_menu_icon {
-        margin-top: 0.5rem;
-        left: 1%;
+        margin-top: 8px
     }
 
     .content_tabs {
