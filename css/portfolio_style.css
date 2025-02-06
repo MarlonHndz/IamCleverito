@@ -236,65 +236,42 @@ header {
 .toggle {
     position: relative;
     width: 30px;
+    height: 30px;
     cursor: pointer;
-    margin: auto;
-    display: block;
-    height: calc(4px * 3 + 11px * 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .3s;
 }
 
-.bar {
-    position: absolute;
-    left: 0;
-    right: 0;
+.bars {
+    width: 100%;
     height: 4px;
-    border-radius: calc(4px / 2);
-    background: #ffffff;
-    color: inherit;
-    opacity: 1;
-    transition: width 0.35s cubic-bezier(.5, -0.35, .35, 1.5) 0s;
+    background-color: rgb(253, 255, 243);
+    border-radius: 5px;
+    transition-duration: .3s;
 }
 
 /***** Spin Animation for menu icon *****/
-.bar--top {
-    width: 100%;
-    bottom: calc(50% + 11px + 1px/ 2);
-    transition-property: bottom, transform;
-    transition-delay: calc(0s + 0.35s), 0s;
+#checkbox_list_menu_icon:checked+.toggle #bar2 {
+    transform: translateY(14px) rotate(60deg);
+    margin-left: 0;
+    transform-origin: right;
+    transition-duration: .3s;
+    z-index: 2;
 }
 
-.bar--middle {
-    width: 88%;
-    top: calc(50% - 4px/ 2);
-    transition-property: opacity;
-    transition-delay: calc(0s + 0.35s);
+#checkbox_list_menu_icon:checked+.toggle #bar1 {
+    transform: translateY(28px) rotate(-60deg);
+    transition-duration: .3s;
+    transform-origin: left;
+    z-index: 1;
 }
 
-.bar--bottom {
-    width: 75%;
-    top: calc(50% + 11px + 1px/ 2);
-    transition-property: top, transform;
-    transition-delay: calc(0s + 0.35s), 0s;
-}
-
-#checkbox_list_menu_icon:checked+.toggle .bar--top {
-    bottom: calc(50% - 4px/ 2);
-    transform: rotate(135deg);
-    transition-delay: 0s, calc(0s + 0.35s);
-    width: 100%;
-}
-
-#checkbox_list_menu_icon:checked+.toggle .bar--middle {
-    opacity: 0;
-    transition-duration: 0s;
-    transition-delay: calc(0s + 0.35s);
-    width: 100%;
-}
-
-#checkbox_list_menu_icon:checked+.toggle .bar--bottom {
-    top: calc(50% - 4px/ 2);
-    transform: rotate(225deg);
-    transition-delay: 0s, calc(0s + 0.35s);
-    width: 100%;
+#checkbox_list_menu_icon:checked+.toggle {
+    transform: rotate(-90deg);
 }
 
 
@@ -602,12 +579,12 @@ header {
     .book_content_menu_icon {
         display: block;
         position: fixed;
-        margin-top: 16px;
+        margin-top: 20px;
         left: 1.3%;
     }
 
     .content_tabs {
-        margin-left: 65px;
+        margin-left: 50px;
         padding-left: 0px;
     }
 
@@ -682,7 +659,6 @@ header {
         height: 25px;
     }
 
-
     .book_content_tabs {
         margin-top: 50px;
     }
@@ -693,6 +669,12 @@ header {
 
     .book_content_menu_icon {
         margin-top: 0.5rem;
+        left: 1%;
+    }
+
+    .content_tabs {
+        margin-left: 45px;
+        padding-left: 0px;
     }
 
     /* -- Portfolio -- */
@@ -732,15 +714,6 @@ header {
     .book_nav_menu {
         margin-right: 40%;
         width: 60%;
-    }
-
-    /* -- Book tabs -- */
-    .book_content_menu_icon {
-        left: 1%;
-    }
-
-    .content_tabs {
-        margin-left: 55px;
     }
 
     .portfolio_text_section {
@@ -789,12 +762,6 @@ header {
         height: 20px;
     }
 
-
-    /* -- Book tabs -- */
-    .book_content_menu_icon {
-        left: 0.8%;
-    }
-
     .content_tabs {
         margin-left: 50px;
     }
@@ -824,16 +791,8 @@ header {
     }
 
     /* -- Tabs -- */
-    .bar--top {
-        bottom: calc(40% + 11px + 4px/ 2);
-    }
-
-    .bar--middle {
-        top: calc(50% - 4px/ 2);
-    }
-
-    .bar--bottom {
-        top: calc(40% + 11px + 4px/ 2);
+    .content_tabs {
+        margin-left: 40px;
     }
 }
 
@@ -905,10 +864,6 @@ header {
         font-size: 14px;
     }
 
-    .content_tabs {
-        margin-left: 45px;
-    }
-
     .previous_book_navigation {
         display: none;
     }
@@ -945,6 +900,7 @@ header {
     .books_navigation {
         margin-top: 5px;
     }
+
     .book_nav_menu>a {
         font-size: 12px;
     }
