@@ -498,6 +498,11 @@ header {
     width: 100%;
 }
 
+.coroutine_summary {
+    height: auto;
+    width: 100%;
+}
+
 /* -- Portfolio Volume Logo Content -- */
 .portfolio_volume_logo {
     width: 20%;

@@ -6,7 +6,35 @@
             <a href="#" class="list_title title_level_one">Eager & Lazy filters</a>
         </li>
         <li class="list_item">
-            <a href="#lambdas" class="list_title title_level_one">Lambdas y funciones de higher-order</a>
+            <a href="#lambdas" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Lambdas y funciones de higher-order</a>
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#func_as_parameter" class="list_title title_level_two">Pasando una función como parámetro</a>
+                </li>
+                <li class="list_item">
+                    <a href="#lambda_instead_of_reference" class="list_title title_level_two">Usando una lambda en lugar de una referencia</a>
+                </li>
+                <li class="list_item">
+                    <a href="#returning_func" class="list_title title_level_two">Retornando una función</a>
+                </li>
+            </ul>
+        </li>
+        <li class="list_item">
+            <a href="#inline_func" class="list_title title_level_one list_title_father">
+                <img src="../../../assets/ic_arrow_right_full.svg" alt="" class="list_arrow">Funciones inline</a>
+
+            <ul class="list_child">
+                <li class="list_item">
+                    <a href="#why_inline" class="list_title title_level_two">¿Por qué usar inline?</a>
+                </li>
+                <li class="list_item">
+                    <a href="#when_inline" class="list_title title_level_two">¿Cuándo usar inline?</a>
+                </li>
+                <li class="list_item">
+                    <a href="#when_no_inline" class="list_title title_level_two">¿Cuándo no usar inline?</a>
+                </li>
+            </ul>
         </li>
         <li class="list_item">
             <a href="#extension_functions" class="list_title title_level_one">Funciones de extensión</a>
@@ -119,7 +147,7 @@
             necesidad de llamarla explícitamente.
         </p>
 
-        <h3 id="lambd_instead_of_reference">Usando una lambda en lugar de una referencia
+        <h3 id="lambda_instead_of_reference">Usando una lambda en lugar de una referencia
             <p>
                 Si no queremos definir una función separada, podemos usar una lambda directamente:
             </p>

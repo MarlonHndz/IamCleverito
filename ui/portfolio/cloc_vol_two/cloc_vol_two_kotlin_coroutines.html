@@ -25,6 +25,9 @@
                 <li class="list_item">
                     <a href="#builder_produce" class="list_title title_level_two">produce</a>
                 </li>
+                <li class="list_item">
+                    <a href="#builders_final_comparison" class="list_title title_level_two">Comparación final</a>
+                </li>
             </ul>
         </li>
         <li class="list_item">
@@ -133,23 +136,58 @@
 
         <h2 id="builders">Builders de corrutinas</h2>
         <p>
-            Kotlin proporciona constructores (builders) para iniciar corrutinas. Los más comunes son:
+            En Kotlin, los builders son funciones especiales que permiten crear corrutinas de manera controlada. Aunque
+            algunas corrutinas pueden no devolver un resultado directo, todas las corrutinas devuelven una instancia que
+            permite gestionarlas. Dependiendo del builder utilizado, esta instancia será de un tipo diferente
+            (<strong>Job, Deferred</strong>, etc.).
+            <br><br>
+            La clave para entender esto es:
+            <br><br>
+            <em>
+                "No devolver un valor" significa que la corrutina no tiene un resultado final utilizable en el código
+                (como un número o una cadena), pero sí devuelve una instancia que permite su control (como cancelarla o
+                esperar su finalización).
+            </em>
         </p>
 
         <h3 id="builder_launch">launch:
             <p>
-                Inicia una corrutina que no devuelve un valor. Es útil para realizar tareas que no requieren un
-                resultado, como actualizaciones en la interfaz de usuario.
+                Inicia una corrutina que no devuelve un valor, pero retorna un Job que permite controlar la ejecución.
+                Es útil para realizar tareas que no requieren un resultado, como actualizaciones en la interfaz de
+                usuario.
             </p>
         </h3>
+        <br>
+        <div class="code_snippet">
+            <p>
+                val job: Job = launch { <br>
+                &emsp;delay(1000) <br>
+                &emsp;println("Task completed") <br>
+                } <br> <br>
+                job.join() <br>
+                println("End")
+            </p>
+        </div>
+        <br>
 
         <h3 id="builder_async">async:
             <p>
-                Inicia una corrutina que devuelve un resultado mediante un objeto <strong>Deferred</strong>. Puedes usar
-                el método <strong>await()</strong> para obtener el valor resultante.
+                Inicia una corrutina que devuelve un resultado mediante un objeto <strong>Deferred</strong>. En lugar de
+                Job, devuelve una instancia de Deferred<T>, que es una promesa de un valor futuro.
             </p>
         </h3>
-
+        <br>
+        <div class="code_snippet">
+            <p>
+                val deferred: Deferred<String> = async { <br>
+                    &emsp;delay(1000) <br>
+                    &emsp;"Got result" <br>
+                    } <br><br>
+                    println("Waiting result...") <br>
+                    println("Result: ${deferred.await()}")
+            </p>
+        </div>
+        <br>
         <p>
             Ambos builders se suspenden automáticamente cuando el hilo principal necesita continuar con otras tareas.
         </p>
@@ -159,21 +197,63 @@
                 Inicia una corrutina <strong>bloqueando el hilo actual</strong> hasta que la corrutina termina su
                 ejecución, lo que va en contra de lo que se quiere hacer con una corrutina. Sin embargo, es muy útil
                 para implementar test sobre tareas suspendidas.
-                <br>
+                <br><br>
                 En un test, al envolver tu tarea suspendida con <em>runBlocking</em> podrás realizar el <em>assert</em>
                 sobre el resultado de dicha tarea y evitar que el test finalice antes de que finalice la tarea en
                 segundo plano.
+                <br><br>
+                Devuelve una instancia de Job, similar a launch, pero ejecutada de forma síncrona.
             </p>
         </h3>
+        <br>
+        <div class="code_snippet">
+            <p>
+                runBlocking { <br>
+                &emsp;println("Strat") <br>
+                &emsp;delay(1000) <br>
+                &emsp;println("End") <br>
+                }
+            </p>
+        </div>
+        <br>
 
         <h3 id="builder_produce">produce:
             <p>
                 No es muy común verlo en aplicaciones Android. Es un builder especializado en producir flujos de datos
-                en forma de un <strong>Channel</strong>. Útil cuando necesitas enviar datos a consumidores en un canal
+                en forma de un <strong>Channel</strong> (ReceiveChannel). Útil cuando necesitas enviar datos a
+                consumidores en un canal
                 de comunicación, es decir, es un builder con retorno.
                 <br>
             </p>
         </h3>
+        <br>
+        <div class="code_snippet">
+            <p>
+                fun CoroutineScope.produceNumbers() = <br>
+                produce { <br>
+                &emsp;for (i in 1..5) { <br>
+                &emsp;&emsp;send(i) <br>
+                &emsp;&emsp;delay(500) <br>
+                &emsp;} <br>
+                } <br><br>
+                fun main() = runBlocking { <br>
+                &emsp;val channel = produceNumbers() <br>
+                &emsp;for (num in channel) { <br>
+                &emsp;&emsp; println("Get: $num") <br>
+                &emsp;} <br>
+                }
+            </p>
+        </div>
+        <br>
+        <p>Devuelve una instancia de ReceiveChannel, que emite múltiples valores con send().</p>
+
+
+
+        <h2 id="builders_final_comparison">Comparación final</h2>
+        <br>
+        <img class="coroutine_summary" src="../../../img/coroutines_builders_cleverito_summary.png" alt="">
+
+
 
 
         <h2 id="scopes">Scopes de corrutinas</h2>
