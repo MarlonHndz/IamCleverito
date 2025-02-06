@@ -800,7 +800,9 @@ header {
     }
 
     .tab {
-        font-size: 17px;
+        margin-top: 2.5px;
+        height: 30px;
+        font-size: 15px;
     }
 
     .code_snippet {
@@ -821,13 +823,7 @@ header {
         padding: 30px;
     }
 
-
     /* -- Tabs -- */
-    .tab {
-        font-size: 16px;
-        font-weight: 400;
-    }
-
     .bar--top {
         bottom: calc(40% + 11px + 4px/ 2);
     }
@@ -905,6 +901,10 @@ header {
         font-size: 20px;
     }
 
+    .tab {
+        font-size: 14px;
+    }
+
     .content_tabs {
         margin-left: 45px;
     }
@@ -956,5 +956,11 @@ header {
 
     .current_book {
         display: none;
+    }
+
+    .tab {
+        margin-top: 4.5px;
+        height: 26px;
+        font-size: 12px;
     }
 }
