@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marlonhndz.github.io/IamCleverito/sitemap.xml
