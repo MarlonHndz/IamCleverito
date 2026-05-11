@@ -17,7 +17,9 @@ body {
 
 
 
-/* -- HEADER -- */
+/* ============================================================
+   HEADER
+   ============================================================ */
 header {
     width: 100%;
     height: fit-content;
@@ -105,10 +107,32 @@ header {
     background: white;
 }
 
+.texts_header>a {
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-size: 25px;
+    font-weight: 300;
+    padding: 5px 30px;
+    border-radius: 40px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    color: white;
+    background: black;
+    text-decoration: none;
+}
+
+.texts_header>a:hover {
+    font-weight: 500;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    color: black;
+    background: white;
+}
 
 
 
-/* -- Introduction -- */
+
+/* ============================================================
+   INTRODUCTION
+   ============================================================ */
 main .home-introduction {
     height: fit-content;
     background: #032B4F;
@@ -124,13 +148,13 @@ main .home-introduction {
 .container-home-introduction {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 40px;
-    padding-bottom: 50px;
+    padding-top: 190px;
+    padding-bottom: 90px;
 }
 
 .image-introduction {
     width: 35%;
-    height: auto;
+    height: 10%;
 }
 
 .container-introduction-texts {
@@ -175,7 +199,7 @@ main .home-introduction {
 }
 
 .slider-arrow {
-   background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
     color: white;
@@ -226,7 +250,9 @@ main .home-introduction {
 
 
 
-/* -- Portfolio -- */
+/* ============================================================
+   PORTFOLIO
+   ============================================================ */
 .portfolio {
     background: rgb(0, 0, 0);
     /* fallback for old browsers */
@@ -302,15 +328,15 @@ main .home-introduction {
 }
 
 #shuffle_logo {
-    margin-top: 15px;
+    margin-top: 5px;
     height: auto;
-    width: 27%;
+    width: 36%;
     transition: 0.4s ease-in-out;
     z-index: 1;
 }
 
 .card:hover #shuffle_logo {
-    width: 30%;
+    width: 45%;
     filter: blur(7px);
     animation: anim 3s infinite;
     margin-bottom: 20px;
@@ -400,7 +426,9 @@ main .home-introduction {
 
 
 
-/* -- Developer -- */
+/* ============================================================
+   DEVELOPER
+   ============================================================ */
 .developer {
     width: 100%;
     height: 100vh;
@@ -453,7 +481,9 @@ main .home-introduction {
 
 
 
-/* -- About Services -- */
+/* ============================================================
+   ABOUT SERVICES
+   ============================================================ */
 .about-services {
     background: #F2F2F2;
     /* fallback for old browsers */
@@ -492,6 +522,9 @@ main .home-introduction {
 
 
 
+/* ============================================================
+   RESPONSIVENESS
+   ============================================================ */
 
 /* -- Responsive 1300px -- */
 @media screen and (max-width:1300px) {
@@ -607,7 +640,8 @@ main .home-introduction {
     }
 
     .image-introduction {
-        width: 25%;
+        width: 40%;
+
     }
 
     /* -- Developer -- */
@@ -674,7 +708,7 @@ main .home-introduction {
     .image-introduction {
         position: absolute;
         align-self: end;
-        width: 10%;
+        width: 0%;
         right: 1%;
     }
 }
