@@ -29,4 +29,13 @@ function markCurrentNavTab() {
 
         curriculumTab.removeAttribute("href");
     }
+
+    if (currentPath.includes("/library/")) {
+
+        const curriculumTab = document.getElementById("library_tab");
+
+        curriculumTab.classList.add("nav-link-active");
+
+        curriculumTab.removeAttribute("href");
+    }
 }
