@@ -299,7 +299,7 @@ header {
 .context-text-long h2 {
     font-weight: 400;
     font-size: 50px;
-    margin-top: 20px;
+    margin: 20px 90px;
     text-align: justify;
 }
 
@@ -413,6 +413,7 @@ header {
 
     .context-text-long h2 {
         font-size: 45px;
+        margin: 20px 0px;
     }
 
     /* -- Purpose -- */
