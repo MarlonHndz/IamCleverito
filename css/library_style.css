@@ -34,10 +34,12 @@ body {
 }
 
 
-/* -- HEADER -- */
+/* ============================================================
+   HEADER SECTION
+   ============================================================ */
 header {
     width: 100%;
-    height: 70vh;
+    height: 75vh;
     min-height: 490px;
     background: #00132E;
     /* fallback for old browsers */
@@ -51,14 +53,15 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .35);
+    /*box-shadow: 0 0 8px rgba(0, 0, 0, .35);*/
 }
 
 .texts-header {
     display: flex;
     height: 100%;
     width: 100%;
-    padding: 0 200px;
+    max-width: 1655px;
+    padding: 0 150px;
     align-items: start;
     justify-content: center;
     flex-direction: column;
@@ -71,20 +74,35 @@ header {
     align-items: center;
 }
 
-.container-header-title img {
+.title-cloc-logo {
     width: auto;
     height: 50px;
 }
 
+.container-texts {
+    width: 60%;
+    overflow: hidden;
+    align-self: left;
+}
+
+.contaier-image {
+    width: 40%;
+}
+
+.contaier-image img {
+    width: 100%;
+    height: auto;
+}
+
 .texts-header h1 {
-    font-size: 70px;
+    font-size: 80px;
     font-weight: 500;
     color: #FFF;
     width: fit-content;
 }
 
 .texts-header h2 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 400;
     color: #FFF;
 }
@@ -92,7 +110,18 @@ header {
 
 
 
-/* -- Portfolio -- */
+/* ============================================================
+   PORTFOLIO SECTION
+   ============================================================ */
+.library-portfolio{
+    background: #00132E;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #00132E, #032B4F, #011633);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #00132E, #032B4F, #011633);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .library-galery-portfolio {
     display: flex;
     justify-content: space-evenly;
@@ -102,8 +131,8 @@ header {
 }
 
 .card-portfolio {
+    background: #fff;
     width: 35%;
-    height: 650px;
     max-width: 400px;
     border-radius: 30px;
     padding: 32px;
@@ -118,6 +147,10 @@ header {
     margin-bottom: 0px;
     height: auto;
     width: 30%;
+}
+
+.card-description {
+    margin-bottom: 10%;
 }
 
 .card-portfolio h4 {
@@ -155,8 +188,16 @@ header {
 }
 
 .library-galery-portfolio .card-portfolio>.container-card-text {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     width: 100%;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: row;
+
 }
 
 .library-galery-portfolio .card-portfolio>.container-card-bottom-part {
@@ -197,7 +238,9 @@ header {
 
 
 
-/* -- Libray Context -- */
+/* ============================================================
+   CONTEXT SECTION
+   ============================================================ */
 .library-context {
     background: #00132E;
     /* fallback for old browsers */
@@ -206,7 +249,7 @@ header {
     background: linear-gradient(to right, #00132E, #032B4F, #011633);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #FFF;
-    border-radius: 10px;
+    
     margin: auto;
     overflow: hidden;
     display: flex;
@@ -214,11 +257,22 @@ header {
 
 .container-context {
     padding: 70px 0;
-    width: 80%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.context-with-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.book-pile {
+    width: 40%;
+    max-width: 510px;
 }
 
 .library-context .context-text {
@@ -252,8 +306,16 @@ header {
 
 
 
-/* -- Porpuses -- */
+/* ============================================================
+   Porpsuses SECTION
+   ============================================================ */
 .library-purpose {
+    background: #00132E;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #00132E, #032B4F, #011633);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #00132E, #032B4F, #011633);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
     margin: auto;
     overflow: hidden;
@@ -274,6 +336,7 @@ header {
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #E1E2E6;
+    background: #fff;
     overflow: hidden;
     display: flex;
 }
@@ -374,8 +437,13 @@ header {
         font-size: 35px;
     }
 
-    .container-header-title img {
+    .title-cloc-logo {
         height: 40px;
+    }
+
+    .book-pile {
+        width: 30%;
+        height: 30%;
     }
 
     /* -- portfolio -- */
@@ -410,7 +478,7 @@ header {
         font-size: 28px;
     }
 
-    .container-header-title img {
+    .title-cloc-logo {
         height: 36px;
     }
 
@@ -476,9 +544,14 @@ header {
         height: auto;
         width: 80%;
     }
+
     .wip_msg h1 {
         font-size: 45px;
         font-weight: 400;
+    }
+
+    .contaier-image {
+        width: 30%;
     }
 
     /* -- Portfolio -- */
@@ -505,6 +578,16 @@ header {
 /* -- Responsive 900px -- */
 @media screen and (max-width:900px) {
 
+
+    /* -- HEADER -- */
+    .container-texts {
+        width: 100%;
+    }
+
+    .contaier-image {
+        display: none;
+    }
+
     /* -- portfolio -- */
     .card-portfolio {
         width: 40%;
@@ -523,7 +606,7 @@ header {
         font-size: 30px;
     }
 
-    .container-header-title img {
+    .title-cloc-logo {
         height: 30px;
     }
 
@@ -564,6 +647,10 @@ header {
         width: 100%;
     }
 
+    .book-pile {
+        display: none;
+    }
+
     /* -- Purpose -- */
     .container-purpose {
         flex-direction: column;
@@ -592,7 +679,7 @@ header {
         font-size: 25px;
     }
 
-    .container-header-title img {
+    .title-cloc-logo {
         height: 28px;
     }
 

@@ -42,6 +42,15 @@ nav {
     background: #011633;
 }
 
+/* TAB ACTIVA */
+.left_nav_content > a.nav-link-active {
+    color: #F9AF5D;
+    background: #00132E;
+    font-weight: 600;
+    pointer-events: none;
+    cursor: default;
+}
+
 .left_nav_content>img {
     width: auto;
     height: 55px;
