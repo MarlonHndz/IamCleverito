@@ -72,6 +72,14 @@ nav {
     color: #F9AF5D;
 }
 
+/* TAB ACTIVA */
+.right_nav_content > a.nav-link-active {
+    color: #F9AF5D;
+    font-weight: 600;
+    pointer-events: none;
+    cursor: default;
+}
+
 
 
 

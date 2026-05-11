@@ -1,6 +1,8 @@
 async function loadHeaderNav() {
-     await loadHeader("/IamCleverito/ui/nav/nav_section.html"); // Production
-    // await loadHeader("/ui/nav/nav_section.html");            // Testing
+    await loadHeader("/IamCleverito/ui/nav/nav_section.html"); // Production
+    //await loadHeader("/ui/nav/nav_section.html");            // Testing
+
+    markCurrentNavTab();
 }
 
 function loadHeader(url) {
@@ -13,4 +15,18 @@ function loadHeader(url) {
             })
             .catch(error => console.log(error));
     });
+}
+
+function markCurrentNavTab() {
+
+    const currentPath = window.location.pathname;
+
+    if (currentPath.includes("/curriculum/")) {
+
+        const curriculumTab = document.getElementById("curriculum_tab");
+
+        curriculumTab.classList.add("nav-link-active");
+
+        curriculumTab.removeAttribute("href");
+    }
 }
