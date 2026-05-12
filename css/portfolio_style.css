@@ -131,9 +131,11 @@ header {
 /* -- HEADER TABS-- */
 .book_content_tabs {
     margin-top: 75px;
+    width: 100%;
     height: 82px;
     /* La altura para los calulos es de 67px pero se usan 82px para evitar las barras de scroll */
     display: flex;
+    flex-direction: row;
 }
 
 .vol_one_color_bg {
@@ -217,8 +219,8 @@ header {
 
 /* -- Menu drawer icon for list -- */
 .book_content_menu_icon {
-    height: 35px;
-    width: 40px;
+    height: 24px;
+    width: 24px;
     padding: 0px;
     border-radius: 0px;
     z-index: 4;
@@ -235,28 +237,37 @@ header {
 
 .toggle {
     position: relative;
-    width: 30px;
-    height: 30px;
+
+    width: 22px;
+    height: 22px;
+
     cursor: pointer;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
-    gap: 10px;
+
+    gap: 4px;
+
     transition-duration: .3s;
 }
 
 .bars {
     width: 100%;
-    height: 4px;
+    height: 2px;
+
     background-color: rgb(253, 255, 243);
-    border-radius: 5px;
+
+    border-radius: 999px;
+
     transition-duration: .3s;
 }
 
 /***** Spin Animation for menu icon *****/
 #checkbox_list_menu_icon:checked+.toggle #bar2 {
-    transform: translateY(14px) rotate(60deg);
+    transform: translateY(6px) rotate(60deg);
     margin-left: 0;
     transform-origin: right;
     transition-duration: .3s;
@@ -264,11 +275,13 @@ header {
 }
 
 #checkbox_list_menu_icon:checked+.toggle #bar1 {
-    transform: translateY(28px) rotate(-60deg);
+    transform: translateY(12px) rotate(-60deg);
     transition-duration: .3s;
     transform-origin: left;
     z-index: 1;
 }
+
+
 
 #checkbox_list_menu_icon:checked+.toggle {
     transform: rotate(-90deg);
@@ -533,6 +546,192 @@ header {
 }
 
 
+/* ============================================================
+   DARK MODE CONTROL
+   ============================================================ */
+
+
+/* ── Sidebar mejorado: clase en lugar de width inline ─────── */
+
+/* En desktop el sidebar siempre visible — no cambia nada */
+.portfolio_list_section {
+    width: 300px;
+    /* valor por defecto ya tienes min-width: 300px */
+}
+
+/* En breakpoint donde es drawer (≤1285px) */
+@media screen and (max-width: 1285px) {
+
+    .portfolio_list_section {
+        width: 0;
+        min-width: 0;
+        /* ya tenías overflow: hidden a través de width 0 */
+    }
+
+    /* Clase que agrega el JS para abrir */
+    .portfolio_list_section.sidebar-open {
+        width: 300px;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/* ── Overlay (fondo semitransparente detrás del sidebar) ───── */
+#sidebar_overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 9;
+    /* debajo del sidebar (z-index: 10) */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    transition: opacity 0.25s;
+    opacity: 0;
+}
+
+#sidebar_overlay.overlay-visible {
+    display: block;
+    opacity: 1;
+}
+
+/* ── Botón de modo lectura ──────────────────────────────────── */
+#reading_mode_toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 10px;
+    margin-left: auto;
+    margin-right: 8px;
+    margin-top: 16px;
+
+    border-radius: 999px;
+    border: 2px solid rgb(255, 255, 255);
+
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: background 0.2s, border-color 0.2s;
+
+    white-space: nowrap;
+
+    width: fit-content;
+    height: fit-content;
+
+    min-height: unset;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Hover cuando el modo ACTIVO es oscuro → preview de modo claro */
+#reading_mode_toggle.is-dark-mode:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #00132E;
+}
+
+/* Hover cuando el modo ACTIVO es claro → preview de modo oscuro */
+#reading_mode_toggle:not(.is-dark-mode):hover {
+    background: #0f1117;
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #e8eaf0;
+}
+
+.mode-icon,
+.mode-label {
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* ── Modo oscuro para la zona de lectura ───────────────────── */
+
+/* Transición suave en todos los elementos afectados */
+#portfolio_body,
+.portfolio_list_section,
+.portfolio_text_section,
+.portfolio_text_section h1,
+.portfolio_text_section h2,
+.portfolio_text_section h3,
+.portfolio_text_section h4,
+.portfolio_text_section p,
+.portfolio_text_section li,
+.list_title,
+.list_title:hover,
+.code_snippet,
+.console_snippet {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ── Variables del modo oscuro ── */
+#portfolio_body.reading-dark {
+    background: #0f1117;
+}
+
+#portfolio_body.reading-dark .portfolio_list_section {
+    background: #161b27;
+    border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+#portfolio_body.reading-dark .list_title {
+    color: rgba(220, 225, 240, 0.85);
+}
+
+#portfolio_body.reading-dark .list_title:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+#portfolio_body.reading-dark .portfolio_content_section {
+    background: #0f1117;
+}
+
+#portfolio_body.reading-dark .portfolio_text_section {
+    background: #0f1117;
+}
+
+#portfolio_body.reading-dark .portfolio_text_section h1,
+#portfolio_body.reading-dark .portfolio_text_section h2,
+#portfolio_body.reading-dark .portfolio_text_section h3,
+#portfolio_body.reading-dark .portfolio_text_section h4 {
+    color: #e8eaf0;
+}
+
+#portfolio_body.reading-dark .portfolio_text_section p,
+#portfolio_body.reading-dark .portfolio_text_section li {
+    color: rgba(200, 208, 230, 0.82);
+}
+
+#portfolio_body.reading-dark .portfolio_text_section strong {
+    color: #FBE803;
+}
+
+#portfolio_body.reading-dark .portfolio_text_section em {
+    color: rgba(200, 208, 230, 0.65);
+}
+
+#portfolio_body.reading-dark .portfolio_text_section a {
+    color: #60a5fa;
+}
+
+#portfolio_body.reading-dark .code_snippet {
+    background: #1e2333;
+    color: #a9d1ff;
+    border-left: 3px solid #FBE803;
+}
+
+#portfolio_body.reading-dark .console_snippet {
+    background: #111827;
+    color: #86efac;
+    border-left: 3px solid rgba(134, 239, 172, 0.4);
+}
+
 
 
 /* -/-/-/-/-/- Responsive -/-/-/-/-/-/-*/
@@ -571,6 +770,14 @@ header {
     .content_tabs {
         margin-left: 50px;
         padding-left: 0px;
+    }
+
+    .mode-label {
+        display: none;
+    }
+
+    #reading_mode_toggle {
+        margin-left: 6px;
     }
 
     /* -- Portfolio -- */
@@ -652,8 +859,12 @@ header {
         padding: 8px;
     }
 
+    #reading_mode_toggle {
+        margin-top: 8px;
+    }
+
     .book_content_menu_icon {
-        margin-top: 8px
+        margin-top: 14px
     }
 
     .content_tabs {
