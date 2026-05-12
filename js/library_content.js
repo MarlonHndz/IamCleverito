@@ -8,6 +8,7 @@ async function loadLibraryContent() {
     await loadSection("library_context_section.html");
     await loadSection("library_purpose_section.html");
     await loadSection("../footer/footer_section.html");
+    initCardClicks();
 }
 
 function loadSection(url) {
@@ -24,4 +25,13 @@ function loadSection(url) {
 
 function cleanContent() {
     document.querySelector("main").innerHTML = '';
+}
+
+function initCardClicks() {
+    document.querySelectorAll('.card-portfolio[data-read-url]').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            window.location.href = card.dataset.readUrl;
+        });
+    });
 }

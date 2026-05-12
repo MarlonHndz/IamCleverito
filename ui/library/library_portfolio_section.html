@@ -2,85 +2,97 @@
     <div class="container">
         <div class="library-galery-portfolio">
 
-            <div class="card-portfolio">
+            <!-- VOL 1 -->
+            <div class="card-portfolio" data-read-url="../../ui/portfolio/cloc_vol_one/book_index.html">
                 <div class="container-card-text">
-                    <img src="../../img/circle_logo_vol_one.png" alt="" class="circle_logo">
+                    <div class="logo-flip-container">
+                        <div class="logo-flip-inner">
+                            <div class="logo-flip-front">
+                                <img src="../../img/circle_logo_vol_one.png" alt="CLOC Vol. 1" class="circle_logo">
+                            </div>
+                            <div class="logo-flip-back">
+                                <img src="../../img/book_covers/CLOC_1.png" alt="Portada CLOC Vol. 1"
+                                    class="book-cover-3d">
+                            </div>
+                        </div>
+                    </div>
                     <h3>Conceptos básicos de programación</h3>
                     <br>
-                    <p class="card-description">POO, conceptos básicos de Java, SOLID, patrones de diseño, servicios web y más.</p>
+                    <p class="card-description">POO, conceptos básicos de Java, SOLID, patrones de diseño, servicios web
+                        y más.</p>
                 </div>
-
                 <div class="container-card-bottom-part">
-                    <div class="container-card-button"
-                        onclick="window.location.href = '../../ui/portfolio/cloc_vol_one/book_index.html';">
+                    <div class="container-card-button">
                         <p>Leer online</p>
                     </div>
-
-                    <div class="container-card-buy" onclick="window.open('https://a.co/d/8w6GG8G', '_blank')">
+                    <div class="container-card-buy"
+                        onclick="event.stopPropagation(); window.open('https://a.co/d/8w6GG8G', '_blank')">
                         <h2>Comprar en Amazon</h2>
                     </div>
-
                 </div>
             </div>
 
-            <div class="card-portfolio">
+            <!-- VOL 2 -->
+            <div class="card-portfolio" data-read-url="../../ui/portfolio/cloc_vol_two/book_index.html">
                 <div class="container-card-text">
-                    <img src="../../img/circle_logo_vol_two.png" alt="" class="circle_logo">
+                    <div class="logo-flip-container">
+                        <div class="logo-flip-inner">
+                            <div class="logo-flip-front">
+                                <img src="../../img/circle_logo_vol_two.png" alt="CLOC Vol. 2" class="circle_logo">
+                            </div>
+                            <div class="logo-flip-back">
+                                <img src="../../img/book_covers/CLOC_2.png" alt="Portada CLOC Vol. 2"
+                                    class="book-cover-3d">
+                            </div>
+                        </div>
+                    </div>
                     <h3>Fundamentos de Kotlin</h3>
                     <br>
                     <p>Nulabilidad, loops, scope functions, modificadores de clases, corrutinas, Flow, LiveData y más.
                     </p>
                 </div>
-
                 <div class="container-card-bottom-part">
-                    <div class="container-card-button"
-                        onclick="window.location.href = '../../ui/portfolio/cloc_vol_two/book_index.html';">
+                    <div class="container-card-button">
                         <p>Leer online</p>
                     </div>
-
-                    <div class="container-card-buy" onclick="window.open('https://a.co/d/jalMAuD', '_blank')">
+                    <div class="container-card-buy"
+                        onclick="event.stopPropagation(); window.open('https://a.co/d/jalMAuD', '_blank')">
                         <h2>Comprar en Amazon</h2>
                     </div>
                 </div>
             </div>
 
-            <div class="card-portfolio">
+            <!-- VOL 3 — WIP: no es clickable como card completa -->
+            <div class="card-portfolio card-portfolio-wip">
+                <!-- 🚧 WIP Badge -->
+                <div class="wip-badge">
+                    <span class="wip-badge-short">WIP</span>
+                    <span class="wip-badge-text">Work in progress</span>
+                </div>
+
                 <div class="container-card-text">
-                    <img src="../../img/circle_logo_vol_three.png" alt="" class="circle_logo">
+                    <div class="logo-flip-container logo-flip-no-hover">
+                        <div class="logo-flip-inner">
+                            <div class="logo-flip-front">
+                                <img src="../../img/circle_logo_vol_three.png" alt="CLOC Vol. 3" class="circle_logo">
+                            </div>
+                        </div>
+                    </div>
                     <h3>Android: Prácticas mandatorias</h3>
                     <br>
                     <p>Componentes de Android, patrones de arquitectura, testing, Clean Architecture y más.</p>
                 </div>
-
                 <div class="container-card-bottom-part">
                     <div class="container-card-button"
                         onclick="window.location.href = '../../ui/wip/working_on_it.html';">
                         <p>Leer online</p>
                     </div>
-
-                    <div class="container-card-buy" onclick="window.location.href = '../../ui/wip/working_on_it.html';">
-                        <h2>Comprar en Amazon</h2>
+                    <div class="container-card-buy container-card-buy-wip" title="Próximamente disponible en Amazon"
+                        onclick="event.stopPropagation();">
+                        <h2>Próximamente</h2>
                     </div>
                 </div>
             </div>
-            <!--
-            <div class="card-portfolio">
-                <div class="container-card-text">
-                    <h4>CLOC VOL. 4</h4>
-                    <h3>Compose y desarrollo de UI</h3>
-                </div>
-
-                <div class="container-card-bottom-part">
-                    <div class="container-card-buy">
-                        <h2>Comprar en Amazon</h2>
-                    </div>
-
-                    <div class="container-card-button">
-                        <p>Leer online</p>
-                    </div>
-                </div>
-            </div>
-            -->
 
         </div>
     </div>
